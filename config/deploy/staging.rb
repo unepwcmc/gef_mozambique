@@ -3,7 +3,7 @@
 ################################################################################
 
 # The Git branch this environment should be attached to.
-set :branch, 'main'
+set :branch, 'master'
 
 # The environment's name. To be used in commands and other references.
 set :stage, :staging
