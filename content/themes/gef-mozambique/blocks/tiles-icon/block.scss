@@ -1,0 +1,110 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.tiles-icon {
+  @include spacer;
+}
+
+.tiles-icon__inner {
+  .home & {
+    @include inner;
+  }
+}
+
+ul.tiles-icon__items,
+.editor-styles-wrapper ul.tiles-icon__items {
+  @include structural_ul;
+
+  .layout__body & {
+    @include break-min($md) {
+      display: flex;
+      margin-right: -$grid-gap;
+    }
+  }
+}
+
+li.tiles-icon__item,
+.editor-styles-wrapper li.tiles-icon__item {
+  margin-bottom: $grid-gap;
+
+  .layout__body & {
+    @include break-min($md) {
+      margin-right: $grid-gap;
+      margin-bottom: 0;
+      display: flex;
+
+      flex: 0 0 calc(((1 / 2) * 100%) - #{$grid-gap});
+    }
+  }
+}
+
+.tile-icon {
+  border: 0.5px solid $color-darker-grey;
+  border-radius: 5px;
+}
+
+.tile-icon__body {
+  margin: $spacer-small;
+
+  @include break-min($md) {
+    margin: $spacer-medium;
+  }
+}
+
+.tile-icon__icon {
+  margin-bottom: $spacer-medium;
+  width: 80px;
+  height: 80px;
+
+  @include break-min($md) {
+    width: 115px;
+    height: 140px;
+    margin-bottom: $spacer-large;
+  }
+}
+
+h4.tile-icon__title {
+  @include font_heading-3;
+  font-weight: $fw-light;
+}
+
+p.tile-icon__description {
+  @include font_heading-5;
+  margin-bottom: 15px;
+
+  @include break-min($md) {
+    margin-bottom: $spacer-small;
+  }
+}
+
+.tile-icon__links {
+  margin-bottom: -$item-padding-small;
+
+  @include break-min($sm) {
+    display: flex;
+    align-items: center;
+    margin-right: -$item-padding-small;
+    margin-bottom: 0;
+  }
+
+  @include break-min($md) {
+    margin-right: -$item-padding;
+  }
+}
+
+a.tile-icon__link {
+  @include button_secondary;
+  @include button_wider;
+  margin-bottom: $item-padding-small;
+  width: 100%;
+
+  @include break-min($sm) {
+    margin-right: $item-padding-small;
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  @include break-min($md) {
+    margin-right: $item-padding;
+  }
+}

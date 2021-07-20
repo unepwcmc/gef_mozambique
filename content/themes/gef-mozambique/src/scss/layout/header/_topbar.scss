@@ -1,0 +1,31 @@
+.layout-topbar {
+  background-color: $color-secondary;
+  color: $color-white;
+  overflow: hidden;
+  max-height: 35px;
+
+  display: block;
+
+  transition: max-height .5s ease;
+
+  .layout-header--scrolled & {
+    max-height: 0;
+  }
+
+  @include break-min($headerNavShow) {
+    display: none;
+  }
+}
+
+.layout-topbar__inner {
+  padding-left: $grid-gap;
+  padding-right: $grid-gap;
+}
+
+.layout-topbar__body {
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
