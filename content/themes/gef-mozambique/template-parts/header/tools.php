@@ -1,9 +1,17 @@
 <div class="header-tools">
   <div class="header-tools__items">
 
-    <div class="header-tools__item header-tools__item--search">
-      <header-search form-action="<?php echo esc_url( home_url( '/' ) ); ?>" />
-    </div>
+    <?php if ( get_theme_mod( 'enable_language_switcher' ) ) : ?>
+      <div class="header-tools__item header-tools__item--language-switcher">
+        <?php do_action( 'wpml_add_language_selector' ); ?>
+      </div>
+    <?php endif; ?>
+
+    <?php /*
+      <div class="header-tools__item header-tools__item--search">
+        <header-search form-action="<?php echo esc_url( home_url( '/' ) ); ?>" />
+      </div>
+    */ ?>
 
     <?php
       if (get_theme_mod( 'enable_header_button' )):

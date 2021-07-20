@@ -22,20 +22,20 @@
   $image_opacity = block_field( 'image-opacity', false );
 ?>
 
-<div class="her-Home<?php if ($dark_text) echo ' her-Home--dark'; ?>">
-  <div class="her-Home_Inner">
+<div class="hero-home<?php if ($dark_text) echo ' hero-home--dark'; ?>">
+  <div class="hero-home__inner">
     <div
-      class="her-Home_Body"
+      class="hero-home__body"
       <?php if ($background_colour) echo 'style="background-color: ' . $background_colour . ';"'; ?>
     >
-      <div class="her-Home_Content">
+      <div class="hero-home__content">
         <?php if ($title): ?>
-          <h2 class="her-Home_Title">
+          <h2 class="hero-home__title">
             <?php echo $title; ?>
           </h2>
         <?php endif; ?>
         <?php if ($text): ?>
-          <div class="her-Home_Text">
+          <div class="hero-home__text">
             <?php echo $text; ?>
           </div>
         <?php endif; ?>
@@ -43,7 +43,7 @@
         <?php if ($link_url && $link_text): ?>
           <a
             href="<?php echo $link_url; ?>"
-            class="her-Home_Link<?php if ($link_url_external) echo ' her-Home_Link--external'; ?>"
+            class="hero-home__link<?php if ($link_url_external) echo ' hero-home__link--external'; ?>"
             title="<?php echo $link_text; ?>"
             <?php if ($link_url_external) echo ' target="_blank"'; ?>
           >
@@ -56,7 +56,7 @@
         <img
           src="<?php echo $image_url; ?>"
           alt="<?php echo $title; ?>"
-          class="her-Home_BackgroundImage"
+          class="hero-home__background-image"
           style="opacity: <?php echo $image_opacity; ?>"
         >
       <?php endif; ?>

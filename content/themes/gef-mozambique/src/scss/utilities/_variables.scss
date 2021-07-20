@@ -5,6 +5,7 @@
 $global-inner: 1250px;
 $grid-gap: 24px;
 $gutter: 75px;
+$gutter-small: 50px;
 $restrained-width: #{$global-inner / 2};
 
 $item-padding-smaller: 5px;
@@ -94,7 +95,7 @@ $headerMobileHeight: 80px;
 $headerMobileHeightScrolled: 60px;
 $headerHeight: 120px;
 $headerHeightScrolled: 80px;
-$headerNavShow: 1024px;
+$headerNavShow: $xlg;
 
 //-------------------------------------------------
 // DRAWERS

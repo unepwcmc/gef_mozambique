@@ -1,19 +1,19 @@
 @import "../../src/scss/utilities/variables";
 @import "../../src/scss/utilities/mixins";
 
-.her-Home_Inner {
+.hero-home__inner {
   @include inner_padding;
 
   display: flex;
 }
 
-.her-Home_BackgroundImage {
+.hero-home__background-image {
   @include absolute_fill;
   @include object_fit_cover;
   z-index: 1;
 }
 
-.her-Home_Body {
+.hero-home__body {
   width: 100%;
 
   display: flex;
@@ -30,7 +30,7 @@
   }
 }
 
-.her-Home_Content {
+.hero-home__content {
   padding: $spacer-medium $grid-gap;
   text-align: center;
   width: 100%;
@@ -57,24 +57,24 @@
   }
 }
 
-h2.her-Home_Title {
+h2.hero-home__title {
   @include font_heading-1;
   color: currentColor;
   text-align: center;
   margin: 0 auto $item-padding * 4;
 }
 
-.her-Home_Text p {
+.hero-home__text p {
   @include font_heading-5;
   font-weight: $fw-regular;
   margin-bottom: $item-padding * 2;
 }
 
-a.her-Home_Link {
+a.hero-home__link {
   @include button_primary;
   margin: 0;
 
-  &.her-Home_Link--external {
+  &.hero-home__link--external {
     display: inline-flex;
     justify-content: center;
 

@@ -63,10 +63,7 @@
                 <?php endif; ?>
               </div>
 
-              <div class="header__item header__item--tools<?php if ( get_theme_mod( 'enable_language_switcher' ) === true ) echo ' header__item--language-switcher'; ?>">
-                <?php if ( get_theme_mod( 'enable_language_switcher' ) ) :
-                  do_action( 'wpml_add_language_selector' );
-                endif; ?>
+              <div class="header__item header__item--tools">
                 <!-- Header Tools -->
                 <?php get_template_part( 'template-parts/header/tools' ); ?>
               </div>

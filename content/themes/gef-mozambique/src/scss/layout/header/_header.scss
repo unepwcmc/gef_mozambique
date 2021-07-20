@@ -16,8 +16,12 @@
 }
 
 .header__inner {
-  padding-left: $grid-gap;
-  padding-right: $grid-gap;
+  padding-left: $gutter-small;
+  padding-right: $gutter-small;
+}
+
+.header__body {
+  position: relative;
 }
 
 .header__items {

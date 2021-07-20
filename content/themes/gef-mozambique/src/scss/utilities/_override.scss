@@ -15,8 +15,8 @@
     display: none;
 
     @include break-min($headerNavShow) {
-      padding-top: 5px !important;
-      padding-bottom: 15px !important;
+      // padding-top: 5px !important;
+      // padding-bottom: 15px !important;
 
       display: block;
     }
@@ -36,9 +36,13 @@
     line-height: 1;
     list-style-type: none;
     margin: 0;
-    padding: 0 0 0 10px !important;
+    padding: 0 0 0 15px !important;
 
     display: inline-block;
+
+    &:first-child {
+      padding-left: 0 !important;
+    }
   }
 
   a {
