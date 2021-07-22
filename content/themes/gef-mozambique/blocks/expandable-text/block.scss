@@ -14,8 +14,11 @@ $lineHeight: $font-base-line-height;
   @include break-min($sm) {
     max-width: calc((8 / 12) * 100%);
   }
-  @include break-min($xlg) {
-    max-width: calc((6 / 12) * 100%);
+
+  .layout__body & {
+    @include break-min($xlg) {
+      max-width: calc((6 / 12) * 100%);
+    }
   }
 }
 

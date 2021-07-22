@@ -7,7 +7,8 @@
   display: flex;
 }
 
-.hero-home__background-image {
+.hero-home__background-image,
+.block-editor__container .hero-home__background-image {
   @include absolute_fill;
   @include object_fit_cover;
   z-index: 1;
@@ -57,17 +58,26 @@
   }
 }
 
-h2.hero-home__title {
-  @include font_heading-1;
+h2.hero-home__title,
+.editor-styles-wrapper h2.hero-home__title {
   color: currentColor;
   text-align: center;
-  margin: 0 auto $item-padding * 4;
+  margin: 0 auto $item-padding * 2;
+
+  .layout__body & {
+    @include font_heading-1;
+    margin-bottom: $item-padding * 4;
+  }
 }
 
-.hero-home__text p {
-  @include font_heading-5;
+.hero-home__text p,
+.editor-styles-wrapper .hero-home__text p {
   font-weight: $fw-regular;
   margin-bottom: $item-padding * 2;
+
+  .layout__body & {
+    @include font_heading-5;
+  }
 }
 
 a.hero-home__link {
