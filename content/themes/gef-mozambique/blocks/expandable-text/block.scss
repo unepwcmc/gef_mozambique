@@ -1,0 +1,76 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+$lineHeight: $font-base-line-height;
+
+.block-expandable {
+  @include spacer;
+}
+
+.block-expandable__inner {
+  @include inner;
+  max-width: calc((10 / 12) * 100%);
+
+  @include break-min($sm) {
+    max-width: calc((8 / 12) * 100%);
+  }
+  @include break-min($xlg) {
+    max-width: calc((6 / 12) * 100%);
+  }
+}
+
+.block-expandable__body {
+  padding-bottom: 21px + $item-padding;
+  position: relative;
+
+  transition: padding 0.2s ease;
+
+  .block-expandable--toggled & {
+    padding: 0;
+  }
+}
+
+.block-expandable__content {
+  overflow: hidden;
+  max-height: $lineHeight * 4;
+
+  @include break-min($sm) {
+    max-height: $lineHeight * 6;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  // transition: max-height 0.8s cubic-bezier(0, 1, 0, 1);
+
+  .block-expandable--toggled & {
+    max-height: 5000px !important;
+
+    transition: max-height 1.3s ease-in-out;
+  }
+}
+
+.block-expandable__toggle {
+  @include button_text;
+  @include button_with_icon;
+  color: $color-grey-text;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  transition: opacity .3s ease, visibility .3s ease;
+
+  .block-expandable--toggled & {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.block-expandable__toggle-icon {
+  color: $color-dark-grey;
+  margin-left: 5px;
+  width: 13px;
+  height: 6px;
+}

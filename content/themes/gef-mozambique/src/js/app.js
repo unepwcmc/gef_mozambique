@@ -9,6 +9,8 @@ import DownloadList from './components/resources/DownloadList.vue'
 import Drawer from './components/drawers/Drawer.vue'
 import DrawerTrigger from './components/drawers/DrawerTrigger.vue'
 import DrawersOverlay from './components/drawers/DrawersOverlay.vue'
+import ExpandableText from './components/blocks/ExpandableText.vue'
+import IconAngle from './icons/IconAngle.vue'
 import LatestPosts from './components/widgets/LatestPosts.vue'
 import ListingGrid from './components/listing/ListingGrid.vue'
 import HeaderSearch from './components/header/HeaderSearch.vue'
@@ -44,6 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
         Drawer,
         DrawerTrigger,
         DrawersOverlay,
+        ExpandableText,
         HeaderSearch,
         LatestPosts,
         ListingGrid,
