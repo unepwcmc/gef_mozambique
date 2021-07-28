@@ -1,0 +1,21 @@
+//-------------------------------------------------
+// Break Points
+//-------------------------------------------------
+
+@mixin break-min($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin break-min-max($min, $max) {
+  @media screen and (min-width: $min) and (max-width: ($max - 1px)) {
+    @content;
+  }
+}
+
+@mixin break-max($breakpoint) {
+  @media screen and (max-width: ($breakpoint - 1px)) {
+    @content;
+  }
+}

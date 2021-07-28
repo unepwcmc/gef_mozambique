@@ -1,0 +1,87 @@
+//-------------------------------------------------
+// Typography
+//-------------------------------------------------
+
+@mixin heading {
+  color: $color-headings;
+  font-family: $font-heading;
+  font-weight: $fw-regular;
+  margin-bottom: $item-padding;
+}
+
+@mixin font_heading-1 {
+  font-size: 40px;
+  font-weight: $fw-light;
+  line-height: 48px;
+
+  @include break-min($sm) {
+    font-size: 65px;
+    line-height: 68px;
+  }
+}
+
+@mixin font_heading-2 {
+  font-size: 34px;
+  line-height: 40px;
+
+  @include break-min($sm) {
+    font-size: 45px;
+    line-height: 52px;
+  }
+}
+
+@mixin font_heading-3 {
+  font-size: 28px;
+  line-height: 32px;
+
+  @include break-min($sm) {
+    font-size: 40px;
+    line-height: 45px;
+  }
+}
+
+@mixin font_heading-4 {
+  font-size: 20px;
+  line-height: 24px;
+
+  @include break-min($sm) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@mixin font_heading-5 {
+  font-size: 25px;
+  line-height: 28px;
+}
+
+@mixin font_heading-6 {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+@mixin font_base_text {
+  font-size: 16px;
+  line-height: 20px;
+
+  @include break-min($xxs) {
+    font-size: $font-base-size;
+    line-height: $font-base-line-height;
+  }
+}
+
+@mixin font_small_text {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+@mixin font_smaller_text {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+@mixin paragraph {
+  @include font_base_text;
+  color: inherit;
+  margin-bottom: $item-padding;
+}

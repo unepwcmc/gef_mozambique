@@ -1,0 +1,59 @@
+//-------------------------------------------------
+// Animations
+//-------------------------------------------------
+
+@mixin underline_on_hover {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: currentColor;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease, visibility .5s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@mixin fade_in {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-30px);
+}
+
+@mixin fade_in_left {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-30px);
+}
+
+@mixin fade_in_right {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(30px);
+}
+
+@mixin faded_in {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
+
+@mixin faded_in_transitions($quantity) {
+  @for $i from 1 through $quantity {
+    &:nth-child(#{$i}) {
+      transition-delay: $i * 0.25s;
+    }
+  }
+}
