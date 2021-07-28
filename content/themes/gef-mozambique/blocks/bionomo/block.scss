@@ -1,0 +1,53 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.block-bionomo {
+  background-color: $color-light-grey;
+  padding: $item-padding;
+}
+
+.block-bionomo__body {
+  display: flex;
+  align-items: center;
+}
+
+.block-bionomo__image {
+  flex: 0 0 100px;
+
+  span {
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+    height: 100px;
+
+    display: block;
+  }
+}
+
+.block-bionomo__content {
+  margin-left: $grid-gap;
+
+  flex: 1;
+}
+
+h5.block-bionomo__heading {
+  @include font_heading-5;
+  margin-bottom: $item-padding-smaller;
+}
+
+p.block-bionomo__text {
+  @include font_small_text;
+  margin-bottom: $item-padding-smaller;
+}
+
+a.block-bionomo__link {
+  @include font_small_text;
+  line-height: 1;
+  display: flex;
+
+  svg {
+    margin-left: 5px;
+    width: 12px;
+  }
+}
