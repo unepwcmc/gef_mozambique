@@ -23,31 +23,22 @@
       >
         {{ date }}
       </p>
-      <ul
-        v-if="isResource"
-        class="card-listing__details-items"
-      >
-        <li
-          v-if="resourceType"
-          class="card-listing__details-item"
-        >
-          {{ $t(`resources.${resourceType}`) }}
-        </li>
-        <li class="card-listing__details-item">
-          {{ $t('resources.resource') }}
-        </li>
-      </ul>
       <h3 class="card-listing__title">
         {{ title }}
       </h3>
-    </div>
-    <a
+      <p class="card-listing__text">
+        {{ excerpt }}
+      </p>
+      <a
       v-if="!modal || (modal && externalLinkURL)"
       :href="link"
-      class="card-listing__fauxlink"
+      class="card-listing__button"
       :title="title"
       :target="hrefTarget"
-    ></a>
+      >
+        More <!-- To be translated -->
+      </a>
+    </div>
   </div>
 </template>
 
@@ -92,6 +83,10 @@
             ? this.config.ACF.date
             : moment(this.config.date).format('D MMMM YYYY')
         }
+      },
+
+      excerpt() {
+        return this.config.excerpt.rendered ? decodeString(this.config.excerpt.rendered).substring(0, 80) : ''
       },
 
       externalLinkURL() {

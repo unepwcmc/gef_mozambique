@@ -45,13 +45,14 @@ p.listing__text {
 .listing__item {
   @include listing_item;
 
-  .listing-latest & {
-    @include break-min-max($sm, $md) {
-      &:nth-child(3) {
-        display: none;
-      }
-    }
-  }
+  // TODO: Delete below
+  // .listing-latest & {
+  //   @include break-min-max($sm, $md) {
+  //     &:nth-child(3) {
+  //       display: none;
+  //     }
+  //   }
+  // }
 }
 
 .listing__loader {

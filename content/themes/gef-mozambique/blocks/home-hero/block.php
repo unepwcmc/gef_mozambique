@@ -22,20 +22,20 @@
   $image_opacity = block_field( 'image-opacity', false );
 ?>
 
-<div class="hero-home<?php if ($dark_text) echo ' hero-home--dark'; ?>">
-  <div class="hero-home__inner">
+<div class="hero hero--large<?php if ($dark_text) echo ' hero--dark'; ?>">
+  <div class="hero__inner">
     <div
-      class="hero-home__body"
+      class="hero__body"
       <?php if ($background_colour) echo 'style="background-color: ' . $background_colour . ';"'; ?>
     >
-      <div class="hero-home__content">
+      <div class="hero__content">
         <?php if ($title): ?>
-          <h2 class="hero-home__title">
+          <h2 class="hero__title">
             <?php echo $title; ?>
           </h2>
         <?php endif; ?>
         <?php if ($text): ?>
-          <div class="hero-home__text">
+          <div class="hero__text">
             <?php echo $text; ?>
           </div>
         <?php endif; ?>
@@ -43,7 +43,7 @@
         <?php if ($link_url && $link_text): ?>
           <a
             href="<?php echo $link_url; ?>"
-            class="hero-home__link<?php if ($link_url_external) echo ' hero-home__link--external'; ?>"
+            class="hero__link<?php if ($link_url_external) echo ' hero__link--external'; ?>"
             title="<?php echo $link_text; ?>"
             <?php if ($link_url_external) echo ' target="_blank"'; ?>
           >
@@ -56,7 +56,7 @@
         <img
           src="<?php echo $image_url; ?>"
           alt="<?php echo $title; ?>"
-          class="hero-home__background-image"
+          class="hero__background-image"
           style="opacity: <?php echo $image_opacity; ?>"
         >
       <?php endif; ?>

@@ -8,6 +8,9 @@
 
 .listing-latest__header {
   @include section_header;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 h3.listing-latest__title {
@@ -21,4 +24,5 @@ h3.listing-latest__title {
 
 a.listing-latest__link {
   @include button_with_icon;
+  @include font_small_text;
 }

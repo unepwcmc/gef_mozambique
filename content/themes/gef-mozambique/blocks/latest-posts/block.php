@@ -27,6 +27,12 @@
   <div class="listing-latest__inner">
     <div class="listing-latest__header">
       <h3 class="listing-latest__title"><?php _e( 'Latest' ) ?> <?php echo $post_label; ?></h3>
+      <?php if ($link_url !== '') : ?>
+        <a href="<?php echo $link_args['url']; ?>" class="listing-latest__link">
+          <?php echo $link_args['text']; ?>
+          <?php get_template_part('template-parts/icons/icon', 'external'); ?>
+        </a>
+      <?php endif; ?>
     </div>
     <div class="listing-latest__body">
 
@@ -36,14 +42,5 @@
       />
 
     </div>
-
-    <?php if ($link_url !== '') : ?>
-      <div class="listing-latest__footer">
-        <a href="<?php echo $link_args['url']; ?>" class="listing-latest__link">
-          <?php echo $link_args['text']; ?>
-          <?php get_template_part('template-parts/icons/icon', 'view-more'); ?>
-        </a>
-      </div>
-    <?php endif; ?>
   </div>
 </div>

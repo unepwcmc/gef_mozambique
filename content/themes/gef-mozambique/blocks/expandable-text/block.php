@@ -12,7 +12,9 @@
   $initial_height = block_field( 'initial-height', false );
 ?>
 
-<expandable-text
-  content="<?php echo htmlentities($text); ?>"
-  toggle-text="<?php echo $toggle_text; ?>"
-/>
+<div class="block">
+  <expandable-text
+    content="<?php echo htmlentities($text); ?>"
+    toggle-text="<?php echo $toggle_text; ?>"
+  />
+</div>
