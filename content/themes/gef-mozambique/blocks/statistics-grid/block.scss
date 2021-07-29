@@ -1,0 +1,30 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.stats-grid {
+  @include spacer;
+}
+
+ul.stats-grid__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: $grid-gap;
+}
+
+.stats-grid__item {
+
+}
+
+.stats-tile {
+  background-color: $color-primary;
+  border-radius: 5px;
+  padding: $item-padding;
+}
+
+h4.stats-tile__heading {
+  @include font_heading-1;
+}
+
+h5.stats-tile__subheading {
+  @include font_heading-3;
+}
