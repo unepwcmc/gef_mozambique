@@ -18,13 +18,17 @@ ul.stats-grid__items {
 .stats-tile {
   background-color: $color-primary;
   border-radius: 5px;
+  color: $color-white;
   padding: $item-padding;
 }
 
 h4.stats-tile__heading {
   @include font_heading-1;
+  color: currentColor;
+  margin-bottom: 0;
 }
 
 h5.stats-tile__subheading {
   @include font_heading-3;
+  color: currentColor;
 }
