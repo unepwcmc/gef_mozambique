@@ -11,23 +11,25 @@
 ?>
 
 <div class="hero">
-  <div class="hero__body">
-    <img
-      src="<?php echo $background_image_url; ?>"
-      alt="<?php echo $title; ?>"
-      class="hero__background-image"
-    >
-    <div
-      <?php if ($overlay_opacity != 1) echo 'style="opacity: ' . $overlay_opacity . ';"'; ?>
-      class="hero__overlay"
-    ></div>
-    <div class="hero__content">
-      <?php if ($title != ''): ?>
-        <h2 class="hero__title"><?php echo $title; ?></h2>
-      <?php endif; ?>
-      <?php if ($text != ''): ?>
-        <p class="hero__text"><?php echo $text; ?></p>
-      <?php endif; ?>
+  <div class="hero__inner">
+    <div class="hero__body">
+      <img
+        src="<?php echo $background_image_url; ?>"
+        alt="<?php echo $title; ?>"
+        class="hero__background-image"
+      >
+      <div
+        <?php if ($overlay_opacity != 1) echo 'style="opacity: ' . $overlay_opacity . ';"'; ?>
+        class="hero__overlay"
+      ></div>
+      <div class="hero__content">
+        <?php if ($title != ''): ?>
+          <h2 class="hero__title"><?php echo $title; ?></h2>
+        <?php endif; ?>
+        <?php if ($text != ''): ?>
+          <p class="hero__text"><?php echo $text; ?></p>
+        <?php endif; ?>
+      </div>
     </div>
   </div>
 </div>
