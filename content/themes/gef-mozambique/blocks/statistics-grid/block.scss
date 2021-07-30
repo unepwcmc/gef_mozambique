@@ -12,7 +12,7 @@ ul.stats-grid__items {
 }
 
 .stats-grid__item {
-
+  display: flex;
 }
 
 .stats-tile {
@@ -20,6 +20,7 @@ ul.stats-grid__items {
   border-radius: 5px;
   color: $color-white;
   padding: $item-padding;
+  width: 100%;
 }
 
 h4.stats-tile__heading {

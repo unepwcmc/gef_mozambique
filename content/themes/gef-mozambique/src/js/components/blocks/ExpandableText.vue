@@ -1,7 +1,10 @@
 <template>
   <div
     class="block-expandable"
-    :class="{ 'block-expandable--toggled': toggled }"
+    :class="[
+      { 'block-expandable--active': expandable },
+      { 'block-expandable--toggled': toggled }
+    ]"
   >
     <div class="block-expandable__inner">
       <div class="block-expandable__body">
@@ -12,6 +15,7 @@
         <button
           class="block-expandable__toggle"
           @click="toggleTextHeight"
+          v-if="expandable"
         >
           {{ toggleText }}
           <IconAngle class="block-expandable__toggle-icon" />
@@ -33,6 +37,10 @@ export default {
     content: {
       type: String,
       default: undefined
+    },
+    expandable: {
+      type: Boolean,
+      default: false
     },
     toggleText: {
       type: String,

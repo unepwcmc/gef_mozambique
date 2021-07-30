@@ -11,16 +11,21 @@ $lineHeight: $font-base-line-height;
   @include inner;
   max-width: calc((10 / 12) * 100%);
 
-  @include break-min($sm) {
-    max-width: $restrained-width;
+  .layout__body & {
+    @include break-min($sm) {
+      max-width: $restrained-width;
+    }
   }
 }
 
 .block-expandable__body {
-  padding-bottom: 21px + $item-padding;
   position: relative;
 
   transition: padding 0.2s ease;
+
+  .block-expandable--active & {
+    padding-bottom: 21px + $item-padding;
+  }
 
   .block-expandable--toggled & {
     padding: 0;
@@ -28,18 +33,18 @@ $lineHeight: $font-base-line-height;
 }
 
 .block-expandable__content {
-  overflow: hidden;
-  max-height: $lineHeight * 4;
-
-  @include break-min($sm) {
-    max-height: $lineHeight * 6;
-  }
-
   *:last-child {
     margin-bottom: 0;
   }
 
-  // transition: max-height 0.8s cubic-bezier(0, 1, 0, 1);
+  .block-expandable--active & {
+    overflow: hidden;
+    max-height: $lineHeight * 4;
+
+    @include break-min($sm) {
+      max-height: $lineHeight * 6;
+    }
+  }
 
   .block-expandable--toggled & {
     max-height: 5000px !important;
@@ -51,7 +56,7 @@ $lineHeight: $font-base-line-height;
 .block-expandable__toggle {
   @include button_text;
   @include button_with_icon;
-  color: $color-grey-text;
+  color: $color-primary;
 
   position: absolute;
   bottom: 0;
@@ -66,8 +71,8 @@ $lineHeight: $font-base-line-height;
 }
 
 .block-expandable__toggle-icon {
-  color: $color-dark-grey;
-  margin-left: 5px;
+  color: $color-secondary;
+  margin-left: $item-padding-small;
   width: 13px;
   height: 6px;
 }
