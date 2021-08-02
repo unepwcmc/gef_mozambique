@@ -11,6 +11,7 @@
   margin: 0;
   outline: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 @mixin button {
@@ -113,9 +114,9 @@
 }
 
 @mixin button_with_icon {
-  text-decoration: none;
+  // text-decoration: none;
   white-space: nowrap;
-
+  //
   display: inline-flex;
   align-items: center;
 }
@@ -123,4 +124,14 @@
 @mixin button_text {
   @include button_reset;
   text-decoration: underline;
+}
+
+@mixin button_text_with_arrow {
+  @include button_reset;
+  @include button_with_icon;
+
+  .icon__angle-right {
+    width: 14px;
+    margin-left: $item-padding-smaller;
+  }
 }

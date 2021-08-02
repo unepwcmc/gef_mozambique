@@ -1,8 +1,8 @@
 <template>
-  <ul class="listing__items">
+  <ul class="listing-grid__items">
     <li
       v-for="(post, index) in posts"
-      class="listing__item"
+      class="listing-grid__item"
     >
       <ListingCard
         :id="index"

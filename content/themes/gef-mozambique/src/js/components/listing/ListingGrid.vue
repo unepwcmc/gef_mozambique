@@ -1,19 +1,19 @@
 <template>
   <div
-    class="listing"
-    :class="`listing--${postType}`"
+    class="listing-grid"
+    :class="`listing-grid--${postType}`"
   >
-    <div class="listing__header">
+    <div class="listing-grid__header">
       <p
         v-if="!isFetching"
-        class="listing__text"
+        class="listing-grid__text"
         v-html="$t('listing.count_text', {
           posts_length: posts.length,
           max_posts: maxPosts
         })"
       />
 
-      <div class="listing__filters">
+      <div class="listing-grid__filters">
         <button
         v-if="activeTermsCount !== 0"
         class="listing_text-button"
@@ -33,10 +33,10 @@
       </div>
     </div>
 
-    <div class="listing__body">
+    <div class="listing-grid__body">
       <div
         v-if="posts.length"
-        class="listing__content"
+        class="listing-grid__content"
       >
         <listing-cards
           :modal="this.modal"
@@ -50,11 +50,11 @@
 
       <div
         v-else
-        class="listing__content listing__content--empty"
+        class="listing-grid__content listing-grid__content--empty"
       >
         <p
           v-if="!isFetching"
-          class="listing___empty-message"
+          class="listing-grid___empty-message"
         >
           {{ $t('common.no_results_found') }}
         </p>
@@ -62,7 +62,7 @@
 
       <div
         v-if="isFetching"
-        class="listing__loader"
+        class="listing-grid__loader"
       >
         <Loader />
       </div>
@@ -76,7 +76,7 @@
 
   <!-- <div
     v-else
-    class="listing__loader listing__loader--padded"
+    class="listing-grid__loader listing-grid__loader--padded"
   >
     <Loader />
   </div> -->

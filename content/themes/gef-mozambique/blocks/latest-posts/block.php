@@ -10,6 +10,8 @@
   $post_type = block_value( 'post-type' );
   $block_field_config = block_field_config( 'post-type' );
 
+  $post_type_class = 'listing-grid--' . $post_type;
+
   foreach ($block_field_config['settings']['options'] as $option) {
     if (in_array($post_type, $option)) {
       $post_label = $option['label'];
@@ -23,18 +25,18 @@
   );
 ?>
 
-<div class="listing-latest">
-  <div class="listing-latest__inner">
-    <div class="listing-latest__header">
-      <h3 class="listing-latest__title"><?php _e( 'Latest' ) ?> <?php echo $post_label; ?></h3>
+<div class="listing-grid <?php echo $post_type_class; ?>">
+  <div class="listing-grid__inner">
+    <div class="listing-grid__header">
+      <h3 class="listing-grid__title"><?php _e( 'Latest' ) ?> <?php echo $post_label; ?></h3>
       <?php if ($link_url !== '') : ?>
-        <a href="<?php echo $link_args['url']; ?>" class="listing-latest__link">
+        <a href="<?php echo $link_args['url']; ?>" class="listing-grid__link">
           <?php echo $link_args['text']; ?>
-          <?php get_template_part('template-parts/icons/icon', 'external'); ?>
+          <?php get_template_part('template-parts/icons/icon', 'angle-right'); ?>
         </a>
       <?php endif; ?>
     </div>
-    <div class="listing-latest__body">
+    <div class="listing-grid__body">
 
       <latest-posts
         post-type="<?php echo $post_type; ?>"
