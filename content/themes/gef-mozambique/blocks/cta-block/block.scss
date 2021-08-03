@@ -30,6 +30,7 @@
 .editor-block-list__layout .block-cta__content {
   padding: $item-padding * 2;
   max-width: calc((9 / 12) * 100%);
+  width: 100%;
 
   display: flex;
 
@@ -38,7 +39,7 @@
 }
 
 .block-cta__featured {
-  max-width: 85%;
+  max-width: calc(((10 / 12) * 100%) + #{$grid-gap});
 }
 
 ul.block-cta__featured-items {
@@ -124,11 +125,15 @@ a.block-cta__fauxlink {
   z-index: 1;
 }
 
-.block-cta__list {
+aside.block-cta__list {
   background-color: $color-white;
   padding: $item-padding-small $item-padding $item-padding $grid-gap;
+  width: calc((3 / 12) * 100%);
 
-  flex: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
   z-index: 2;
 }
 

@@ -9,9 +9,10 @@
   $image = block_field( 'background-image', false );
   $image_url = wp_get_attachment_image_src( $image, 'full-size' )[0];
   $image_alt = get_post_meta($image, '_wp_attachment_image_alt', true);
+  $has_other_links = block_row_count( 'other-links' ) > 1;
 ?>
 
-<div class="block-cta">
+<div class="block-cta<?php if ($has_other_links) echo ' block-cta--aside' ?>">
   <div class="block-cta__inner">
     <div class="block-cta__body">
       <div class="block-cta__content">
@@ -65,13 +66,14 @@
                   </div>
                 </li>
 
-              <?php endwhile; wp_reset_query(); ?>
+              <?php endwhile; reset_block_rows( 'featured-links' ); ?>
 
             </ul>
           </div>
         <?php endif; ?>
       </div>
-      <?php if ( block_rows( 'other-links' ) ) : ?>
+
+      <?php if ( block_rows( 'other-links' ) && $has_other_links ) : ?>
 
         <aside class="block-cta__list">
           <h3 class="block-cta__list-title">
@@ -102,7 +104,7 @@
                 </li>
               <?php endif; ?>
 
-            <?php endwhile; wp_reset_query(); ?>
+            <?php endwhile; reset_block_rows( 'other-links' ); ?>
 
           </ul>
         </aside>
