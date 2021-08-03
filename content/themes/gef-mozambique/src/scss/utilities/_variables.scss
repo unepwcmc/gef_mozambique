@@ -6,7 +6,7 @@ $global-inner: 1250px;
 $grid-gap: 24px;
 $gutter: 75px;
 $gutter-small: 50px;
-$restrained-width: calc((8 / 12) * 100%);
+$restrained-width: calc((8 / 12) * 100% + #{$grid-gap * 2});
 
 $item-padding-smaller: 5px;
 $item-padding-small: 10px;

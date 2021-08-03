@@ -1,17 +1,20 @@
-.richtext {
+.richtext .entry__content {
 
   > h2 {
-    @include font_heading-3;
+    @include font_heading-1;
   }
 
   > h3 {
-    @include font_heading-4;
-    font-weight: $fw-medium;
+    @include font_heading-2;
+  }
+
+  > h4 {
+    @include font_heading-3;
   }
 
   > h2, > h3, > h4 {
     margin-top: #{$grid-gap * 2};
-    margin-bottom: $grid-gap;
+    margin-bottom: $item-padding;
 
     &:first-child {
       margin-top: 0;
@@ -39,7 +42,7 @@
   }
 
   > h2 + p, > h3 + p, > h4 + p {
-    margin-top: $grid-gap;
+    margin-top: $item-padding;
   }
 
   .wp-block-quote {

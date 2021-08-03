@@ -4,11 +4,6 @@
 
 .hero__inner {
   @include inner_padding;
-
-  // .page-template-default & {
-  //   @include inner;
-  // }
-
   display: flex;
 }
 
@@ -37,10 +32,10 @@
 }
 
 .hero__content {
+  color: #fff;
   padding: $spacer-medium $grid-gap;
   text-align: center;
   width: 100%;
-  color: #fff;
 
   position: relative;
   z-index: 2;
@@ -48,10 +43,6 @@
   @include break-min($xs) {
     padding: $spacer-large $grid-gap;
     max-width: 900px;
-  }
-
-  @include break-min($lg) {
-    padding: $spacer-xlarge $grid-gap $spacer-large;
   }
 
   & *:last-child {
@@ -66,12 +57,11 @@
 h2.hero__title,
 .editor-styles-wrapper h2.hero__title {
   color: currentColor;
+  margin: 0 auto $item-padding;
   text-align: center;
-  margin: 0 auto $item-padding * 2;
 
   .layout__body & {
     @include font_heading-1;
-    margin-bottom: $item-padding * 4;
   }
 }
 
