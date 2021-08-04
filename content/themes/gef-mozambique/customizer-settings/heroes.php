@@ -141,42 +141,42 @@ function hero_customizer_settings($wp_customize) {
     ) ) );
 
   /*-------------------------------------------------------------------------------
-  	Partners
+  	Multimedia
   -------------------------------------------------------------------------------*/
 
-  // Add Partners Hero Section
-  $wp_customize->add_section( 'partners_hero', array (
-    'title' => 'Partners Page',
+  // Add Multimedia Hero Section
+  $wp_customize->add_section( 'multimedia_hero', array (
+    'title' => 'Multimedia Page',
     'panel' => 'hero_settings',
-    'description' => 'Settings for the hero on the Partners listing page',
+    'description' => 'Settings for the hero on the Multimedia listing page',
     'priority' => 100
   ) );
 
-    // Partners Hero Title
-    $wp_customize->add_setting('partners_hero_title');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'partners_hero_title',
+    // Multimedia Hero Title
+    $wp_customize->add_setting('multimedia_hero_title');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'multimedia_hero_title',
     array(
     'label' => 'Title',
-    'section' => 'partners_hero',
-    'settings' => 'partners_hero_title'
+    'section' => 'multimedia_hero',
+    'settings' => 'multimedia_hero_title'
     ) ) );
 
-    // Partners Hero Background Image
-    $wp_customize->add_setting('partners_hero_image');
-    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'partners_hero_image', array(
+    // Multimedia Hero Background Image
+    $wp_customize->add_setting('multimedia_hero_image');
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'multimedia_hero_image', array(
       'label' => 'Background Image',
-      'section' => 'partners_hero',
-      'settings' => 'partners_hero_image'
+      'section' => 'multimedia_hero',
+      'settings' => 'multimedia_hero_image'
     ) ) );
 
-    // Partners Hero Hero Overlay Opacity
-    $wp_customize->add_setting('partners_hero_overlay_opacity');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'partners_hero_overlay_opacity',
+    // Multimedia Hero Hero Overlay Opacity
+    $wp_customize->add_setting('multimedia_hero_overlay_opacity');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'multimedia_hero_overlay_opacity',
     array(
       'label' => 'Overlay Opacity',
       'type' => 'range',
-      'section' => 'partners_hero',
-      'settings' => 'partners_hero_overlay_opacity',
+      'section' => 'multimedia_hero',
+      'settings' => 'multimedia_hero_overlay_opacity',
       'input_attrs' => array(
         'min' => 0,
         'max' => 10,
@@ -184,14 +184,14 @@ function hero_customizer_settings($wp_customize) {
       )
     ) ) );
 
-    // Partners Hero Text
-    $wp_customize->add_setting('partners_hero_text');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'partners_hero_text',
+    // Multimedia Hero Text
+    $wp_customize->add_setting('multimedia_hero_text');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'multimedia_hero_text',
     array(
     'label' => 'Text',
     'type' => 'textarea',
-    'section' => 'partners_hero',
-    'settings' => 'partners_hero_text'
+    'section' => 'multimedia_hero',
+    'settings' => 'multimedia_hero_text'
     ) ) );
 
   /*-------------------------------------------------------------------------------

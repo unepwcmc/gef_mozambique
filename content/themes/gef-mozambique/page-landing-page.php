@@ -23,7 +23,7 @@ get_header(); ?>
 			set_query_var('hero-background-image', get_post_thumbnail_id(get_the_id()));
 			set_query_var('hero-opacity', get_field( 'hero_opacity' ));
 
-			get_template_part( 'template-parts/components/heroes/hero', 'landing' );
+			get_template_part( 'template-parts/components/heroes/hero', 'large' );
 
 		endwhile; // End of the loop.
 	endif;
@@ -32,7 +32,7 @@ get_header(); ?>
 <div class="layout-container">
 	<div class="layout-container__inner">
 		<div class="layout-container__body">
-			<section class="layout-primary layout-primary--restrained">
+			<section class="layout-primary">
 				<div class="layout-primary__body">
 					<?php
 						if ( have_posts() ) :

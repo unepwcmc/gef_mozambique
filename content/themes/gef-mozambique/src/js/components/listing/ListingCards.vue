@@ -4,7 +4,8 @@
       v-for="(post, index) in posts"
       class="listing-grid__item"
     >
-      <ListingCard
+      <Component
+        :is="CardName"
         :id="index"
         :key="post.id"
         :config="post"
@@ -16,13 +17,17 @@
 </template>
 
 <script>
-  import ListingCard from './ListingCard.vue'
+  import CardEvent from '../cards/CardEvent.vue'
+  import CardMultimedia from '../cards/CardMultimedia.vue'
+  import CardPost from '../cards/CardPost.vue'
 
   export default {
     name: 'ListingCards',
 
     components: {
-      ListingCard
+      CardEvent,
+      CardMultimedia,
+      CardPost,
     },
 
     props: {
@@ -37,6 +42,12 @@
       postType: {
         type: String,
         required: true
+      }
+    },
+
+    computed: {
+      CardName () {
+        return 'card-' + this.postType
       }
     }
   }

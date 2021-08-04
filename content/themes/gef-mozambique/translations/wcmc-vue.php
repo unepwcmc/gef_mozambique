@@ -15,6 +15,7 @@ return array(
     'event' => __( 'event', 'wcmc-vue' ),
     'events' => __( 'events', 'wcmc-vue' ),
     'news' => __( 'news', 'wcmc-vue' ),
+    'multimedia' => __( 'multimedia', 'wcmc-vue' ),
     'resource' => __( 'resource', 'wcmc-vue' ),
     'resources' => __( 'resources', 'wcmc-vue' ),
     'partner' => __( 'partner', 'wcmc-vue' ),

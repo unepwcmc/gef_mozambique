@@ -2,9 +2,17 @@
 // Hero
 //-------------------------------------------------
 
+.hero {
+  position: relative;
+}
+
 .hero__inner {
   @include inner_padding;
   display: flex;
+
+  .hero--simple & {
+    @include inner;
+  }
 }
 
 .hero__background-image,
@@ -18,35 +26,50 @@
   width: 100%;
 
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  align-items: flex-end;
 
-  position: relative;
+  .layout__body & {
+    min-height: 300px;
+  }
 
-  .layout__body .hero--large & {
-    @include break-min($lg) {
-      min-height: 500px;
+  .hero--large & {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+
+    .layout__body & {
+      @include break-min($lg) {
+        min-height: 500px;
+      }
     }
   }
 }
 
 .hero__content {
   color: #fff;
-  padding: $spacer-medium $grid-gap;
-  text-align: center;
+  padding: $spacer-medium 0;
   width: 100%;
 
   position: relative;
   z-index: 2;
 
   @include break-min($xs) {
-    padding: $spacer-large $grid-gap;
     max-width: 900px;
   }
 
   & *:last-child {
     margin-bottom: 0;
+  }
+
+  .hero--large & {
+    padding: $spacer-medium $grid-gap;
+    text-align: center;
+
+    @include break-min($xs) {
+      padding: $spacer-large $grid-gap;
+    }
   }
 
   .her-Home--dark & {
@@ -58,7 +81,7 @@ h2.hero__title,
 .editor-styles-wrapper h2.hero__title {
   color: currentColor;
   margin: 0 auto $item-padding;
-  text-align: center;
+
 
   .layout__body & {
     @include font_heading-1;

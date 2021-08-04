@@ -4,14 +4,14 @@
     :class="`listing-grid--${postType}`"
   >
     <div class="listing-grid__header">
-      <p
+      <!-- <p
         v-if="!isFetching"
         class="listing-grid__text"
         v-html="$t('listing.count_text', {
           posts_length: posts.length,
           max_posts: maxPosts
         })"
-      />
+      /> -->
 
       <div class="listing-grid__filters">
         <button
@@ -156,7 +156,7 @@ export default {
       activeTerms: {},
       config: {
         postsBaseUrl: '/wp-json/wp/v2/',
-        resourcesBaseUrl: '/wp-json/relevanssi/v1/search?_embed&s=',
+        multimediaBaseUrl: '/wp-json/wp/v2/multimedia?_embed',
         eventsBaseUrl: '/wp-json/gef-mozambique/v1/events?_embed',
         filtersBaseURL: '/wp-json/gef-mozambique/v1/list-filters'
       },
@@ -303,8 +303,8 @@ export default {
       let requestURL = ''
 
       // TODO make in to a switch statement
-      if (this.postType == 'resource') {
-        requestURL = this.config.resourcesBaseUrl
+      if (this.postType == 'multimedia') {
+        requestURL = this.config.multimediaBaseUrl
       } else {
         requestURL = this.postType == 'event'
         ? this.config.eventsBaseUrl

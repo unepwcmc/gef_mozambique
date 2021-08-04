@@ -13,7 +13,7 @@
 
 	// Page Hero
 	set_query_var('hero-title', get_the_archive_title());
-	get_template_part( 'template-parts/components/heroes/hero', 'page' );
+	get_template_part( 'template-parts/components/heroes/hero', 'large' );
 ?>
 
 <div class="layout-container">

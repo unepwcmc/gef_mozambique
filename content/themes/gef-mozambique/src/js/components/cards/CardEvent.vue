@@ -26,12 +26,6 @@
       <h3 class="card-listing__title">
         {{ title }}
       </h3>
-      <p
-        v-if="excerpt"
-        class="card-listing__text"
-      >
-        {{ excerpt }}
-      </p>
       <a
       v-if="!modal || (modal && externalLinkURL)"
       :href="link"
@@ -50,7 +44,7 @@
   import moment from 'moment'
 
   export default {
-    name: 'ListingCard',
+    name: 'CardEvent',
 
     props: {
       id: {

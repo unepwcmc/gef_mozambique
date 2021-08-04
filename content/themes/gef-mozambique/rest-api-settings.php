@@ -84,7 +84,7 @@ add_action('rest_api_init', function () {
 
 
 /**
- * Grab latest post title by an author!
+ * Get events by start date
  *
  * @param array $data Options for the function.
  * @return string|null Post title for the latest,  * or null if none.

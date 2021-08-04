@@ -4,7 +4,7 @@
 
   $text = get_query_var( 'hero-text' );
 
-  $background_colour = get_query_var( 'hero-background-colour' );
+  $background_colour = get_query_var( 'hero-background-colour' ) ? get_query_var( 'hero-background-colour' ):  '#000000';
   $background_image = get_query_var( 'hero-background-image' );
   $background_image_url = $background_image != '' ? wp_get_attachment_image_src( $background_image, 'full-size' )[0] : get_theme_mod( 'default_hero_image' );
 
