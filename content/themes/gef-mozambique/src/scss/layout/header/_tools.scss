@@ -56,11 +56,6 @@ a.header-tools__button {
 .header-tools__item--language-switcher {
   display: none;
 
-  // position: absolute;
-  // top: 20px;
-  // right: 0;
-  // z-index: 5;
-
   @include break-min($headerNavShow) {
     display: block;
   }

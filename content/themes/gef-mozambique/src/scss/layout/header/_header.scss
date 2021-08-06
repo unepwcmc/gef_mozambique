@@ -6,8 +6,10 @@
 .header__top {
   background-color: $color-primary-light;
 
-  .layout-header--scrolled & {
-    display: none;
+  @include break-min($headerNavShow) {
+    .layout-header--scrolled & {
+      display: none;
+    }
   }
 }
 
@@ -54,12 +56,12 @@
 }
 
 .header__item--logo {
-  width: 125px;
+  width: 185px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex: 0 0 125px;
+  flex: 0 0 185px;
 
   transition: color .1s ease, flex-basis .1s ease, width .1s ease;
 
@@ -71,9 +73,9 @@
 
   .layout-header--scrolled & {
     color: $color-primary;
-    width: 100px;
+    width: 150px;
 
-    flex-basis: 100px;
+    flex-basis: 150px;
 
     @include break-min($headerNavShow) {
       width: 130px;

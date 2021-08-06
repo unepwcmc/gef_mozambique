@@ -1,5 +1,5 @@
 .layout-topbar {
-  background-color: $color-secondary;
+  background-color: $color-primary;
   color: $color-white;
   overflow: hidden;
   max-height: 35px;
@@ -18,8 +18,7 @@
 }
 
 .layout-topbar__inner {
-  padding-left: $grid-gap;
-  padding-right: $grid-gap;
+  @include inner_padding;
 }
 
 .layout-topbar__body {
