@@ -29,7 +29,15 @@
 }
 
 .layout-main {
-  padding-top: 160px + $spacer-large; // ToDo: make varible
+  padding-top: 105px + $spacer-small; // ToDo: make varible
+
+  @include break-min($sm) {
+    padding-top: 105px + 50px; // ToDo: make varible
+  }
+
+  @include break-min($headerNavShow) {
+    padding-top: 160px + $spacer-large; // ToDo: make varible
+  }
 }
 
 .layout-container {
