@@ -96,16 +96,14 @@ p.block-cta__text,
 p.block-cta__link,
 .editor-block-list__layout p.block-cta__link {
   @include button_text;
-  color: $color-accent;
+  color: $color-accent-primary;
   text-decoration: none;
 
   &.block-cta__link--external {
-    display: inline-flex;
-    justify-content: center;
+    @include button_text_external;
 
     svg {
-      margin-left: $item-padding-small;
-      width: 14px;
+      color: currentColor;
     }
   }
 }
@@ -153,13 +151,6 @@ a.block-cta__list-link,
   text-decoration: none;
 
   &.block-cta__list-link--external {
-    display: inline-flex;
-    justify-content: center;
-
-    svg {
-      color: $color-grey-text;
-      margin-left: $item-padding-small;
-      width: 14px;
-    }
+    @include button_text_external;
   }
 }

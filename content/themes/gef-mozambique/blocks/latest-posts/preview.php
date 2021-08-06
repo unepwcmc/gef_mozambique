@@ -10,7 +10,7 @@
   /* Query */
   $get_items_query = array(
     'post_type' => 'post',
-    'posts_per_page' => 3
+    'posts_per_page' => 4
   );
 
   $get_items = new WP_Query($get_items_query);

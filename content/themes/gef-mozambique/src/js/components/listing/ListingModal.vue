@@ -1,37 +1,13 @@
 <template>
-  <modal>
+  <modal :id="id">
     <h3 class="listing-modal__title">
       {{ title }}
     </h3>
-    <h4
-      class="listing-modal__heading"
-      v-if="partnerType"
-    >
-      {{ partnerType }}
-    </h4>
-    <div class="listing-modal__columns">
-      <div
-        v-if="imageUrl"
-        class="listing-modal__column listing-modal__column--small"
-      >
-        <div
-          v-if="imageUrl"
-          class="listing-modal__image-wrap"
-        >
-          <img
-            class="listing-modal__image"
-            :src="imageUrl"
-            :alt="title"
-          >
-        </div>
-      </div>
-      <div class="listing-modal__column listing-modal__column--large">
-        <div
-          v-if="content"
-          v-html="content"
-          class="listing-modal__content richtext"
-        />
-      </div>
+    <div
+      v-if="content"
+      v-html="content"
+      class="listing-modal__content richtext"
+    />
     </div>
   </modal>
 </template>
@@ -48,6 +24,10 @@
     },
 
     props: {
+      id: {
+        type: String,
+        default: undefined
+      },
       post: {
         type: Object,
         default: () => {}
@@ -61,10 +41,6 @@
 
       imageUrl() {
         return this.post._embedded && this.post._embedded['wp:featuredmedia'] ? this.post._embedded['wp:featuredmedia'][0].source_url : ''
-      },
-
-      partnerType() {
-        return this.post._embedded && this.post._embedded['wp:term'] ? this.post._embedded['wp:term'][0].find(term => term.taxonomy === 'partner_type').name : ''
       },
 
       title() {

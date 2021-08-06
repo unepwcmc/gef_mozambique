@@ -1,45 +1,47 @@
 <template>
   <div
-    class="card-listing__card"
-    :class="`card-listing__card--${postType}`"
+    class="listing-card listing-card--post"
     @click="clickHandler()"
   >
-    <div
-      v-if="!isResource"
-      class="card-listing__header"
-    >
-      <div class="card-listing__image-wrap">
+    <div class="listing-card__header">
+      <div class="listing-card__image-wrap">
         <img
-          class="card-listing__image"
+          class="listing-card__image"
           :src="imageUrl"
           :alt="title"
         >
       </div>
     </div>
-    <div class="card-listing__body">
+    <div class="listing-card__body">
       <p
         v-if="hasDate"
-        class="card-listing__date"
+        class="listing-card__date"
       >
         {{ date }}
       </p>
-      <h3 class="card-listing__title">
+      <h3 class="listing-card__title">
         {{ title }}
       </h3>
       <p
         v-if="excerpt"
-        class="card-listing__text"
+        class="listing-card__text"
       >
         {{ excerpt }}
       </p>
-      <a
-      v-if="!modal || (modal && externalLinkURL)"
-      :href="link"
-      class="card-listing__button"
-      :title="title"
-      :target="hrefTarget"
+      <p
+        class="listing-card__button"
       >
         More <!-- To be translated -->
+        <IconAngleRight />
+      </p>
+      <a
+        v-if="!modal || (modal && externalLinkURL)"
+        :href="link"
+        class="listing-card__fauxlink"
+        :title="title"
+        :target="hrefTarget"
+      >
+        View More <!-- To be translated -->
       </a>
     </div>
   </div>
@@ -48,9 +50,14 @@
 <script>
   import { decodeString } from '../../helpers/application-helpers.js'
   import moment from 'moment'
+  import IconAngleRight from '../../icons/IconAngleRight.vue'
 
   export default {
     name: 'ListingCard',
+
+    components: {
+      IconAngleRight
+    },
 
     props: {
       id: {

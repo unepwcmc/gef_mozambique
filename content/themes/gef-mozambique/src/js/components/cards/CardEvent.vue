@@ -1,37 +1,36 @@
 <template>
   <div
-    class="card-listing__card"
-    :class="`card-listing__card--${postType}`"
+    class="listing-card listing-card--event"
     @click="clickHandler()"
   >
     <div
       v-if="!isResource"
-      class="card-listing__header"
+      class="listing-card__header"
     >
-      <div class="card-listing__image-wrap">
+      <div class="listing-card__image-wrap">
         <img
-          class="card-listing__image"
           :src="imageUrl"
           :alt="title"
+          class="listing-card__image"
         >
       </div>
     </div>
-    <div class="card-listing__body">
+    <div class="listing-card__body">
       <p
         v-if="hasDate"
-        class="card-listing__date"
+        class="listing-card__date"
       >
         {{ date }}
       </p>
-      <h3 class="card-listing__title">
+      <h3 class="listing-card__title">
         {{ title }}
       </h3>
       <a
       v-if="!modal || (modal && externalLinkURL)"
       :href="link"
-      class="card-listing__button"
       :title="title"
       :target="hrefTarget"
+      class="listing-card__button"
       >
         More <!-- To be translated -->
       </a>

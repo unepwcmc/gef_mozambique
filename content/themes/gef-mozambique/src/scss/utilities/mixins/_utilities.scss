@@ -13,6 +13,14 @@
   left: 0;
 }
 
+@mixin absolute_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
 @mixin no_margin_padding {
   margin: 0;
   padding: 0;

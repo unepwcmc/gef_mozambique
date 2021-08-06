@@ -1,4 +1,4 @@
-.card-listing__card {
+.listing-card {
   width: 100%;
 
   display: flex;
@@ -7,56 +7,112 @@
   position: relative;
 }
 
-.card-listing__image-wrap {
+.listing-card__header {
+  .listing-card__card--report & {
+    background-color: $color-light-grey;
+  }
+}
+
+.listing-card__icon {
+  @include absolute_center;
+  width: 30%;
+}
+
+.listing-card__badge {
+  background-color: $color-accent-secondary;
+  color: $color-white;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+
+  position: absolute;
+  top: 0;
+  right: #{$grid-gap / 2};
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.listing-card__image-wrap {
   overflow: hidden;
   padding-bottom: calc((7 / 10) * 100%);
 
   position: relative;
+
+  .listing-card--link-tile & {
+    border: 1px solid $color-border;
+  }
 }
 
-.card-listing__image,
-.block-editor__container .card-listing__image {
+.listing-card__image,
+.block-editor__container .listing-card__image {
   @include absolute_fill;
   @include object_fit_cover;
   transition: transform .8s ease;
   will-change: transform;
 
-  img {
-    width: 100%;
-    height: 100%;
+  .listing-card:hover & {
+    transform: scale(1.01);
   }
 
-  .listing--member & {
+  &.listing-card__image--contain {
+    @include absolute_center;
     @include object_fit_contain;
-    padding: 0 $spacer-medium;
-  }
+    max-width: 70%;
+    max-height: 70%;
 
-  .card-listing__card:hover & {
-    transform: scale(1.015);
+    .listing-card:hover & {
+      transform: scale(1.01) translate(-50%, -50%);
+    }
   }
 }
 
-.card-listing__body {
+.listing-card__body {
   margin-top: $item-padding;
   width: 100%;
 }
 
-p.card-listing__date {
-  @include font_smaller_text;
-  color: $color-dark-grey;
-  margin-bottom: $item-padding-smaller;
-  text-transform: uppercase;
-}
-
-h3.card-listing__title {
-  @include font_heading-5;
+p.listing-card__date {
+  @include font_small_text;
+  color: $color-grey-text;
+  font-weight: $fw-black;
   margin-bottom: $item-padding-small;
 }
 
-p.card-listing__text {
+h3.listing-card__title {
+  margin-bottom: $item-padding;
+}
+
+p.listing-card__text {
   @include font_small_text;
 }
 
-a.card-listing__button {
-  @include button_primary;
+p.listing-card__button {
+  @include button_text_with_arrow;
+  color: $color-primary;
+
+  svg {
+    color: $color-secondary;
+
+    transition: transform .3s ease;
+  }
+
+  .listing-card:hover & {
+    svg {
+      transform: translateX(1px);
+    }
+  }
+}
+
+a.listing-card__fauxlink {
+  @include absolute_fill;
+  font-size: 0;
+  z-index: 2;
 }

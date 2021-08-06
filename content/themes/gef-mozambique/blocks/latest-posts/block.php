@@ -6,19 +6,15 @@
   */
 
   // Variables
-  $post_label = block_value( 'post-label' );
-  $post_type = block_value( 'post-type' );
-  $block_field_config = block_field_config( 'post-type' );
+  $section_title = block_value( 'section-title' );
 
+  $post_type = block_value( 'post-type' );
   $post_type_class = 'listing-grid--' . $post_type;
 
-  foreach ($block_field_config['settings']['options'] as $option) {
-    if (in_array($post_type, $option)) {
-      $post_label = $option['label'];
-    }
-  }
+  $link_url = $post_type == 'posts'
+    ? get_post_type_archive_link( 'post' )
+    : get_post_type_archive_link($post_type);
 
-  $link_url = '/' . strtolower($post_label);
   $link_args = array(
     'text' => block_field( 'link-text', false ),
     'url' => $link_url
@@ -28,7 +24,7 @@
 <div class="listing-grid <?php echo $post_type_class; ?>">
   <div class="listing-grid__inner">
     <div class="listing-grid__header">
-      <h3 class="listing-grid__title"><?php _e( 'Latest' ) ?> <?php echo $post_label; ?></h3>
+      <h3 class="listing-grid__title"><?php echo $section_title; ?></h3>
       <?php if ($link_url !== '') : ?>
         <a href="<?php echo $link_args['url']; ?>" class="listing-grid__link">
           <?php echo $link_args['text']; ?>
@@ -40,7 +36,6 @@
 
       <latest-posts
         post-type="<?php echo $post_type; ?>"
-        post-url="<?php echo $post_label; ?>"
       />
 
     </div>

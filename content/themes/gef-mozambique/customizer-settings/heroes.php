@@ -195,42 +195,42 @@ function hero_customizer_settings($wp_customize) {
     ) ) );
 
   /*-------------------------------------------------------------------------------
-  	Resources
+  	Reports
   -------------------------------------------------------------------------------*/
 
-  // Add Resources Hero Section
-  $wp_customize->add_section( 'resources_hero', array (
-    'title' => 'Resources Page',
+  // Add Reports Hero Section
+  $wp_customize->add_section( 'reports_publications_hero', array (
+    'title' => 'Reports Page',
     'panel' => 'hero_settings',
-    'description' => 'Settings for the hero on the Resources listing page',
+    'description' => 'Settings for the hero on the Reports listing page',
     'priority' => 100
   ) );
 
-    // Resources Hero Title
-    $wp_customize->add_setting('resources_hero_title');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'resources_hero_title',
+    // Reports Hero Title
+    $wp_customize->add_setting('reports_publications_hero_title');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'reports_publications_hero_title',
     array(
     'label' => 'Title',
-    'section' => 'resources_hero',
-    'settings' => 'resources_hero_title'
+    'section' => 'reports_publications_hero',
+    'settings' => 'reports_publications_hero_title'
     ) ) );
 
-    // Resources Hero Background Image
-    $wp_customize->add_setting('resources_hero_image');
-    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'resources_hero_image', array(
+    // Reports Hero Background Image
+    $wp_customize->add_setting('reports_publications_hero_image');
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'reports_publications_hero_image', array(
       'label' => 'Background Image',
-      'section' => 'resources_hero',
-      'settings' => 'resources_hero_image'
+      'section' => 'reports_publications_hero',
+      'settings' => 'reports_publications_hero_image'
     ) ) );
 
-    // Resources Hero Overlay Opacity
-    $wp_customize->add_setting('resources_hero_overlay_opacity');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'resources_hero_overlay_opacity',
+    // Reports Hero Overlay Opacity
+    $wp_customize->add_setting('reports_publications_hero_overlay_opacity');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'reports_publications_hero_overlay_opacity',
     array(
       'label' => 'Overlay Opacity',
       'type' => 'range',
-      'section' => 'resources_hero',
-      'settings' => 'resources_hero_overlay_opacity',
+      'section' => 'reports_publications_hero',
+      'settings' => 'reports_publications_hero_overlay_opacity',
       'input_attrs' => array(
         'min' => 0,
         'max' => 10,
@@ -238,14 +238,14 @@ function hero_customizer_settings($wp_customize) {
       )
     ) ) );
 
-    // Resources Hero Text
-    $wp_customize->add_setting('resources_hero_text');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'resources_hero_text',
+    // Reports Hero Text
+    $wp_customize->add_setting('reports_publications_hero_text');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'reports_publications_hero_text',
     array(
     'label' => 'Text',
     'type' => 'textarea',
-    'section' => 'resources_hero',
-    'settings' => 'resources_hero_text'
+    'section' => 'reports_publications_hero',
+    'settings' => 'reports_publications_hero_text'
     ) ) );
 }
 

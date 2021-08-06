@@ -1,18 +1,11 @@
 <template>
   <div
-    class="listing-card listing-card__card--multimedia"
+    class="listing-card listing-card__card--report"
     @click="clickHandler()"
   >
     <div class="listing-card__header">
-      <span class="listing-card__badge">
-        <component :is="iconName" />
-      </span>
       <div class="listing-card__image-wrap">
-        <img
-          :src="imageUrl"
-          :alt="title"
-          class="listing-card__image"
-        >
+        <IconReport class="listing-card__icon" />
       </div>
     </div>
     <div class="listing-card__body">
@@ -32,16 +25,14 @@
 <script>
   import { decodeString } from '../../helpers/application-helpers.js'
   import IconAngleRight from '../../icons/IconAngleRight.vue'
-  import IconVideo from '../../icons/IconVideo.vue'
-  import IconImage from '../../icons/IconImage.vue'
+  import IconReport from '../../icons/IconReport.vue'
 
   export default {
-    name: 'CardMultimedia',
+    name: 'CardReport',
 
     components: {
       IconAngleRight,
-      IconVideo,
-      IconImage
+      IconReport
     },
 
     props: {
@@ -59,7 +50,7 @@
       },
       modalID: {
         type: String,
-        default: undefined
+        required: true
       },
       postType: {
         type: String,
@@ -74,27 +65,8 @@
     },
 
     computed: {
-      iconName() {
-        return `icon-${this.mediaType}`
-      },
-
-      imageUrl() {
-        if (this.postType == 'casestudy') {
-          return this.config.imageUrl
-            ? this.config.imageUrl
-            : this.placeholderImageUrl
-        } else {
-          return (
-            this.config.hasOwnProperty('_embedded') &&
-            this.config._embedded.hasOwnProperty('wp:featuredmedia')
-          )
-            ? this.config._embedded['wp:featuredmedia'][0].source_url
-            : this.placeholderImageUrl
-        }
-      },
-
-      mediaType() {
-        return this.config._embedded['wp:term'][0][0].slug
+      excerpt() {
+        return this.config.excerpt.rendered ? decodeString(this.config.excerpt.rendered).substring(0, 80) : ''
       },
 
       title() {

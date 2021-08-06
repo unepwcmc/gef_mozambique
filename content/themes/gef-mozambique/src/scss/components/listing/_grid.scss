@@ -40,6 +40,19 @@ p.listing-grid__text {
 a.listing-grid__link {
   @include button_text_with_arrow;
   color: $color-primary;
+  position: relative;
+
+  svg {
+    color: $color-secondary;
+
+    transition: transform .3s ease;
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(1px);
+    }
+  }
 }
 
 .listing-grid__filters {

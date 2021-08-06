@@ -10,6 +10,7 @@
         :key="post.id"
         :config="post"
         :modal="modal"
+        :modalID="modalID"
         :post-type="postType"
       />
     </li>
@@ -20,6 +21,7 @@
   import CardEvent from '../cards/CardEvent.vue'
   import CardMultimedia from '../cards/CardMultimedia.vue'
   import CardPost from '../cards/CardPost.vue'
+  import CardReport from '../cards/CardReport.vue'
 
   export default {
     name: 'ListingCards',
@@ -28,12 +30,17 @@
       CardEvent,
       CardMultimedia,
       CardPost,
+      CardReport
     },
 
     props: {
       modal: {
         type: Boolean,
         default: false
+      },
+      modalID: {
+        type: String,
+        default: undefined
       },
       posts: {
         type: Array,

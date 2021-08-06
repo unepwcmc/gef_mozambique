@@ -23,11 +23,11 @@ get_header(); ?>
 			/* Variables */
 			set_query_var( 'hero-title', get_theme_mod( 'resources_hero_title' ) != ''
 				? get_theme_mod( 'resources_hero_title' )
-				: get_the_archive_title() );
+				: get_the_title() );
 			set_query_var( 'hero-background-image', get_theme_mod( 'resources_hero_image' ) );
 			set_query_var( 'hero-opacity', get_theme_mod( 'resources_hero_overlay_opacity' ) );
 
-			get_template_part( 'template-parts/components/heroes/hero', 'page' );
+			get_template_part( 'template-parts/components/heroes/hero', 'large' );
 
 		endwhile; // End of the loop.
 	endif;

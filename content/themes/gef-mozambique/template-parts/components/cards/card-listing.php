@@ -4,21 +4,21 @@
     : get_stylesheet_directory_uri() . '/inc/img/card-placeholder.jpg';
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="card-listing__card">
-	<header class="card-listing__header">
-    <div class="card-listing__image-wrap">
+<article id="post-<?php the_ID(); ?>" class="listing-card__card">
+	<header class="listing-card__header">
+    <div class="listing-card__image-wrap">
       <img
         src="<?php echo $thumbnail_url; ?>"
         alt="<?php the_title(); ?>"
-        class="card-listing__image"
+        class="listing-card__image"
       />
     </div>
 	</header>
-	<div class="card-listing__body">
-		<div class="card-listing__content">
-      <p class="card-listing__details"><?php the_time( 'd/m/y' ); ?></p>
-      <h3 class="card-listing__title"><?php the_title(); ?></h3>
+	<div class="listing-card__body">
+		<div class="listing-card__content">
+      <p class="listing-card__details"><?php the_time( 'd/m/y' ); ?></p>
+      <h3 class="listing-card__title"><?php the_title(); ?></h3>
 		</div>
 	</div>
-  <a class="card-listing__fauxlink" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"></a>
+  <a class="listing-card__fauxlink" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"></a>
 </article><!-- #post-## -->

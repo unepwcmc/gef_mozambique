@@ -19,7 +19,7 @@
         class="listing_text-button"
         @click="clearActiveTerms"
         >
-
+          Clear
         </button>
 
         <listing-drawer
@@ -128,7 +128,13 @@ export default {
   },
 
   created() {
-    this.postSingular = this.postType === 'posts' ? 'post' : this.postType
+    if (this.postType === 'posts') {
+      this.postSingular = 'post'
+    } else if (this.postType === 'report_publication') {
+      this.postSingular = 'report'
+    } else {
+      this.postSingular = this.postType
+    }
   },
 
   mounted() {
@@ -156,6 +162,7 @@ export default {
       activeTerms: {},
       config: {
         postsBaseUrl: '/wp-json/wp/v2/',
+        reportBaseUrl: '/wp-json/wp/v2/report_publication?_embed',
         multimediaBaseUrl: '/wp-json/wp/v2/multimedia?_embed',
         eventsBaseUrl: '/wp-json/gef-mozambique/v1/events?_embed',
         filtersBaseURL: '/wp-json/gef-mozambique/v1/list-filters'

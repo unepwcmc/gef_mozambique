@@ -3,11 +3,11 @@
 //-------------------------------------------------
 
 @mixin button_reset {
+  @include font_base_text;
   appearance: none;
   border: 0;
   background: none;
   cursor: pointer;
-  font-size: $font-base-size;
   margin: 0;
   outline: 0;
   padding: 0;
@@ -103,35 +103,56 @@
   @include button;
 
   color: $color-secondary;
-  border-color: $color-accent;
-  background-color: $color-accent;
+  border-color: $color-accent-primary;
+  background-color: $color-accent-primary;
 
   &:hover {
     color: $color-secondary;
-    border-color: darken($color-accent, 20%);
-    background-color: darken($color-accent, 20%);
+    border-color: darken($color-accent-primary, 20%);
+    background-color: darken($color-accent-primary, 20%);
   }
 }
 
 @mixin button_with_icon {
-  // text-decoration: none;
+  @include button_reset;
   white-space: nowrap;
-  //
+
   display: inline-flex;
   align-items: center;
 }
 
 @mixin button_text {
   @include button_reset;
+  font-weight: $fw-medium;
   text-decoration: underline;
 }
 
-@mixin button_text_with_arrow {
-  @include button_reset;
+@mixin button_text_external {
   @include button_with_icon;
+  font-weight: $fw-medium;
+  padding-right: 12px;
 
-  .icon__angle-right {
+  position: relative;
+
+  svg {
+    color: $color-grey-text;
+    margin-left: $item-padding-small;
     width: 14px;
-    margin-left: $item-padding-smaller;
+  }
+}
+
+@mixin button_text_with_arrow {
+  @include button_with_icon;
+  font-weight: $fw-medium;
+  padding-right: 12px;
+
+  position: relative;
+
+  svg {
+    width: 7.5px;
+
+    position: absolute;
+    right: 0;
+    top: 7.5px;
   }
 }

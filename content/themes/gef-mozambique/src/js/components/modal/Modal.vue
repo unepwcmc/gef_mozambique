@@ -35,6 +35,10 @@
       config: {
         type: Object,
         default: () => {}
+      },
+      id: {
+        type: String,
+        default: undefined
       }
     },
 
@@ -56,9 +60,11 @@
         this.toggleBodyClass('removeClass', 'layout__body--modal-active');
       },
 
-      openModal() {
-        this.active = true
-        this.toggleBodyClass('addClass', 'layout__body--modal-active');
+      openModal(modalID) {
+        if (modalID === this.id) {
+          this.active = true
+          this.toggleBodyClass('addClass', 'layout__body--modal-active');
+        }
       },
 
       toggleBodyClass(addRemoveClass, className) {
