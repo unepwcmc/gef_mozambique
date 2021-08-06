@@ -1,47 +1,56 @@
 .header {
   background-color: transparent;
-  color: $color-primary;
+  color: $color-white;
 
-  transition: color .1s ease, background-color .1s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
 
-  .no-hero &,
+.header__top {
+  background-color: $color-primary-light;
+
   .layout-header--scrolled & {
-    background-color: $color-header;
-    color: $color-primary;
+    display: none;
+  }
+}
 
-    @include break-min($headerNavShow) {
-      color: $color-secondary;
-    }
+.header__bottom {
+  background-color: $color-primary;
+
+  .layout-header--scrolled & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 }
 
 .header__inner {
-  padding-left: $gutter-small;
-  padding-right: $gutter-small;
-}
-
-.header__body {
-  position: relative;
+  @include inner_padding;
 }
 
 .header__items {
   padding-top: 10px;
   padding-bottom: 10px;
-  height: $headerMobileHeight;
+  // height: $headerMobileHeight;
 
   display: flex;
+  justify-content: space-between;
 
   transition: height .3s ease;
 
   .layout-header--scrolled & {
-    height: $headerMobileHeightScrolled;
+    // height: $headerMobileHeightScrolled;
   }
 
   @include break-min($headerNavShow) {
-    height: $headerHeight;
+    // height: $headerHeight;
 
     .layout-header--scrolled & {
-      height: $headerHeightScrolled;
+      // height: $headerHeightScrolled;
     }
   }
 }
@@ -61,9 +70,9 @@
   transition: color .1s ease, flex-basis .1s ease, width .1s ease;
 
   @include break-min($headerNavShow) {
-    width: 170px;
+    width: 230px;
 
-    flex: 0 0 170px;
+    flex: 0 0 230px;
   }
 
   .layout-header--scrolled & {

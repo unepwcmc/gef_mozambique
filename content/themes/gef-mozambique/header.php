@@ -48,26 +48,26 @@
 
 
       <header class="header">
-        <div class="header__inner">
-          <div class="header__body">
+        <div class="header__top">
+          <div class="header__inner">
             <div class="header__items">
               <div class="header__item header__item--logo">
                 <!-- Site Name & Logo  -->
                 <?php get_template_part( 'template-parts/header/logo' ); ?>
               </div>
-
-              <div class="header__item header__item--nav">
-                <!-- Main (primary) Navigation -->
-                <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                  <?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-                <?php endif; ?>
-              </div>
-
               <div class="header__item header__item--tools">
                 <!-- Header Tools -->
                 <?php get_template_part( 'template-parts/header/tools' ); ?>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <div class="header__inner">
+            <!-- Main (primary) Navigation -->
+            <?php if ( has_nav_menu( 'primary' ) ) : ?>
+              <?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+            <?php endif; ?>
           </div>
         </div>
       </header>

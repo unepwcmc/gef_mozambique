@@ -15,7 +15,7 @@ export default {
 
   data() {
     return {
-      distanceToTrigger: 1,
+      distanceToTrigger: 80,
       scrolled: false
     }
   },

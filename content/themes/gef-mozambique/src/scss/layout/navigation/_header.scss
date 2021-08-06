@@ -8,19 +8,21 @@
 
     @include break-min($headerNavShow) {
       display: flex;
+      justify-content: space-between;
     }
 
     li {
       @include no_bullets;
       font-family: $font-heading;
+      font-weight: $fw-medium;
       font-size: 16px;
       letter-spacing: 0.6px;
     }
 
     > li {
       margin-right: 20px;
-      padding-top: 37.5px;
-      padding-bottom: 37.5px;
+      padding-top: 25px;
+      padding-bottom: 25px;
 
       position: relative;
 
@@ -50,7 +52,7 @@
         white-space: nowrap;
 
         &::before {
-          background-color: $color-primary;
+          background-color: $color-white;
           content: '';
           height: 2px;
 
@@ -133,7 +135,7 @@
 
         &:hover,
         &.current-menu-item {
-          background-color: $color-primary;
+          background-color: $color-white;
         }
 
         a {

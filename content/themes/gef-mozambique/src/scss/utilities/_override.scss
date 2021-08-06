@@ -33,6 +33,7 @@
 
   .wpml-ls-item {
     font-size: inherit;
+    font-weight: $fw-medium;
     line-height: 1;
     list-style-type: none;
     margin: 0;
@@ -42,6 +43,25 @@
 
     &:first-child {
       padding-left: 0 !important;
+    }
+
+    &:not(:last-child) {
+      position: relative;
+
+      &::after {
+        background-color: $color-white;
+        content: '';
+        width: 1px;
+        height: 80%;
+
+        display: block;
+
+        position: absolute;
+        top: 50%;
+        right: -8.5px;
+
+        transform: translateY(-50%);
+      }
     }
   }
 
@@ -64,7 +84,7 @@
   }
 
   .wpml-ls-slot-shortcode_actions.wpml-ls-item.wpml-ls-current-language a {
-    text-decoration: underline;
+    font-weight: $fw-black;
   }
 }
 
