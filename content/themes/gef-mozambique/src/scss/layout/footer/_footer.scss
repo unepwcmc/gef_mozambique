@@ -1,10 +1,12 @@
 .footer {
-  @include spacer_body_small;
+  @include spacer_body_top_small;
   background-color: $color-footer;
   color: $color-white;
+  padding-bottom: $spacer-small;
 
   position: relative;
   z-index: 1;
+  border-bottom: 12px solid $color-primary-dark;
 }
 
 .footer__inner {
@@ -12,19 +14,15 @@
 }
 
 .footer__footer {
-  margin-top: $item-padding;
-  border-top: 2px solid $color-border;
-  padding-top: $item-padding;
-  padding-bottom: $item-padding;
-
   @include break-min($md) {
     display: flex;
   }
 }
 
 p.footer__text {
+  @include font_small_text;
+  font-weight: $fw-black;
   color: currentColor;
-  font-size: 14px;
   line-height: 1.2;
   margin-top: $item-padding * 2;
   margin-bottom: 0;
@@ -34,17 +32,5 @@ p.footer__text {
     max-width: 700px;
 
     flex: 1 1 auto;
-  }
-
-  &:last-child {
-    font-size: 16px;
-
-    @include break-min($md) {
-      margin-left: auto;
-      padding-left: $grid-gap;
-      text-align: right;
-
-      flex: 1 1 450px;
-    }
   }
 }

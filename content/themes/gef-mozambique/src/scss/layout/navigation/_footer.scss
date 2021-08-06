@@ -5,10 +5,12 @@
   display: flex;
   flex-wrap: wrap;
 
-  @include break-min($sm) {
+  @include break-min($md) {
     margin-right: 0;
     margin-bottom: 0;
+  }
 
+  @include break-min($lg) {
     flex-wrap: nowrap;
   }
 
@@ -18,15 +20,19 @@
     margin-bottom: 5px;
 
     a {
+      @include font_small_text;
       color: currentColor;
+      font-weight: $fw-light;
       text-decoration: none;
 
+      transition: opacity .3s ease;
+
       &:not([href]) {
-        font-weight: $fw-bold;
+        font-weight: $fw-black;
       }
 
       &[href]:hover {
-        text-decoration: underline;
+        opacity: 0.7;
       }
     }
 
@@ -42,14 +48,14 @@
 
     flex: 0 0 calc(((6 / 12) * 100%) - #{$grid-gap});
 
-    @include break-min($sm) {
+    @include break-min($md) {
       width: auto;
 
-      flex: 0 0 180px;
+      flex: 0 0 220px;
     }
 
     > a {
-      font-weight: $fw-medium;
+      // font-weight: $fw-black;
       margin-bottom: 10px;
 
       display: block;
@@ -60,13 +66,16 @@
       flex: 0 0 calc(((12 / 12) * 100%) - #{$grid-gap});
 
       @include break-min($xxs) {
-        width: 340px;
+        width: 230px;
 
-        flex: 0 0 340px;
+        flex: 0 0 230px;
       }
 
-      @include break-min($sm) {
+      @include break-min($md) {
         margin-right: 0;
+      }
+
+      @include break-min($lg) {
         margin-left: auto;
       }
     }
@@ -77,37 +86,13 @@
     display: flex;
   }
 
-  .menu-item-logo {
-    width: calc(50% - #{$spacer-large / 2});
+  .nav-footer__logo {
     margin-bottom: 0;
-
-    display: inline-block;
 
     transition: opacity .5s ease;
 
     img {
       display: block;
-    }
-
-    &:not(:first-child) {
-      margin-left: $spacer-large;
-      position: relative;
-
-      &::before {
-        background-color: $color-white;
-        content: '';
-        width: 2px;
-        height: 100%;
-
-        display: block;
-        position: absolute;
-        top: 0;
-        left: -#{$spacer-large / 2};
-      }
-
-      &:hover {
-        opacity: 0.85;
-      }
     }
 
     &:hover {

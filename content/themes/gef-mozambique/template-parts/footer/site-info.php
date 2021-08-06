@@ -12,4 +12,4 @@
   <p class="footer__text" ><em><?php echo get_theme_mod( 'footer_tagline' ); ?></em></p>
 <?php endif; ?>
 
-<p class="footer__text"><?php _e( 'Copyright UNEP-WCMC', 'wcmc' ); ?> <?php echo date("Y"); ?></p><!-- .site-info -->
+<p class="footer__text"><?php _e( 'Copyright Mozambique Biodiversity', 'wcmc' ); ?> <?php echo date("Y"); ?></p><!-- .site-info -->

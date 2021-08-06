@@ -106,18 +106,15 @@
   @include spacer_padding_bottom;
 }
 
-@mixin spacer_body_small {
+@mixin spacer_body_top_small {
   padding-top: $spacer-small;
-  padding-bottom: $spacer-small;
 
   @include break-min($sm) {
     padding-top: $spacer-medium;
-    padding-bottom: $spacer-medium;
   }
 
   @include break-min($md) {
     padding-top: 55px;
-    padding-bottom: 55px;
   }
 }
 
