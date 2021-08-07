@@ -4,6 +4,68 @@
   z-index: 4 !important;
 }
 
+// Flickity
+
+.flickity-button {
+  .cards-carousel & {
+    &:disabled {
+      cursor: pointer;
+      opacity: .5;
+      pointer-events: all;
+    }
+  }
+}
+
+.flickity-prev-next-button {
+  z-index: 8;
+
+  .cards-carousel & {
+    background-color: $color-primary;
+    border-radius: 0;
+    color: $color-white;
+    height: 80px;
+    width: 60px;
+
+    transition: opacity .3s ease;
+
+    &:hover {
+      background: $color-primary;
+      opacity: 0.9;
+    }
+
+    &.previous {
+      left: 0;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      // left: $grid-gap;
+      //
+      // @include break-min($xs) {
+      //   left: $grid-gap * 2;
+      // }
+      //
+      // @include break-min($lg) {
+      //   left: $gutter;
+      // }
+    }
+
+    &.next {
+      right: $grid-gap;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+
+      @include break-min($xs) {
+        right: $grid-gap * 2;
+      }
+
+      @include break-min($lg) {
+        right: auto;
+        left: calc((80% + #{$grid-gap}));
+        transform: translate(-100%, -50%);
+      }
+    }
+  }
+}
+
 // WPML Language Switcher
 
 .wpml-ls-legacy-list-horizontal {

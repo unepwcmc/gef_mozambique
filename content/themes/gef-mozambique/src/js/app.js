@@ -10,6 +10,7 @@ import Drawer from './components/drawers/Drawer.vue'
 import DrawerTrigger from './components/drawers/DrawerTrigger.vue'
 import DrawersOverlay from './components/drawers/DrawersOverlay.vue'
 import ExpandableText from './components/blocks/ExpandableText.vue'
+import FlickityCarousel from './components/carousel/FlickityCarousel.vue'
 import IconAngle from './icons/IconAngle.vue'
 import LatestPosts from './components/widgets/LatestPosts.vue'
 import ListingGrid from './components/listing/ListingGrid.vue'
@@ -47,6 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
         DrawerTrigger,
         DrawersOverlay,
         ExpandableText,
+        FlickityCarousel,
         HeaderSearch,
         LatestPosts,
         ListingGrid,

@@ -1,0 +1,80 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.cards-carousel__inner {
+  @include inner_padding;
+}
+
+.cards-carousel__cells {
+  .flickity-viewport {
+    overflow: visible;
+  }
+}
+
+.cards-carousel__cell {
+  margin-right: $grid-gap;
+  width: 40%;
+}
+
+
+.card-carousel__body {
+  min-height: 700px;
+
+  display: flex;
+  align-items: flex-end;
+
+  position: relative;
+}
+
+.card-carousel__content {
+  color: $color-white;
+  padding: $spacer-small;
+
+  position: relative;
+  z-index: 3;
+}
+
+h3.card-carousel__title {
+  @include font_heading-2;
+  color: currentColor;
+  margin-bottom: 0;
+}
+
+p.card-carousel__text {
+  margin-bottom: $item-padding-small;
+}
+
+p.card-carousel__button {
+  @include button_with_icon;
+  color: $color-accent-primary;
+  font-weight: $fw-medium;
+  margin: 0;
+
+  &.card-carousel__button--external {
+    display: inline-flex;
+    justify-content: center;
+
+    svg {
+      margin-left: 4px;
+      width: 8px;
+    }
+  }
+}
+
+.card-carousel__background-image {
+  @include absolute_fill;
+  @include object_fit_cover;
+  z-index: 1;
+}
+
+.card-carousel__overlay {
+  @include absolute_fill;
+  background: linear-gradient(0deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 0%, 1) 5%, hsla(0, 0%, 0%, 0.1) 40%, hsla(0, 0%, 0%, 0.1) 100%);
+  z-index: 2;
+}
+
+a.card-carousel__fauxlink {
+  @include absolute_fill;
+  font-size: 0;
+  z-index: 4;
+}
