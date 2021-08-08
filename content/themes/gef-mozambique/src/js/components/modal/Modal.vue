@@ -5,7 +5,7 @@
   >
     <div class="modal__inner">
 
-      <div class="modal__body">
+      <div class="modal__content">
         <div
           v-on:click="closeModal"
           class="modal__close"
@@ -14,8 +14,12 @@
           <span class="modal__close-span"></span>
         </div>
 
-        <div class="modal__content">
-          <slot />
+        <div class="modal__header">
+          <slot name="header" />
+        </div>
+
+        <div class="modal__body">
+          <slot name="body" />
         </div>
       </div>
     </div>

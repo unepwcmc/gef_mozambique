@@ -195,6 +195,60 @@ function hero_customizer_settings($wp_customize) {
     ) ) );
 
   /*-------------------------------------------------------------------------------
+  	International Conventions
+  -------------------------------------------------------------------------------*/
+
+  // Add Multimedia Hero Section
+  $wp_customize->add_section( 'conventions_hero', array (
+    'title' => 'Conventions Page',
+    'panel' => 'hero_settings',
+    'description' => 'Settings for the hero on the Conventions listing page',
+    'priority' => 100
+  ) );
+
+    // Conventions Hero Title
+    $wp_customize->add_setting('conventions_hero_title');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'conventions_hero_title',
+    array(
+    'label' => 'Title',
+    'section' => 'conventions_hero',
+    'settings' => 'conventions_hero_title'
+    ) ) );
+
+    // Conventions Hero Background Image
+    $wp_customize->add_setting('conventions_hero_image');
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'conventions_hero_image', array(
+      'label' => 'Background Image',
+      'section' => 'conventions_hero',
+      'settings' => 'conventions_hero_image'
+    ) ) );
+
+    // Conventions Hero Hero Overlay Opacity
+    $wp_customize->add_setting('conventions_hero_overlay_opacity');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'conventions_hero_overlay_opacity',
+    array(
+      'label' => 'Overlay Opacity',
+      'type' => 'range',
+      'section' => 'conventions_hero',
+      'settings' => 'conventions_hero_overlay_opacity',
+      'input_attrs' => array(
+        'min' => 0,
+        'max' => 10,
+        'step' => 1,
+      )
+    ) ) );
+
+    // Conventions Hero Text
+    $wp_customize->add_setting('conventions_hero_text');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'conventions_hero_text',
+    array(
+    'label' => 'Text',
+    'type' => 'textarea',
+    'section' => 'conventions_hero',
+    'settings' => 'conventions_hero_text'
+    ) ) );
+
+  /*-------------------------------------------------------------------------------
   	Reports
   -------------------------------------------------------------------------------*/
 

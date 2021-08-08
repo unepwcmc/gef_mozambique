@@ -1,5 +1,5 @@
 h3.listing-modal__title {
-  @include font_heading-3;
+  @include font_heading-2;
   font-weight: $fw-bold;
   margin-bottom: $item-padding-smaller;
 }
@@ -88,4 +88,30 @@ a.listing-modal__link {
   width: 15px;
   height: 12px;
   display: inline-block;
+}
+
+.listing-modal__download {
+  padding-top: $item-padding;
+  padding-bottom: $item-padding;
+}
+
+.listing-modal__download-heading {
+
+}
+
+.listing-modal__download-text {
+
+}
+
+a.listing-modal__download-button {
+  @include button_accent_tertiary;
+  color: $color-black;
+
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    margin-left: 10px;
+    width: 12px;
+  }
 }

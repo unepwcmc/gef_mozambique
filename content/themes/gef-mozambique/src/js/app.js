@@ -14,6 +14,7 @@ import FlickityCarousel from './components/carousel/FlickityCarousel.vue'
 import IconAngle from './icons/IconAngle.vue'
 import LatestPosts from './components/widgets/LatestPosts.vue'
 import ListingGrid from './components/listing/ListingGrid.vue'
+import ListingList from './components/listing/ListingList.vue'
 import HeaderSearch from './components/header/HeaderSearch.vue'
 import MainHeader from './components/header/MainHeader.vue'
 
@@ -52,6 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
         HeaderSearch,
         LatestPosts,
         ListingGrid,
+        ListingList,
         MainHeader
       },
 

@@ -58,9 +58,9 @@
   }
 }
 
-.modal__body {
+.modal__content {
   background-color: #fff;
-  color: $color-secondary;
+  color: $color-black;
   margin: 0;
   padding: #{$item-padding * 3} #{$item-padding * 1.5} #{$item-padding * 3} #{$item-padding * 3};
   width: 100%;
@@ -92,7 +92,7 @@
 }
 
 .modal__close-span {
-  background-color: $color-secondary;
+  background-color: $color-black;
   transform-origin: 50% 50%;
   height: 1px;
   width: 100%;
@@ -110,14 +110,27 @@
   }
 }
 
-.modal__content {
+.modal__body {
   margin-top: $grid-gap;
   padding-right: $item-padding * 1.5;
   overflow-y: auto;
-  max-height: 100%;
+  max-height: calc(100% - 60px);
 
   @include break-min($sm) {
     margin-top: $item-padding * 1.5;
+    max-height: calc(100% - 95px);
+  }
+
+  @include break-min($md) {
+    max-height: calc(100% - 45px);
+  }
+
+  @include break-min($lg) {
+    // margin-right: auto;
+    // margin-left: auto;
+    // max-width: 80%;
+    padding-left: 50px;
+    padding-right: 50px + $item-padding * 1.5;
   }
 
   /* Width */
@@ -132,6 +145,6 @@
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: $color-secondary;
+    background: $color-black;
   }
 }

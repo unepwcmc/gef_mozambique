@@ -45,7 +45,7 @@ $fw-black: 900;
 //-------------------------------------------------
 
 $color-primary: #146314;
-$color-secondary: #000000;
+$color-secondary: #FFBF3D;
 $color-primary-light: #246D24;
 $color-primary-dark: #043E04;
 
@@ -53,20 +53,22 @@ $color-cta: #030C27;
 
 $color-accent-primary: #33E305;
 $color-accent-secondary: #E12E79;
+$color-accent-tertiary: #9DCD0B;
 
+$color-black: #000000;
 $color-darker-grey: #57575D;
 $color-dark-grey: #4A4D52;
 $color-mid-grey: #E5E5E5;
 $color-light-grey: #F4F4F4;
 $color-white: #ffffff;
 
-$color-border: rgba($color-secondary,0.25);
+$color-border: rgba($color-black,0.25);
 $color-border-light: rgba(255,255,255,0.25);
-$color-body-font: $color-dark-grey;
+$color-body-font: $color-black;
 $color-error: #dc3232;
 $color-grey-text: #A8A8A8;
 $color-link: #4968b3;
-$color-headings: $color-secondary;
+$color-headings: $color-black;
 $color-tools-icons: $color-white;
 
 $color-header: $color-light-grey;
@@ -76,9 +78,9 @@ $color-footer: $color-primary;
 // GRADIENTS
 //-------------------------------------------------
 
-$card-gradient: linear-gradient(180deg, rgba($color-secondary, 0.55) 0%, rgba($color-secondary, 0.15) 40%, rgba($color-secondary, 0) 100%);
+$card-gradient: linear-gradient(180deg, rgba($color-black, 0.55) 0%, rgba($color-black, 0.15) 40%, rgba($color-black, 0) 100%);
 
-$hero-gradient: linear-gradient(180deg, rgba($color-secondary, 0.65) 0%, rgba($color-secondary, 0.25) 35%, rgba($color-secondary, 0.25) 100%);
+$hero-gradient: linear-gradient(180deg, rgba($color-black, 0.65) 0%, rgba($color-black, 0.25) 35%, rgba($color-black, 0.25) 100%);
 
 //-------------------------------------------------
 // BREAKPOINTS
