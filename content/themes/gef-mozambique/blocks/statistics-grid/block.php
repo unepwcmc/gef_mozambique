@@ -8,7 +8,7 @@
 
 <?php if ( block_rows( 'statistic' ) ) : ?>
   <div class="stats-grid">
-    <div class="stats-grid_inner">
+    <div class="stats-grid__inner">
       <ul class="stats-grid__items">
         <?php while ( block_rows( 'statistic' ) ) : block_row( 'statistic' );?>
           <li class="stats-grid__item">
