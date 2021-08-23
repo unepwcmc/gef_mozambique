@@ -2,9 +2,11 @@
 
 return array(
   'common' => array(
+    'explore' => __( 'Explore', 'wcmc-vue' ),
     'filter' => __( 'Filter', 'wcmc-vue' ),
     'filters' => __( 'Filters', 'wcmc-vue' ),
     'filter_toggle' => __( 'Filter Toggle', 'wcmc-vue' ),
+    'more' => __( 'More', 'wcmc-vue' ),
     'no_results_found' => __( 'No results found.', 'wcmc-vue' ),
     'related_documents' => __( 'Related Documents', 'wcmc-vue' ),
     'view_all' => __( 'View all', 'wcmc-vue')

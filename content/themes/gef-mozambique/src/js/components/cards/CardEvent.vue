@@ -8,11 +8,7 @@
       class="listing-card__header"
     >
       <div class="listing-card__image-wrap">
-        <img
-          :src="imageUrl"
-          :alt="title"
-          class="listing-card__image"
-        >
+        <IconCalendar class="listing-card__icon" />
       </div>
     </div>
     <div class="listing-card__body">
@@ -25,14 +21,19 @@
       <h3 class="listing-card__title">
         {{ title }}
       </h3>
-      <a
-      v-if="!modal || (modal && externalLinkURL)"
-      :href="link"
-      :title="title"
-      :target="hrefTarget"
-      class="listing-card__button"
+      <p
+        class="listing-card__button listing-card__button--external"
       >
-        More <!-- To be translated -->
+        {{ $t( 'common.explore' )}}
+        <IconExternal />
+      </p>
+      <a
+        :href="link"
+        class="listing-card__fauxlink"
+        :title="title"
+        target="_blank"
+      >
+        {{ $t( 'common.explore' )}}
       </a>
     </div>
   </div>
@@ -41,9 +42,16 @@
 <script>
   import { decodeString } from '../../helpers/application-helpers.js'
   import moment from 'moment'
+  import IconCalendar from '../../icons/IconCalendar.vue'
+  import IconExternal from '../../icons/IconExternal.vue'
 
   export default {
     name: 'CardEvent',
+
+    components: {
+      IconCalendar,
+      IconExternal
+    },
 
     props: {
       id: {

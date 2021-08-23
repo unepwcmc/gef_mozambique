@@ -1,6 +1,6 @@
 <template>
   <div
-    class="listing-card listing-card__card--report"
+    class="listing-card listing-card--report"
     @click="clickHandler()"
   >
     <div class="listing-card__header">
@@ -13,9 +13,9 @@
         {{ title }}
       </h3>
       <p
-        class="listing-card__button"
+        class="listing-card__button listing-card__button--arrow"
       >
-        More <!-- To be translated -->
+        {{ $t( 'common.more' ) }}
         <IconAngleRight />
       </p>
     </div>

@@ -1,4 +1,5 @@
 .listing-card {
+  cursor: pointer;
   width: 100%;
 
   display: flex;
@@ -8,14 +9,20 @@
 }
 
 .listing-card__header {
-  .listing-card__card--report & {
+  .listing-card--event &,
+  .listing-card--report & {
     background-color: $color-light-grey;
+  }
+
+  .listing-card--event & {
+    color: $color-event;
   }
 }
 
 .listing-card__icon {
   @include absolute_center;
   width: 30%;
+
 }
 
 .listing-card__badge {
@@ -81,9 +88,13 @@
 
 p.listing-card__date {
   @include font_small_text;
-  color: $color-grey-text;
+  background-color: $color-light-grey;
+  color: $color-event;
   font-weight: $fw-black;
   margin-bottom: $item-padding-small;
+  padding: 2px 5px;
+
+  display: inline-block;
 }
 
 h3.listing-card__title {
@@ -95,19 +106,26 @@ p.listing-card__text {
 }
 
 p.listing-card__button {
-  @include button_text_with_arrow;
   color: $color-primary;
 
-  svg {
-    color: $color-black;
+  &.listing-card__button--arrow {
+    @include button_text_with_arrow;
 
-    transition: transform .3s ease;
+    svg {
+      color: $color-black;
+
+      transition: transform .3s ease;
+    }
+
+    .listing-card:hover & {
+      svg {
+        transform: translateX(1px);
+      }
+    }
   }
 
-  .listing-card:hover & {
-    svg {
-      transform: translateX(1px);
-    }
+  &.listing-card__button--external {
+    @include button_text_external;
   }
 }
 
