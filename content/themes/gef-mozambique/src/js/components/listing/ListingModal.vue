@@ -5,7 +5,7 @@
         {{ title }}
       </h3>
     </template>
-    <template v-slot:body>
+    <template v-slot:default>
       <div
         v-if="content"
         v-html="content"
@@ -37,7 +37,6 @@
           </div>
         </li>
       </ul>
-      </div>
     </template>
   </modal>
 </template>

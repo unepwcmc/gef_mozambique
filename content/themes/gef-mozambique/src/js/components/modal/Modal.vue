@@ -19,7 +19,7 @@
         </div>
 
         <div class="modal__body">
-          <slot name="body" />
+          <slot />
         </div>
       </div>
     </div>

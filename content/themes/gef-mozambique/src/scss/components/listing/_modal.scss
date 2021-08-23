@@ -1,3 +1,8 @@
+button.listing-modal__trigger {
+  @include button_secondary;
+  margin-top: $item-padding;
+}
+
 h3.listing-modal__title {
   @include font_heading-2;
   font-weight: $fw-bold;
@@ -60,7 +65,7 @@ h4.listing-modal__heading {
   }
 
   p {
-    @include font_base_text;
+    @include font_small_text;
   }
 }
 
@@ -95,12 +100,13 @@ a.listing-modal__link {
   padding-bottom: $item-padding;
 }
 
-.listing-modal__download-heading {
-
+h4.listing-modal__download-heading {
+  @include font_heading-3;
+  margin-bottom: $item-padding-smaller;
 }
 
-.listing-modal__download-text {
-
+p.listing-modal__download-text {
+  @include font_small_text;
 }
 
 a.listing-modal__download-button {
