@@ -88,13 +88,17 @@
 
 p.listing-card__date {
   @include font_small_text;
-  background-color: $color-light-grey;
-  color: $color-event;
+  color: $color-grey-text;
   font-weight: $fw-black;
   margin-bottom: $item-padding-small;
-  padding: 2px 5px;
 
-  display: inline-block;
+  .listing-card--event & {
+    background-color: $color-light-grey;
+    color: $color-event;
+    padding: 2px 5px;
+
+    display: inline-block;
+  }
 }
 
 h3.listing-card__title {

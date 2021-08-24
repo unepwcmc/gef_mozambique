@@ -13,10 +13,7 @@
       </div>
     </div>
     <div class="listing-card__body">
-      <p
-        v-if="hasDate"
-        class="listing-card__date"
-      >
+      <p class="listing-card__date">
         {{ date }}
       </p>
       <h3 class="listing-card__title">
@@ -29,9 +26,9 @@
         {{ excerpt }}
       </p>
       <p
-        class="listing-card__button"
+        class="listing-card__button listing-card__button--arrow"
       >
-        More <!-- To be translated -->
+        {{ $t( 'common.more' ) }}
         <IconAngleRight />
       </p>
       <a
@@ -41,7 +38,7 @@
         :title="title"
         :target="hrefTarget"
       >
-        View More <!-- To be translated -->
+        {{ $t( 'common.more' ) }}
       </a>
     </div>
   </div>
@@ -86,13 +83,9 @@
 
     computed: {
       date() {
-        if (this.postType === 'event') {
-          return this.config.acf && moment(this.config.acf.date_start).format('D MMMM YYYY')
-        } else {
-          return this.config.ACF && this.config.ACF.date
-            ? this.config.ACF.date
-            : moment(this.config.date).format('D MMMM YYYY')
-        }
+        return this.config.ACF && this.config.ACF.date
+          ? this.config.ACF.date
+          : moment(this.config.date).format('D MMMM YYYY')
       },
 
       excerpt() {
@@ -104,43 +97,20 @@
       },
 
       imageUrl() {
-        if (this.postType == 'casestudy') {
-          return this.config.imageUrl
-            ? this.config.imageUrl
-            : this.placeholderImageUrl
-        } else {
-          return (
-            this.config.hasOwnProperty('_embedded') &&
-            this.config._embedded.hasOwnProperty('wp:featuredmedia')
-          )
-            ? this.config._embedded['wp:featuredmedia'][0].source_url
-            : this.placeholderImageUrl
-        }
-      },
-
-      isResource() {
-        return this.postType === 'resource'
+        return (
+          this.config.hasOwnProperty('_embedded') &&
+          this.config._embedded.hasOwnProperty('wp:featuredmedia')
+        )
+          ? this.config._embedded['wp:featuredmedia'][0].source_url
+          : this.placeholderImageUrl
       },
 
       link() {
         return this.externalLinkURL ? this.externalLinkURL : this.config.link
       },
 
-      hasDate() {
-        return this.postType == 'post' || this.postType == 'event'
-      },
-
       hrefTarget() {
         return this.externalLinkURL ? '_blank' : '_self'
-      },
-
-      resourceType() {
-        return this.postType == 'resource' &&
-          this.config._embedded['wp:term'].find(term => term[0].taxonomy == 'resource_type') ?
-            this.config._embedded['wp:term']
-            .find(term => term[0].taxonomy == 'resource_type')[0]
-            .slug.replace('-', '_') :
-            undefined
       },
 
       title() {

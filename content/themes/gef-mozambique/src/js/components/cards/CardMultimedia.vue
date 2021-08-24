@@ -20,9 +20,9 @@
         {{ title }}
       </h3>
       <p
-        class="listing-card__button"
+        class="listing-card__button listing-card__button--arrow"
       >
-        More <!-- To be translated -->
+        {{ $t( 'common.more' ) }}
         <IconAngleRight />
       </p>
     </div>
