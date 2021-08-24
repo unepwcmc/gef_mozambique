@@ -54,6 +54,9 @@
 
     computed: {
       CardName () {
+        if (this.postType === 'online_course') {
+          return 'card-event'
+        }
         return 'card-' + this.postType
       }
     }

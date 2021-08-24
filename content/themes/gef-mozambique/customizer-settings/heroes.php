@@ -301,6 +301,60 @@ function hero_customizer_settings($wp_customize) {
     'section' => 'reports_publications_hero',
     'settings' => 'reports_publications_hero_text'
     ) ) );
+
+  /*-------------------------------------------------------------------------------
+  	Online Courses
+  -------------------------------------------------------------------------------*/
+
+  // Add Online Courses Hero Section
+  $wp_customize->add_section( 'online_courses_hero', array (
+    'title' => 'Online Courses Page',
+    'panel' => 'hero_settings',
+    'description' => 'Settings for the hero on the Online Courses listing page',
+    'priority' => 100
+  ) );
+
+    // Online Courses Hero Title
+    $wp_customize->add_setting('online_courses_hero_title');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'online_courses_hero_title',
+    array(
+    'label' => 'Title',
+    'section' => 'online_courses_hero',
+    'settings' => 'online_courses_hero_title'
+    ) ) );
+
+    // Online Courses Hero Background Image
+    $wp_customize->add_setting('online_courses_hero_image');
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'online_courses_hero_image', array(
+      'label' => 'Background Image',
+      'section' => 'online_courses_hero',
+      'settings' => 'online_courses_hero_image'
+    ) ) );
+
+    // Online Courses Hero Overlay Opacity
+    $wp_customize->add_setting('online_courses_hero_overlay_opacity');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'online_courses_hero_overlay_opacity',
+    array(
+      'label' => 'Overlay Opacity',
+      'type' => 'range',
+      'section' => 'online_courses_hero',
+      'settings' => 'online_courses_hero_overlay_opacity',
+      'input_attrs' => array(
+        'min' => 0,
+        'max' => 10,
+        'step' => 1,
+      )
+    ) ) );
+
+    // Online Courses Hero Text
+    $wp_customize->add_setting('online_courses_hero_text');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'online_courses_hero_text',
+    array(
+    'label' => 'Text',
+    'type' => 'textarea',
+    'section' => 'online_courses_hero',
+    'settings' => 'online_courses_hero_text'
+    ) ) );
 }
 
 add_action('customize_register', 'hero_customizer_settings');
