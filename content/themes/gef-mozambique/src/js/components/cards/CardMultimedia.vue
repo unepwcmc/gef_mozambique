@@ -4,7 +4,10 @@
     @click="clickHandler()"
   >
     <div class="listing-card__header">
-      <span class="listing-card__badge">
+      <span
+        v-if="mediaType"
+        class="listing-card__badge"
+      >
         <component :is="iconName" />
       </span>
       <div class="listing-card__image-wrap">
