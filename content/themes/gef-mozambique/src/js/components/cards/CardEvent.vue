@@ -72,12 +72,6 @@
       }
     },
 
-    data() {
-      return {
-        placeholderImageUrl: '/content/themes/gef-mozambique/dist/img/card-placeholder.png'
-      }
-    },
-
     computed: {
       date() {
         if (this.postType === 'event') {

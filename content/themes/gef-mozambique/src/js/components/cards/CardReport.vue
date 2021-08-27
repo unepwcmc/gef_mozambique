@@ -58,12 +58,6 @@
       }
     },
 
-    data() {
-      return {
-        placeholderImageUrl: '/content/themes/gef-mozambique/dist/img/card-placeholder.png'
-      }
-    },
-
     computed: {
       excerpt() {
         return this.config.excerpt.rendered ? decodeString(this.config.excerpt.rendered).substring(0, 80) : ''
