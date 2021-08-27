@@ -97,7 +97,7 @@
       },
 
       mediaType() {
-        return this.config._embedded['wp:term'][0][0].slug
+        return this.config._embedded['wp:term'] ? this.config._embedded['wp:term'][0][0].slug : ''
       },
 
       title() {
