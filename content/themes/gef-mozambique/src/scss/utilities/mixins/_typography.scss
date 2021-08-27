@@ -74,6 +74,11 @@
   line-height: 20px;
 }
 
+@mixin font_header_nav {
+  font-size: 16px;
+  line-height: 30px;
+}
+
 @mixin paragraph {
   @include font_base_text;
   color: inherit;

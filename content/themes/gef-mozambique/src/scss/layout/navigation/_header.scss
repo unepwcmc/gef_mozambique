@@ -119,9 +119,10 @@
 
   .nav-header__submenu {
     position: absolute;
-    top: calc(100% - 30px);
+    // top: calc(100% - 30px);
+    top: calc(100% + 1px);
     z-index: 10;
-    background-color: $color-darker-grey;
+    background-color: $color-primary;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -129,21 +130,28 @@
 
     .sub-menu {
       margin: 0;
+      padding-top: $item-padding;
+      padding-bottom: $item-padding;
 
       li {
+        padding-right: $item-padding * 2;
+        padding-left: $item-padding * 2;
+
         transition: background-color .3s ease;
 
-        &:hover,
-        &.current-menu-item {
-          background-color: $color-white;
-        }
-
         a {
+          @include font_header_nav;
           color: #fff;
           white-space: nowrap;
-          font-weight: 400;
-          display: block;
-          padding: 7.5px;
+          // display: block;
+          transition: opacity .3s ease;
+        }
+
+        &.current-menu-item,
+        &:hover {
+          a {
+            opacity: 0.7;
+          }
         }
       }
     }
