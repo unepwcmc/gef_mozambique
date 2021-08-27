@@ -34,6 +34,9 @@
 			<section class="layout-primary">
 				<div class="layout-primary__body layout-primary__body--archive">
 
+					<!-- Intro Block for Reports & Publications - Editable from WordPress Reusable Blocks page -->
+					<?php echo do_shortcode( '[content_block slug=reports-publications-intro]' ); ?>
+
 					<listing-grid
 						post-type="<?php echo $post_type; ?>"
 						:modal="true"
