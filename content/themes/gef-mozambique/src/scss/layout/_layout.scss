@@ -29,14 +29,26 @@
 }
 
 .layout-main {
-  padding-top: 105px + $spacer-small; // ToDo: make varible
-
-  @include break-min($sm) {
-    padding-top: 105px + 50px; // ToDo: make varible
-  }
+  padding-top: 105px; // ToDo: make varible
 
   @include break-min($headerNavShow) {
-    padding-top: 160px + $spacer-large; // ToDo: make varible
+    padding-top: 156px; // ToDo: make varible
+  }
+
+  .page-institutional-framework &,
+  .page-resources &,
+  .page-template-page-landing-page &,
+  .post-type-archive-convention &,
+  .post-type-archive-report_publication & {
+    padding-top: 105px + $spacer-small; // ToDo: make varible
+
+    @include break-min($sm) {
+      padding-top: 105px + 50px; // ToDo: make varible
+    }
+
+    @include break-min($headerNavShow) {
+      padding-top: 160px + $spacer-large; // ToDo: make varible
+    }
   }
 }
 
