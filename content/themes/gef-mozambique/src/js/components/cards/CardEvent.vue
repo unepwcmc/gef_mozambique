@@ -74,7 +74,7 @@
 
     data() {
       return {
-        placeholderImageUrl: '/content/themes/ea/dist/img/card-placeholder.png'
+        placeholderImageUrl: '/content/themes/gef-mozambique/dist/img/card-placeholder.png'
       }
     },
 
