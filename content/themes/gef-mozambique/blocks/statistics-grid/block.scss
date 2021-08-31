@@ -22,6 +22,10 @@ ul.stats-grid__items {
   grid-gap: $grid-gap;
 
   @include break-min($sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include break-min($md) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
