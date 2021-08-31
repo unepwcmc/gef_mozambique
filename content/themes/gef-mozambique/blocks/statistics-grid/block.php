@@ -13,6 +13,18 @@
         <?php while ( block_rows( 'statistic' ) ) : block_row( 'statistic' );?>
           <li class="stats-grid__item">
             <div class="stats-tile">
+              <?php if ( block_sub_value( 'tooltip' ) ) : ?>
+                <div class="stats-tile__tooltip">
+                  <div class="stats-tile__tooltip-icon">
+                    <?php get_template_part( 'template-parts/icons/icon', 'info' ); ?>
+                  </div>
+                  <div class="stats-tile__tooltip-body">
+                    <span class="stats-tile__tooltip-text">
+                      <?php echo block_sub_value( 'tooltip' ); ?>
+                    </span>
+                  </div>
+                </div>
+              <?php endif;?>
               <?php if ( block_sub_value( 'figure' ) ) : ?>
                 <h4 class="stats-tile__heading">
                   <?php echo block_sub_value( 'figure' ); ?>
