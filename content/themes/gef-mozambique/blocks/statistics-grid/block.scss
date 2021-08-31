@@ -17,9 +17,13 @@ $icon-padding: 5px;
 
 ul.stats-grid__items {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 1fr;
   grid-gap: $grid-gap;
+
+  @include break-min($sm) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .stats-grid__item {
@@ -60,10 +64,10 @@ ul.stats-grid__items {
 
   position: absolute;
   top: -6px;
-  right: $icon-width / 2 + $icon-padding;
+  right: -$icon-padding * 3;
   z-index: 1;
 
-  transform: translate(50%, -100%);
+  transform: translate(0, -100%);
   transition: opacity .3s ease, visibility .3s ease;
 
   &:after {
@@ -75,10 +79,10 @@ ul.stats-grid__items {
 
     position: absolute;
     top: 100%;
-    left: 50%;
+    right: $icon-padding * 4;
     z-index: 2;
 
-    transform: translateX(-50%);
+    // transform: translateX(-50%);
   }
 
   .stats-tile__tooltip:hover & {
