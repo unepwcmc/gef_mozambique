@@ -42,7 +42,7 @@
   .post-type-archive-convention &,
   .post-type-archive-public_consultation &,
   .post-type-archive-report_publication &,
-  .single {
+  .single & {
     padding-top: 105px + $spacer-small; // ToDo: make varible
 
     @include break-min($sm) {
