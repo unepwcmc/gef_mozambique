@@ -310,7 +310,7 @@ function footer_logo( $items, $args ) {
 
     $items .= '<li class="menu-item menu-item--logo">';
 
-    $items .= '<a class="nav-footer__logo" href="' . get_site_url() . '" title="' . get_bloginfo('name') . '">' . $logo . '</a>';
+    $items .= '<a class="nav-footer__logo" href="' . esc_url( home_url( '/' ) ) . '" title="' . get_bloginfo('name') . '">' . $logo . '</a>';
 
     $items .= '</li>';
   }
