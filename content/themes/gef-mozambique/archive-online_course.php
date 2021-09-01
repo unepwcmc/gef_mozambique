@@ -10,6 +10,7 @@
 	get_header();
 
 	$post_type = get_queried_object()->name;
+	$post_type_singular_name = strtolower(get_queried_object()->labels->singular_name);
 
 	// Page Hero
 	set_query_var( 'hero-title', get_theme_mod( 'online_courses_hero_title' ) != ''
@@ -35,6 +36,7 @@
 
 					<listing-grid
 						post-type="<?php echo $post_type; ?>"
+						post-singular="<?php echo $post_type_singular_name; ?>"
 					/>
 
 				</div>

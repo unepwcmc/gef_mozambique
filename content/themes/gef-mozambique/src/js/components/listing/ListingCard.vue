@@ -127,15 +127,6 @@
         return this.externalLinkURL ? '_blank' : '_self'
       },
 
-      resourceType() {
-        return this.postType == 'resource' &&
-          this.config._embedded['wp:term'].find(term => term[0].taxonomy == 'resource_type') ?
-            this.config._embedded['wp:term']
-            .find(term => term[0].taxonomy == 'resource_type')[0]
-            .slug.replace('-', '_') :
-            undefined
-      },
-
       title() {
         return this.config.title ? decodeString(this.config.title.rendered) : ''
       }

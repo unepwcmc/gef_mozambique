@@ -65,26 +65,6 @@ function relevanssi_rest_api_filter_add_filters() {
       $args['order'] = $parameters['order'];
     }
 
-    if ( isset( $parameters['resource_stage'] ) ) {
-      $resource_stage_query = array(
-        'taxonomy' => 'resource_stage',
-        'field' => 'term_id',
-        'terms' => explode(',', $parameters['resource_stage'])
-      );
-
-      array_push($args["tax_query"], $resource_stage_query);
-    }
-
-    if ( isset( $parameters['resource_type'] ) ) {
-      $resource_type_query = array(
-        'taxonomy' => 'resource_type',
-        'field' => 'term_id',
-        'terms' => explode(',', $parameters['resource_type'])
-      );
-
-      array_push($args["tax_query"], $resource_type_query);
-    }
-
     // run query
     $search_query = new WP_Query( $args );
     if ( function_exists('relevanssi_do_query') ) {

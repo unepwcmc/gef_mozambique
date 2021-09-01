@@ -4,15 +4,6 @@
     :class="`listing-grid--${postType}`"
   >
     <div class="listing-grid__header">
-      <!-- <p
-        v-if="!isFetching"
-        class="listing-grid__text"
-        v-html="$t('listing.count_text', {
-          posts_length: posts.length,
-          max_posts: maxPosts
-        })"
-      /> -->
-
       <div class="listing-grid__filters">
         <button
         v-if="activeTermsCount !== 0"
@@ -39,9 +30,12 @@
         class="listing-grid__content"
       >
         <listing-cards
-          :modal="this.modal"
-          :posts="posts"
-          :post-type="postSingular"
+          v-bind="{
+            modal,
+            modalID,
+            posts,
+            postType: postSingular
+          }"
           @onCardClicked="updateActivePost"
         />
 
@@ -68,18 +62,14 @@
       </div>
 
       <listing-modal
-        v-if="modal"
-        v-bind="{ post: activePost }"
+        v-if="modal && posts.length"
+        v-bind="{
+          id: modalID,
+          post: activePost
+        }"
       />
     </div>
   </div>
-
-  <!-- <div
-    v-else
-    class="listing-grid__loader listing-grid__loader--padded"
-  >
-    <Loader />
-  </div> -->
 </template>
 
 <script>
@@ -101,15 +91,11 @@ export default {
   },
 
   props: {
-    resourceStage: {
-      type: String,
-      default: undefined
-    },
-    resourceType: {
-      type: String,
-      default: undefined
-    },
     postType: {
+      type: String,
+      required: true
+    },
+    postSingular: {
       type: String,
       required: true
     },
@@ -127,16 +113,6 @@ export default {
     }
   },
 
-  created() {
-    if (this.postType === 'posts') {
-      this.postSingular = 'post'
-    } else if (this.postType === 'report_publication') {
-      this.postSingular = 'report'
-    } else {
-      this.postSingular = this.postType
-    }
-  },
-
   mounted() {
     this.getFilters()
 
@@ -145,13 +121,11 @@ export default {
         filter: this.termLabel,
         term_id: this.termId
       })
-      console.log('Sending terms');
     } else {
       this.getPosts()
     }
 
     this.$eventHub.$on('termsUpdated', (filter, checkedTerms) => {
-      console.log('terms set');
       this.$set(this.activeTerms, filter, checkedTerms)
     })
   },
@@ -173,8 +147,7 @@ export default {
       maxPosts: 1,
       page: 1,
       perPage: 8,
-      posts: [],
-      postSingular: ''
+      posts: []
     }
   },
 
@@ -193,18 +166,14 @@ export default {
       return encodeURI(requestURL)
     },
 
+    modalID() {
+      return String(this._uid)
+    },
+
     postsParams() {
       let params = {
         'page': this.page,
         'per_page': this.perPage
-      }
-
-      if (this.resourceStage) {
-        params['resource_stage'] = this.resourceStage
-      }
-
-      if (this.resourceType) {
-        params['resource_type'] = this.resourceType
       }
 
       Object.keys(this.activeTerms).forEach(term => {
@@ -285,10 +254,8 @@ export default {
       if (!this.isFetching && ((this.posts.length < this.maxPosts) || this.isLoading)) {
         this.isFetching = true
 
-        console.log('getting posts')
         axios.get(this.getPostsURL(), { params: this.postsParams })
         .then((response) => {
-          console.log(response)
 
           this.maxPosts = parseInt(response.headers['x-wp-total'])
           this.totalPostCount = this.maxPosts
@@ -317,8 +284,6 @@ export default {
         ? this.config.eventsBaseUrl
         : this.config.postsBaseUrl + this.postType + '?_embed'
       }
-
-      console.log(encodeURI(requestURL))
 
       return encodeURI(requestURL)
     },

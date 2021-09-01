@@ -10,6 +10,7 @@
 	get_header();
 
 	$post_type = get_queried_object()->name;
+	$post_type_singular_name = strtolower(get_queried_object()->labels->singular_name);
 
 	// Page Hero
 	set_query_var('hero-title', get_the_archive_title());
@@ -22,7 +23,10 @@
 			<section class="layout-primary">
 				<div class="layout-primary__body layout-primary__body--archive">
 
-					<listing-grid post-type="<?php echo $post_type; ?>" />
+					<listing-grid
+						post-type="<?php echo $post_type; ?>"
+						post-singular="<?php echo $post_type_singular_name; ?>"
+					/>
 
 				</div>
 			</section>

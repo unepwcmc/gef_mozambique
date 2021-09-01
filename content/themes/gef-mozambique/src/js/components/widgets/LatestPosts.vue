@@ -65,6 +65,7 @@
       modalID() {
         return String(this._uid)
       },
+
       postsURL() {
         let requestURL = this.config.postsBaseUrl + this.postType + '?_embed'
 

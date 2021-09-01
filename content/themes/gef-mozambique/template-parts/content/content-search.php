@@ -20,10 +20,6 @@
 
 	$post_type_singular_name = $post_type->labels->singular_name;
 
-	if ($isTypeResource) {
-		$resource_type = get_the_terms($post->ID, 'resource_type')[0];
-	}
-
 	$post_type_label = $isTypePost ?
 		__( 'News', 'wcmc' ) :
 		$post_type_singular_name;
@@ -44,7 +40,6 @@
 				<p class="entry-excerpt__details">
 					<?php echo $post_type_label; ?>
 					<?php if ($isTypePost) echo the_date(' • j F Y'); ?>
-					<?php if ($isTypeResource) echo ' • ' . $resource_type->name; ?>
 				</p>
 				<?php if (get_the_excerpt() != ''): ?>
 					<p class="entry-excerpt__content"><?php
