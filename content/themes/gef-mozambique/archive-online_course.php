@@ -16,12 +16,7 @@
 	set_query_var( 'hero-title', get_theme_mod( 'online_courses_hero_title' ) != ''
 		? get_theme_mod( 'online_courses_hero_title' )
 		: get_the_archive_title() );
-	set_query_var( 'hero-text', get_theme_mod( 'online_courses_hero_text' ) );
-	$hero_link = get_theme_mod( 'online_courses_hero_button_link' ) != 0
-		? get_page_link( get_theme_mod( 'online_courses_hero_button_link' ) )
-		: '';
-	set_query_var( 'hero-link-url', $hero_link );
-	set_query_var( 'hero-link-text', get_theme_mod( 'online_courses_hero_button_text' ) );
+
 	set_query_var( 'hero-background-image', get_theme_mod( 'online_courses_hero_image') );
 	set_query_var( 'hero-opacity', get_theme_mod( 'online_courses_hero_overlay_opacity' ) );
 

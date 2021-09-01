@@ -76,16 +76,6 @@ function hero_customizer_settings($wp_customize) {
       )
     ) ) );
 
-    // Events Hero Text
-    $wp_customize->add_setting('events_hero_text');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'events_hero_text',
-    array(
-    'label' => 'Text',
-    'type' => 'textarea',
-    'section' => 'events_hero',
-    'settings' => 'events_hero_text'
-    ) ) );
-
   /*-------------------------------------------------------------------------------
     News
   -------------------------------------------------------------------------------*/
@@ -128,16 +118,6 @@ function hero_customizer_settings($wp_customize) {
         'max' => 10,
         'step' => 1,
       )
-    ) ) );
-
-    // News Hero Text
-    $wp_customize->add_setting('news_hero_text');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'news_hero_text',
-    array(
-    'label' => 'Text',
-    'type' => 'textarea',
-    'section' => 'news_hero',
-    'settings' => 'news_hero_text'
     ) ) );
 
   /*-------------------------------------------------------------------------------
@@ -184,21 +164,11 @@ function hero_customizer_settings($wp_customize) {
       )
     ) ) );
 
-    // Multimedia Hero Text
-    $wp_customize->add_setting('multimedia_hero_text');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'multimedia_hero_text',
-    array(
-    'label' => 'Text',
-    'type' => 'textarea',
-    'section' => 'multimedia_hero',
-    'settings' => 'multimedia_hero_text'
-    ) ) );
-
   /*-------------------------------------------------------------------------------
   	International Conventions
   -------------------------------------------------------------------------------*/
 
-  // Add Multimedia Hero Section
+  // Add International Conventions Hero Section
   $wp_customize->add_section( 'conventions_hero', array (
     'title' => 'Conventions Page',
     'panel' => 'hero_settings',
@@ -346,14 +316,58 @@ function hero_customizer_settings($wp_customize) {
       )
     ) ) );
 
-    // Online Courses Hero Text
-    $wp_customize->add_setting('online_courses_hero_text');
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'online_courses_hero_text',
+  /*-------------------------------------------------------------------------------
+  	Public Consultations
+  -------------------------------------------------------------------------------*/
+
+  // Add Public Consultations Hero Section
+  $wp_customize->add_section( 'public_consultations_hero', array (
+    'title' => 'Public Consultations Page',
+    'panel' => 'hero_settings',
+    'description' => 'Settings for the hero on the Public Consultations listing page',
+    'priority' => 100
+  ) );
+
+    // Public Consultations Hero Title
+    $wp_customize->add_setting('public_consultations_hero_title');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'public_consultations_hero_title',
+    array(
+    'label' => 'Title',
+    'section' => 'public_consultations_hero',
+    'settings' => 'public_consultations_hero_title'
+    ) ) );
+
+    // Public Consultations Hero Background Image
+    $wp_customize->add_setting('public_consultations_hero_image');
+    $wp_customize->add_control( new WP_Customize_Media_Control( $wp_customize, 'public_consultations_hero_image', array(
+      'label' => 'Background Image',
+      'section' => 'public_consultations_hero',
+      'settings' => 'public_consultations_hero_image'
+    ) ) );
+
+    // Public Consultations Hero Overlay Opacity
+    $wp_customize->add_setting('public_consultations_hero_overlay_opacity');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'public_consultations_hero_overlay_opacity',
+    array(
+      'label' => 'Overlay Opacity',
+      'type' => 'range',
+      'section' => 'public_consultations_hero',
+      'settings' => 'public_consultations_hero_overlay_opacity',
+      'input_attrs' => array(
+        'min' => 0,
+        'max' => 10,
+        'step' => 1,
+      )
+    ) ) );
+
+    // Public Consultations Hero Text
+    $wp_customize->add_setting('public_consultations_hero_text');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'public_consultations_hero_text',
     array(
     'label' => 'Text',
     'type' => 'textarea',
-    'section' => 'online_courses_hero',
-    'settings' => 'online_courses_hero_text'
+    'section' => 'public_consultations_hero',
+    'settings' => 'public_consultations_hero_text'
     ) ) );
 }
 

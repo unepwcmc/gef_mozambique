@@ -55,6 +55,12 @@ require_once( 'customizer-settings/social-media-links.php' );
 require_once( 'customizer-settings/heroes.php' );
 
 /*-------------------------------------------------------------------------------
+  Archive Settings
+-------------------------------------------------------------------------------*/
+
+require_once( 'customizer-settings/archive-settings.php' );
+
+/*-------------------------------------------------------------------------------
   CTA Block Customiser Settings
 -------------------------------------------------------------------------------*/
 

@@ -40,6 +40,7 @@
   .page-resources &,
   .page-template-page-landing-page &,
   .post-type-archive-convention &,
+  .post-type-archive-public_consultation &,
   .post-type-archive-report_publication & {
     padding-top: 105px + $spacer-small; // ToDo: make varible
 
@@ -132,4 +133,8 @@ h2.layout-primary__title {
       margin-bottom: 0;
     }
   }
+}
+
+.layout-primary__intro {
+  @include restrain_width;
 }
