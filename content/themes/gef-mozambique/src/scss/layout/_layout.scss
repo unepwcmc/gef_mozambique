@@ -41,7 +41,8 @@
   .page-template-page-landing-page &,
   .post-type-archive-convention &,
   .post-type-archive-public_consultation &,
-  .post-type-archive-report_publication & {
+  .post-type-archive-report_publication &,
+  .single {
     padding-top: 105px + $spacer-small; // ToDo: make varible
 
     @include break-min($sm) {
