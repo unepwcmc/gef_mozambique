@@ -25,7 +25,7 @@
 	set_query_var( 'hero-background-image', get_theme_mod( 'online_courses_hero_image') );
 	set_query_var( 'hero-opacity', get_theme_mod( 'online_courses_hero_overlay_opacity' ) );
 
-	get_template_part( 'template-parts/components/heroes/hero', 'large' );
+	get_template_part( 'template-parts/components/heroes/hero', 'simple' );
 ?>
 
 <div class="layout-container">
