@@ -6,6 +6,12 @@
 
 // Flickity
 
+.flickity-viewport {
+  .cards-carousel__cells & {
+    overflow: visible;
+  }
+}
+
 .flickity-button {
   .cards-carousel & {
     &:disabled {

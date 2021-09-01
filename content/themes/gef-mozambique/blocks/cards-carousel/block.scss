@@ -9,12 +9,6 @@
   @include inner_padding;
 }
 
-.cards-carousel__cells {
-  .flickity-viewport {
-    overflow: visible;
-  }
-}
-
 .cards-carousel__cell {
   margin-right: $grid-gap;
   width: 90%;
