@@ -10,6 +10,8 @@
       <div class="block-expandable__body">
         <div
           class="block-expandable__content"
+          ref="content"
+          :style="initialHeight"
           v-html="content"
         />
         <button
@@ -48,13 +50,24 @@ export default {
     },
   },
 
+  mounted () {
+    this.setInitalHeight()
+  },
+
   data () {
     return {
+      initialHeight: {},
       toggled: false
     }
   },
 
   methods: {
+    setInitalHeight () {
+      const heightString = this.$refs.content.childNodes[0].clientHeight + 'px'
+
+      Vue.set(this.initialHeight, 'max-height', heightString);
+    },
+
     toggleTextHeight () {
       this.toggled = true
     }

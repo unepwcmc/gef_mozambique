@@ -1,4 +1,5 @@
 import Vue from 'vue'
+window.Vue = Vue
 import store from './store'
 
 import objectFitImages from 'object-fit-images'
