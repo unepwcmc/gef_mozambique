@@ -14,7 +14,6 @@
     li {
       @include no_bullets;
       font-family: $font-heading;
-      font-weight: $fw-medium;
       font-size: 16px;
       letter-spacing: 0.6px;
     }
@@ -66,29 +65,6 @@
           transition: transform 0.5s ease;
         }
       }
-
-      // # Dropdown Arrow
-      //
-      // &.menu-item-has-children > a {
-      //   margin-right: 20px;
-      //
-      //   position: relative;
-      //
-      //   &::after {
-      //     background-image: url('../../img/icon-angle-down-white.svg');
-      //     background-size: 15px;
-      //     background-repeat: no-repeat;
-      //     content: '';
-      //     width: 15px;
-      //     height: 10px;
-      //
-      //     display: block;
-      //
-      //     position: absolute;
-      //     top: 10px;
-      //     right: -20px;
-      //   }
-      // }
 
       &.current-menu-item > a::before {
         transform-origin: bottom left;
@@ -162,4 +138,5 @@
     visibility: visible;
     pointer-events: all;
   }
+
 }
