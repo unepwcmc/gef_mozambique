@@ -33,6 +33,10 @@
       postType: {
         type: String,
         required: true
+      },
+      postSingular: {
+        type: String,
+        required: true
       }
     },
 
@@ -40,20 +44,10 @@
       return {
         activePost: {},
         config: {
+          eventsBaseUrl: '/wp-json/gef-mozambique/v1/events?_embed',
           postsBaseUrl: '/wp-json/wp/v2/'
         },
-        posts: [],
-        postSingular: ''
-      }
-    },
-
-    created() {
-      if (this.postType === 'posts') {
-        this.postSingular = 'post'
-      } else if (this.postType === 'report_publication') {
-        this.postSingular = 'report'
-      } else {
-        this.postSingular = this.postType
+        posts: []
       }
     },
 
@@ -67,7 +61,13 @@
       },
 
       postsURL() {
-        let requestURL = this.config.postsBaseUrl + this.postType + '?_embed'
+        let requestURL = ''
+
+        if (this.postType === 'event'){
+          requestURL = this.config.eventsBaseUrl
+        } else {
+          requestURL = this.config.postsBaseUrl + this.postType + '?_embed'
+        }
 
         return encodeURI(requestURL)
       },

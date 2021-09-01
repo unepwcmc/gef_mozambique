@@ -9,6 +9,10 @@
   $section_title = block_value( 'section-title' );
 
   $post_type = block_value( 'post-type' );
+  $post_type_obj = get_post_type_object( $post_type );
+
+  $post_type_singular_name = $post_type == 'posts' ? 'post' : strtolower($post_type_obj->labels->singular_name);
+
   $post_type_class = 'listing-grid--' . $post_type;
 
   $link_url = $post_type == 'posts'
@@ -36,6 +40,7 @@
 
       <latest-posts
         post-type="<?php echo $post_type; ?>"
+        post-singular="<?php echo $post_type_singular_name; ?>"
       />
 
     </div>

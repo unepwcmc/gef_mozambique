@@ -9,8 +9,8 @@
 
 	get_header();
 
-	$post_type = get_queried_object()->name;
-	$post_type_singular_name = strtolower(get_queried_object()->labels->singular_name);
+	$post_type = 'posts';
+	$post_type_singular_name = 'post';
 
 	// Page Hero
 	set_query_var( 'hero-title', get_theme_mod( 'news_hero_title' ) != ''
