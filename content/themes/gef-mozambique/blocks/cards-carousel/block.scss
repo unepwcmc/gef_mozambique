@@ -17,7 +17,15 @@
 
 .cards-carousel__cell {
   margin-right: $grid-gap;
-  width: 40%;
+  width: 90%;
+
+  @include break-min($sm) {
+    width: 60%;
+  }
+
+  @include break-min($lg) {
+    width: 40%;
+  }
 }
 
 .card-carousel__body {

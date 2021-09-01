@@ -17,8 +17,7 @@
             cellAlign: 'left',
             cellSelector: '.cards-carousel__cell',
             contain: true,
-            autoPlay: 8000,
-            wrapAround: true
+            autoPlay: 8000
           }"
           class="cards-carousel__cells"
         >

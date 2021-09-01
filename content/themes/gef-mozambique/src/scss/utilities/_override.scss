@@ -16,8 +16,27 @@
   }
 }
 
+.flickity-page-dots {
+  .cards-carousel & {
+    bottom: 5px;
+
+    @include break-min($sm) {
+      display: none;
+    }
+
+    .dot {
+      background-color: $color-white;
+    }
+  }
+}
+
 .flickity-prev-next-button {
+  display: none;
   z-index: 8;
+
+  @include break-min($sm) {
+    display: block;
+  }
 
   .cards-carousel & {
     background-color: $color-primary;
@@ -34,34 +53,17 @@
     }
 
     &.previous {
-      left: 0;
       border-top-right-radius: 3px;
       border-bottom-right-radius: 3px;
-      // left: $grid-gap;
-      //
-      // @include break-min($xs) {
-      //   left: $grid-gap * 2;
-      // }
-      //
-      // @include break-min($lg) {
-      //   left: $gutter;
-      // }
+
+      left: 0;
     }
 
     &.next {
-      right: $grid-gap;
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
 
-      @include break-min($xs) {
-        right: $grid-gap * 2;
-      }
-
-      @include break-min($lg) {
-        right: auto;
-        left: calc((80% + #{$grid-gap}));
-        transform: translate(-100%, -50%);
-      }
+      right: 0;
     }
   }
 }
