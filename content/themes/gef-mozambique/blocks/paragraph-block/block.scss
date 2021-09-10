@@ -13,7 +13,7 @@ h4.block-paragraph__heading {
 .block-paragraph__inner {
   .page-template-page-fullwidth &,
   .page-template-page-table-page & {
-    @include inner;
+    @include restrain_width;
   }
 }
 
