@@ -4,18 +4,19 @@
   }
 }
 
-.listing-list__body {
+.listing-list__loader {
+  padding-top: $spacer-medium;
+  width: 100%;
 
-}
+  display: flex;
+  justify-content: center;
 
-.listing-list__content {
+  &.listing-grid__loader--padded {
+    padding: $spacer-xlarge;
+  }
 
-}
-
-.listing-list__items {
-
-}
-
-.listing-list__item {
-
+  svg {
+    width: 50px;
+    transform: scale(-1,1);
+  }
 }

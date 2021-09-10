@@ -5,37 +5,13 @@
 
 .listing-simple__image-wrap {
   margin-bottom: $item-padding;
-  width: 175px;
-  height: 65px;
-
-  position: relative;
-
-  @include break-min($lg) {
-    margin-bottom: 0;
-
-    position: absolute;
-    left: -#{$spacer-medium};
-    top: 0;
-    transform: translateX(-100%);
-  }
+  max-width: 175px;
+  max-height: 65px;
 }
-
-.listing-simple__image {
-  @include absolute_fill;
-  @include object_fit_cover;
-}
-
 
 h3.listing-simple__title {
   @include font_heading-2;
   margin-bottom: 0;
-}
-
-p.listing-simple__date {
-}
-
-.listing-simple__text {
-
 }
 
 ul.listing-simple__items {
