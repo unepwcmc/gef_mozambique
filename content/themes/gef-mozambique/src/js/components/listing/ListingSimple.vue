@@ -14,10 +14,10 @@
       {{ title }}
     </h3>
     <p
-      v-if="hasDate"
+      v-if="year"
       class="listing-simple__date"
     >
-      Ratification Year: <strong>{{ date }}</strong>
+      Ratification Year: <strong>{{ year }}</strong>
     </p>
     <p
       v-if="description"
@@ -87,10 +87,8 @@
     },
 
     computed: {
-      date() {
-        return this.config.acf && this.config.acf.date
-          ? this.config.acf.date
-          : moment(this.config.date).format('D MMMM YYYY')
+      year() {
+        return this.config.acf && this.config.acf.ratification_year ? this.config.acf.ratification_year : ''
       },
 
       description() {
@@ -113,10 +111,6 @@
 
       link() {
         return this.externalLinkURL ? this.externalLinkURL : this.config.link
-      },
-
-      hasDate() {
-        return this.postType == 'convention'
       },
 
       hrefTarget() {
