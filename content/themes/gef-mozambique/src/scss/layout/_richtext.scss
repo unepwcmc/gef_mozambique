@@ -25,6 +25,11 @@
     margin-top: #{$grid-gap * 1.5};
     margin-bottom: #{$grid-gap * 1.5};
 
+    .page-template-page-fullwidth &,
+    .page-template-page-table-page & {
+      @include restrain_width;
+    }
+
     &:first-child {
       margin-top: 0;
     }

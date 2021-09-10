@@ -10,8 +10,11 @@ h4.block-paragraph__heading {
   margin-bottom: $item-padding-small;
 }
 
-.block-paragraph__text {
-
+.block-paragraph__inner {
+  .page-template-page-fullwidth &,
+  .page-template-page-table-page & {
+    @include inner;
+  }
 }
 
 a.block-paragraph__link,

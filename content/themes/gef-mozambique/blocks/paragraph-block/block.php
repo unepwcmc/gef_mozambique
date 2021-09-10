@@ -17,35 +17,37 @@
 ?>
 
 <div class="block-paragraph">
-  <?php if ( $heading ) : ?>
-    <h4 class="block-paragraph__heading">
-      <?php echo $heading; ?>
-    </h4>
-  <?php endif;?>
+  <div class="block-paragraph_inner">
+    <?php if ( $heading ) : ?>
+      <h4 class="block-paragraph__heading">
+        <?php echo $heading; ?>
+      </h4>
+    <?php endif;?>
 
-  <?php if ( $text ) : ?>
-    <div class="block-paragraph__text">
-      <?php echo $text; ?>
-    </div>
-  <?php endif;?>
+    <?php if ( $text ) : ?>
+      <div class="block-paragraph__text">
+        <?php echo $text; ?>
+      </div>
+    <?php endif;?>
 
-  <?php if ($link_url && $link_text): ?>
-    <a
-      href="<?php echo $link_url; ?>"
-      title="<?php echo $link_text; ?>"
-      <?php if ($external_link) echo ' target="_blank"'; ?>
-      class="block-paragraph__link<?php if ($external_link) echo ' block-paragraph__link--external'; ?>"
-    >
-      <?php echo $link_text; ?>
-      <?php if ($external_link) get_template_part( 'template-parts/icons/icon', 'external' ); ?>
-    </a>
-  <?php endif; ?>
+    <?php if ($link_url && $link_text): ?>
+      <a
+        href="<?php echo $link_url; ?>"
+        title="<?php echo $link_text; ?>"
+        <?php if ($external_link) echo ' target="_blank"'; ?>
+        class="block-paragraph__link<?php if ($external_link) echo ' block-paragraph__link--external'; ?>"
+      >
+        <?php echo $link_text; ?>
+        <?php if ($external_link) get_template_part( 'template-parts/icons/icon', 'external' ); ?>
+      </a>
+    <?php endif; ?>
 
-  <?php if ($modal_downloads): ?>
-    <modal-downloads
-      text='<?php echo htmlentities($modal_text); ?>'
-      :downloads='<?php echo json_encode($modal_downloads['rows']); ?>'
-    ></modal-downloads>
-  <?php endif; ?>
+    <?php if ($modal_downloads): ?>
+      <modal-downloads
+        text='<?php echo htmlentities($modal_text); ?>'
+        :downloads='<?php echo json_encode($modal_downloads['rows']); ?>'
+      ></modal-downloads>
+    <?php endif; ?>
 
+  </div>
 </div>
