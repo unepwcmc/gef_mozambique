@@ -577,9 +577,22 @@ add_filter( 'posts_table_reset_label', function( $label ) {
 
 add_filter( 'posts_table_language_defaults', function( $defaults ) {
     $defaults['totalsPlural'] = 'results';
-    $defaults['totalsSingle'] = 'result'; 
+    $defaults['totalsSingle'] = 'result';
     return $defaults;
 } );
+
+/*-------------------------------------------------------------------------------------------------
+REDIRECT ON CERTAIN CPT SINGLE TEMPLATES - WHEN NO FRONT END AVAILABLE
+------------------------------------------------------------------------------------------------- */
+
+add_action( 'template_redirect', 'post_single_redirect' );
+
+function post_single_redirect() {
+  if ( is_singular( 'convention' ) ) {
+    wp_redirect( home_url(), 301 );
+    exit;
+  }
+}
 
 /*-------------------------------------------------------------------------------------------------
 IMPORT CUSTOMIZER SETTINGS

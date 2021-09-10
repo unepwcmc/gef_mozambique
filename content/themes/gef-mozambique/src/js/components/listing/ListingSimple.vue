@@ -25,8 +25,14 @@
     >
       {{ description }}
     </p>
-    <ul class="listing-simple__items">
-      <li class="listing-simple__item">
+    <ul
+      v-if="externalLinkURL || hasDownloads"
+      class="listing-simple__items"
+    >
+      <li
+        v-if="hasDownloads"
+        class="listing-simple__item"
+      >
         <button
           class="listing-simple__button"
           @click="clickHandler()"
@@ -34,10 +40,13 @@
           Related Documents
         </button>
       </li>
-      <li class="listing-simple__item">
+      <li
+        v-if="externalLinkURL"
+        class="listing-simple__item"
+      >
         <a
-          href="#"
-          title="<?php echo $link_text; ?>"
+          :href="externalLinkURL"
+          title="Explore"
           target="_blank"
           class="listing-simple__link listing-simple__link--external"
         >
@@ -99,6 +108,10 @@
         return this.config.acf && this.config.acf.external_link_url ? this.config.acf.external_link_url : ''
       },
 
+      hasDownloads() {
+        return this.config.acf && this.config.acf.modal_downloads
+      },
+
       // THIS NEXT!
       imageUrl() {
         return (
@@ -107,14 +120,6 @@
         )
           ? this.config._embedded['wp:featuredmedia'][0].source_url
           : ''
-      },
-
-      link() {
-        return this.externalLinkURL ? this.externalLinkURL : this.config.link
-      },
-
-      hrefTarget() {
-        return this.externalLinkURL ? '_blank' : '_self'
       },
 
       title() {
