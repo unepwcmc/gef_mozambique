@@ -1,3 +1,58 @@
+// Posts Table Pro
+
+.posts-table-wrapper table.dataTable {
+  border-collapse: collapse;
+
+  thead {
+    background-color: rgba($color-grey-text, 0.1);
+
+    tr {
+      border: 0;
+    }
+
+    th {
+      @include font_heading-3;
+      border: 0;
+      font-weight: $fw-regular;
+      padding: 20px;
+
+      &.sorting {
+        background: none;
+      }
+    }
+
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $color-border;
+      cursor: pointer;
+
+      transition: background-color .3s ease;
+
+      &:hover {
+        background-color: rgba($color-grey-text, 0.2);
+      }
+    }
+
+    td {
+      padding: 20px;
+    }
+  }
+
+  .post-type-nbsap_goals {
+    .col-text {
+      @include font_small_text_tall;
+
+      h3 {
+        font-weight: $fw-regular;
+        margin-bottom: $item-padding-smaller !important;
+      }
+    }
+  }
+}
+
+
 // WordPress Admin Bar
 
 #wpadminbar {

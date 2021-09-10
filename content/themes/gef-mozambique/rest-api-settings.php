@@ -138,3 +138,96 @@ add_action( 'rest_api_init', function () {
     'callback' => 'get_events_by_date_start',
   ) );
 } );
+
+
+
+
+/**
+ * Get table post data
+ *
+ * @param array $data Options for the function.
+ * @return string|null Post title for the latest,  * or null if none.
+ */
+function get_table_post_data( WP_REST_Request $request ) {
+
+	$parameters = $request->get_query_params();
+
+	$post_type = $parameters['post_type'];
+	// $post_type = 'nbsap_goals';
+
+	$args = array(
+		'posts_per_page' => -1,
+		'post_type'		=> $post_type,
+		'order'				=> 'ASC'
+  );
+
+  $search_query = new WP_Query( $args );
+
+	$controller = new WP_REST_Posts_Controller('post');
+  $posts = array();
+
+  while ( $search_query->have_posts() ) : $search_query->the_post();
+    $data    = $controller->prepare_item_for_response( $search_query->post, $request );
+    $posts[] = $controller->prepare_response_for_collection( $data );
+  endwhile;
+
+	$formatted_posts = array();
+	// Make in to parameter
+	$restricted_columns = ['Text', 'Compliance Percentage', 'Progress Ranking', 'Shortcode'];
+
+	foreach ($posts as $post) {
+		$post_id = $post['id'];
+		$post_title = $post['title']['rendered'];
+		$post_data = array();
+
+		$post_acf_data = get_field_objects( $post_id );
+		foreach ($post_acf_data as $item) {
+			// If value is already show on the table already
+			if ( !in_array( $item['label'], $restricted_columns )) {
+				array_push($post_data, array(
+					'label' => $item['label'],
+					'value' => $item['value']
+				));
+			}
+		}
+
+		$new_post = array(
+			'id' => $post_id,
+			'title' => $post_title,
+			'data' => $post_data
+		);
+		array_push($formatted_posts, $new_post);
+	}
+
+
+	//
+	//
+	//
+	// $post_id = intval($parameters['post_id']);
+	// $post_type = $parameters['post_type'];
+	//
+	// $post_title = get_the_title( $post_id );
+	//
+  // $acf_data = get_field_objects( $post_id );
+	//
+  // $post_data = array(
+	// 	'title' => $post_title,
+	// 	'acf' => $acf_data
+	// );
+
+	// return results
+  if(!empty($formatted_posts)) {
+    $returned = new WP_REST_Response( $formatted_posts, 200 );
+    return $returned;
+  } else {
+    return new WP_Error( 'No results', 'Nothing found' );
+  }
+
+}
+
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'gef-mozambique/v1', '/table-posts', array(
+    'methods' => 'GET',
+    'callback' => 'get_table_post_data',
+  ) );
+} );

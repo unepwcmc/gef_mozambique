@@ -1,0 +1,68 @@
+button.table-modal__trigger {
+  @include button_reset;
+
+  svg {
+    opacity: 0.7;
+    width: 36px;
+    height: 36px;
+
+    transition: opacity .5s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+h3.table-modal__title {
+  @include font_heading-2;
+  font-weight: $fw-bold;
+  margin-bottom: $item-padding-smaller;
+}
+
+h4.table-modal__heading {
+  @include font_heading-3;
+  margin-bottom: $item-padding-smaller;
+}
+
+p.table-modal__text {
+  @include font_small_text;
+  margin-bottom: 0;
+}
+
+ul.table-modal__list-items {
+  @include structural_ul;
+}
+
+li.table-modal__list-item {
+  margin-bottom: $item-padding * 1.5;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a.table-modal__link {
+  @include font_smaller_text;
+  text-decoration: none;
+  font-weight: $fw-bold;
+  word-break: break-all;
+}
+
+.table-modal__indicator-icon {
+  border-radius: 50%;
+  font-size: 0;
+  margin-bottom: $item-padding-smaller !important;
+  width: 20px;
+  height: 20px;
+
+  display: block;
+
+  .table-modal__indicator--ambar & {
+    background-color: orange;
+  }
+
+  .table-modal__indicator--vermelho & {
+    background-color: red;
+  }
+}

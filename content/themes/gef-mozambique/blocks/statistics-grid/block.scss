@@ -97,7 +97,7 @@ ul.stats-grid__items {
 
 .stats-tile__tooltip-text {
   @include font_small_text;
-  color: $color-white;
+  color: $color-black;
   font-weight: $fw-medium;
 
   display: block;

@@ -61,6 +61,12 @@ require_once( 'customizer-settings/heroes.php' );
 require_once( 'customizer-settings/archive-settings.php' );
 
 /*-------------------------------------------------------------------------------
+  Table Settings
+-------------------------------------------------------------------------------*/
+
+require_once( 'customizer-settings/table-settings.php' );
+
+/*-------------------------------------------------------------------------------
   CTA Block Customiser Settings
 -------------------------------------------------------------------------------*/
 

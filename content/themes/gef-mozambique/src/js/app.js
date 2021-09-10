@@ -19,6 +19,8 @@ import ListingList from './components/listing/ListingList.vue'
 import HeaderSearch from './components/header/HeaderSearch.vue'
 import MainHeader from './components/header/MainHeader.vue'
 import ModalDownloads from './components/modal/ModalDownloads.vue'
+import TableModal from './components/table/TableModal.vue'
+import TableModalTrigger from './components/table/TableModalTrigger.vue'
 
 window.axios = require('axios')
 
@@ -57,7 +59,9 @@ window.addEventListener("DOMContentLoaded", () => {
         ListingGrid,
         ListingList,
         MainHeader,
-        ModalDownloads
+        ModalDownloads,
+        TableModal,
+        TableModalTrigger
       },
 
       data () {

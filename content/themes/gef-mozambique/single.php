@@ -33,6 +33,14 @@ get_header(); ?>
 		<div class="layout-container__body">
 			<section class="layout-primary layout-primary--restrained">
 				<div class="layout-primary__body">
+					<?php $fields = get_fields(); ?>
+					<?php if( $fields ): ?>
+				    <ul>
+			        <?php foreach( $fields as $name => $value ): ?>
+		            <li><strong><?php echo $name; ?></strong> <?php echo $value; ?></li>
+			        <?php endforeach; ?>
+				    </ul>
+					<?php endif; ?>
 					<?php
 						/* Start the Loop */
 						if ( have_posts() ) :
