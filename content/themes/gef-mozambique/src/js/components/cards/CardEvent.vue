@@ -13,7 +13,7 @@
     </div>
     <div class="listing-card__body">
       <p
-        v-if="hasDate"
+        v-if="date"
         class="listing-card__date"
       >
         {{ date }}
@@ -74,13 +74,7 @@
 
     computed: {
       date() {
-        if (this.postType === 'event') {
-          return this.config.acf && moment(this.config.acf.date_start).format('D MMMM YYYY')
-        } else {
-          return this.config.ACF && this.config.ACF.date
-            ? this.config.ACF.date
-            : moment(this.config.date).format('D MMMM YYYY')
-        }
+        return this.config.acf && this.config.acf.date_start ? moment(this.config.acf.date_start).format('D MMMM YYYY') : ''
       },
 
       excerpt() {
