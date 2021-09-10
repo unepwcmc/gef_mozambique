@@ -84,12 +84,12 @@ add_action('rest_api_init', function () {
 
 
 /**
- * Get events by start date
+ * Get posts by start date
  *
  * @param array $data Options for the function.
  * @return string|null Post title for the latest,  * or null if none.
  */
-function get_events_by_date_start( WP_REST_Request $request ) {
+function get_posts_by_date_start( WP_REST_Request $request ) {
 
 	$parameters = $request->get_query_params();
 
@@ -103,7 +103,7 @@ function get_events_by_date_start( WP_REST_Request $request ) {
 	$args = array(
 		'paged' => $parameters['page'],
 		'posts_per_page' => $per_page,
-		'post_type'		=> 'event',
+		'post_type'		=> $parameters['post_type'],
 		'meta_key'			=> 'date_start',
 		'orderby'			=> 'meta_value',
 		'order'				=> 'ASC'
@@ -133,9 +133,9 @@ function get_events_by_date_start( WP_REST_Request $request ) {
 }
 
 add_action( 'rest_api_init', function () {
-  register_rest_route( 'gef-mozambique/v1', '/events', array(
+  register_rest_route( 'gef-mozambique/v1', '/posts-by-start-date', array(
     'methods' => 'GET',
-    'callback' => 'get_events_by_date_start',
+    'callback' => 'get_posts_by_date_start',
   ) );
 } );
 
