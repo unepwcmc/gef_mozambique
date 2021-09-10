@@ -48,7 +48,7 @@ export default {
         },
 
         'acf': {
-          'documents': this.downloads
+          'modal_downloads': this.downloads
         },
 
         'title': {

@@ -1,28 +1,7 @@
 @import "../../src/scss/utilities/variables";
 @import "../../src/scss/utilities/mixins";
 
-.block-paragraphs {
-  @include spacer;
-}
-
-.block-paragraphs__header {
-  @include section_header;
-}
-
-h3.block-paragraphs__title {
-  @include section_title;
-}
-
-.block-paragraphs__body {
-  @include restrain_width;
-}
-
-ul.block-paragraphs__items,
-.editor-styles-wrapper .genesis-custom-blocks-editor__ssr ul.block-paragraphs__items {
-  @include structural_ul;
-}
-
-li.block-paragraphs__item {
+.block-paragraph {
   @include spacer;
 }
 
@@ -49,4 +28,9 @@ a.block-paragraph__link,
       width: 14px;
     }
   }
+}
+
+button.block-paragraph__trigger {
+  @include button_secondary;
+  margin-top: $item-padding;
 }

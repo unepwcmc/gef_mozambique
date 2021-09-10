@@ -22,7 +22,6 @@
   }
 
   > p {
-    @include restrain_width;
     margin-top: #{$grid-gap * 1.5};
     margin-bottom: #{$grid-gap * 1.5};
 

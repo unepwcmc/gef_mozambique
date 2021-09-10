@@ -2,6 +2,7 @@
 
 return array(
   'common' => array(
+    'download' => __( 'Download', 'wcmc-vue' ),
     'explore' => __( 'Explore', 'wcmc-vue' ),
     'filter' => __( 'Filter', 'wcmc-vue' ),
     'filters' => __( 'Filters', 'wcmc-vue' ),

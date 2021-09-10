@@ -51,6 +51,7 @@
               <?php endif; ?>
 
               <?php if ($modal_downloads): ?>
+                <?php var_dump(highlight_string("<?n". var_export($modal_downloads, true))); ?>
                 <modal-downloads
                   text='<?php echo htmlentities($modal_text); ?>'
                   :downloads='<?php echo json_encode($modal_downloads); ?>'

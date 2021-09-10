@@ -27,11 +27,11 @@
               {{ document.description }}
             </p>
             <a
-              :href="document.file.link"
+              :href="document.file"
               download
               class="listing-modal__download-button"
             >
-              Download
+              {{ $t('common.download' ) }}
               <IconDownload />
             </a>
           </div>
@@ -67,19 +67,27 @@
 
     computed: {
       content() {
-        return this.post.content ? this.post.content.rendered : ''
+        return this.post.acf && this.post.acf.modal_text
+          ? this.post.acf.modal_text
+          : this.post.content.rendered
       },
 
       documents() {
-        return this.post.acf && this.post.acf.documents ? this.post.acf.documents : ''
+        return this.post.acf && this.post.acf.modal_downloads
+          ? this.post.acf.modal_downloads
+          : ''
       },
 
       imageUrl() {
-        return this.post._embedded && this.post._embedded['wp:featuredmedia'] ? this.post._embedded['wp:featuredmedia'][0].source_url : ''
+        return this.post._embedded && this.post._embedded['wp:featuredmedia']
+          ? this.post._embedded['wp:featuredmedia'][0].source_url
+          : ''
       },
 
       title() {
-        return this.post.title ? decodeString(this.post.title.rendered) : ''
+        return this.post.acf && this.post.acf.modal_title
+          ? this.post.acf.modal_title
+          : decodeString(this.post.title.rendered)
       }
     }
   }
