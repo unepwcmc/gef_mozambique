@@ -29,7 +29,7 @@
 		<div class="layout-container__body">
 			<section class="layout-primary">
 				<div class="layout-primary__body layout-primary__body--archive">
-<?php echo $post_type_singular_name; ?>
+
 					<listing-grid
 						post-type="<?php echo $post_type; ?>"
 						post-singular="<?php echo $post_type_singular_name; ?>"

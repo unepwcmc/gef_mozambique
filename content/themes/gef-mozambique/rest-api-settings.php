@@ -139,6 +139,62 @@ add_action( 'rest_api_init', function () {
   ) );
 } );
 
+/**
+ * Get courses by start date
+ *
+ * @param array $data Options for the function.
+ * @return string|null Post title for the latest,  * or null if none.
+ */
+function get_courses_by_date_start( WP_REST_Request $request ) {
+
+	$parameters = $request->get_query_params();
+
+  // Force the posts_per_page to be no more than 12
+  if ( isset( $parameters['per_page'] ) && ( (int) $parameters['per_page'] >= 1 && (int) $filter['per_page'] <= 12 ) ) {
+    $per_page = intval($parameters['per_page']);
+  } else {
+    $per_page = 12;
+  }
+
+	$args = array(
+		'paged' => $parameters['page'],
+		'posts_per_page' => $per_page,
+		'post_type'		=> 'online_course',
+		'meta_key'			=> 'date_start',
+		'orderby'			=> 'meta_value',
+		'order'				=> 'ASC'
+  );
+
+  $search_query = new WP_Query( $args );
+
+	$controller = new WP_REST_Posts_Controller('post');
+  $posts = array();
+
+  while ( $search_query->have_posts() ) : $search_query->the_post();
+    $data    = $controller->prepare_item_for_response( $search_query->post, $request );
+    $posts[] = $controller->prepare_response_for_collection( $data );
+  endwhile;
+
+	// return results
+  if(!empty($posts)) {
+    $total = $search_query->found_posts;
+    $pages = $search_query->max_num_pages;
+    $returned = new WP_REST_Response( $posts, 200 );
+    $returned->header( 'X-WP-Total', $total );
+    $returned->header( 'X-WP-TotalPages', $pages );
+    return $returned;
+  } else {
+    return new WP_Error( 'No results', 'Nothing found' );
+  }
+}
+
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'gef-mozambique/v1', '/courses', array(
+    'methods' => 'GET',
+    'callback' => 'get_courses_by_date_start',
+  ) );
+} );
+
 
 
 

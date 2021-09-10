@@ -9,6 +9,7 @@
 }
 
 .listing-card__header {
+  .listing-card--course &,
   .listing-card--event &,
   .listing-card--report & {
     background-color: $color-light-grey;
@@ -23,6 +24,9 @@
   @include absolute_center;
   width: 30%;
 
+  .listing-card--course & {
+    width: 22%;
+  }
 }
 
 .listing-card__badge {
@@ -92,6 +96,7 @@ p.listing-card__date {
   font-weight: $fw-black;
   margin-bottom: $item-padding-small;
 
+  .listing-card--course &,
   .listing-card--event & {
     background-color: $color-light-grey;
     color: $color-event;

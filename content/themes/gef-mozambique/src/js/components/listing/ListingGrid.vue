@@ -135,11 +135,11 @@ export default {
       activePost: {},
       activeTerms: {},
       config: {
-        postsBaseUrl: '/wp-json/wp/v2/',
-        reportBaseUrl: '/wp-json/wp/v2/report_publication?_embed',
-        multimediaBaseUrl: '/wp-json/wp/v2/multimedia?_embed',
+        coursesBaseUrl: '/wp-json/gef-mozambique/v1/courses?_embed',
         eventsBaseUrl: '/wp-json/gef-mozambique/v1/events?_embed',
-        filtersBaseURL: '/wp-json/gef-mozambique/v1/list-filters'
+        filtersBaseURL: '/wp-json/gef-mozambique/v1/list-filters',
+        multimediaBaseUrl: '/wp-json/wp/v2/multimedia?_embed',
+        postsBaseUrl: '/wp-json/wp/v2/'
       },
       filters: [],
       isLoading: true,
@@ -256,7 +256,7 @@ export default {
 
         axios.get(this.getPostsURL(), { params: this.postsParams })
         .then((response) => {
-
+          console.log(response);
           this.maxPosts = parseInt(response.headers['x-wp-total'])
           this.totalPostCount = this.maxPosts
           this.page += 1
@@ -276,14 +276,21 @@ export default {
     getPostsURL() {
       let requestURL = ''
 
-      // TODO make in to a switch statement
-      if (this.postType == 'multimedia') {
-        requestURL = this.config.multimediaBaseUrl
-      } else {
-        requestURL = this.postType == 'event'
-        ? this.config.eventsBaseUrl
-        : this.config.postsBaseUrl + this.postType + '?_embed'
+      switch (this.postType) {
+        case 'online_course':
+          requestURL = this.config.coursesBaseUrl
+          break;
+        case 'event':
+          requestURL = this.config.eventsBaseUrl
+          break;
+        case 'multimedia':
+          requestURL = this.config.multimediaBaseUrl
+          break;
+        default:
+          requestURL = this.config.postsBaseUrl + this.postType + '?_embed'
       }
+
+      console.log('requestURL: ', requestURL);
 
       return encodeURI(requestURL)
     },

@@ -18,6 +18,7 @@
 </template>
 
 <script>
+  import CardCourse from '../cards/CardCourse.vue'
   import CardEvent from '../cards/CardEvent.vue'
   import CardMultimedia from '../cards/CardMultimedia.vue'
   import CardPost from '../cards/CardPost.vue'
@@ -27,6 +28,7 @@
     name: 'ListingCards',
 
     components: {
+      CardCourse,
       CardEvent,
       CardMultimedia,
       CardPost,
@@ -54,7 +56,7 @@
 
     computed: {
       CardName () {
-        if (this.postType === 'course' || this.postType === 'public_consultation') {
+        if (this.postType === 'public_consultation') {
           return 'card-event'
         }
         return 'card-' + this.postType
