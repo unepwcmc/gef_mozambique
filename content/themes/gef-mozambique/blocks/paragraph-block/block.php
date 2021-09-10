@@ -42,6 +42,7 @@
       </a>
     <?php endif; ?>
 
+    <?php var_dump(highlight_string("<?n". var_export($modal_downloads, true))); ?>
     <?php if (!empty($modal_downloads['rows'])): ?>
       <modal-downloads
         text='<?php echo htmlentities($modal_text); ?>'
