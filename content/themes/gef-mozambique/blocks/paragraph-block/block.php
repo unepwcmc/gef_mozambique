@@ -42,7 +42,7 @@
       </a>
     <?php endif; ?>
 
-    <?php if (!empty($modal_downloads)): ?>
+    <?php if (!empty($modal_downloads['rows'])): ?>
       <modal-downloads
         text='<?php echo htmlentities($modal_text); ?>'
         :downloads='<?php echo json_encode($modal_downloads['rows']); ?>'
