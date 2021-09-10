@@ -6,10 +6,10 @@
   width: 100%;
 }
 
-.block-cta__inner,
-.editor-block-list__layout .block-cta__inner {
-  @include inner;
-}
+// .block-cta__inner,
+// .editor-block-list__layout .block-cta__inner {
+//   @include inner;
+// }
 
 .block-cta__body,
 .editor-block-list__layout .block-cta__body {
@@ -149,8 +149,10 @@ a.block-cta__list-link,
   @include button_text;
   color: $color-primary;
   text-decoration: none;
+  white-space: inherit;
 
   &.block-cta__list-link--external {
     @include button_text_external;
+    white-space: inherit;
   }
 }
