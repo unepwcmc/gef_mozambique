@@ -17,7 +17,7 @@
 ?>
 
 <div class="block-paragraph">
-  <div class="block-paragraph_inner">
+  <div class="block-paragraph__inner">
     <?php if ( $heading ) : ?>
       <h4 class="block-paragraph__heading">
         <?php echo $heading; ?>
