@@ -1,3 +1,9 @@
+<?php
+  // Generate unique IDs to use for clippath
+  $a = substr(md5(mt_rand()), 0, 3);
+  $b = substr(md5(mt_rand()), 0, 3);
+?>
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -6,23 +12,14 @@
   viewBox="0 0 155.114 59.707"
 >
   <defs>
-    <component :is="'style'" type="text/css">
-      .g {
-        clip-path: url(#a);
-      }
-
-      .k {
-        clip-path: url(#u);
-      }
-    </component>
-    <clipPath id="a">
+    <clipPath id="<?php echo $a; ?>">
       <circle
         cx="29.854"
         cy="29.854"
         r="29.854"
       />
     </clipPath>
-    <clipPath id="u">
+    <clipPath id="<?php echo $b; ?>">
       <rect
         width="10.36"
         height="17.415"
@@ -67,7 +64,7 @@
       fill="#fff"
     />
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -77,7 +74,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -87,7 +84,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -97,7 +94,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -227,7 +224,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -237,7 +234,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -247,7 +244,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -257,7 +254,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -267,7 +264,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -277,7 +274,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -287,7 +284,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -297,7 +294,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -307,7 +304,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -317,7 +314,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -327,7 +324,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -337,7 +334,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -347,7 +344,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -357,7 +354,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -367,7 +364,7 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path
@@ -377,11 +374,11 @@
       />
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <g
-        class="k"
+        clip-path="url(#<?php echo $b; ?>)"
         transform="translate(38.208 5.213)"
       >
         <path
@@ -392,7 +389,7 @@
       </g>
     </g>
     <g
-      class="g"
+      clip-path="url(#<?php echo $a; ?>)"
       transform="translate(39.3)"
     >
       <path

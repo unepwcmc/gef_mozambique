@@ -6,10 +6,12 @@
   width: 100%;
 }
 
-// .block-cta__inner,
-// .editor-block-list__layout .block-cta__inner {
-//   @include inner;
-// }
+.block-cta__inner {
+  // .editor-block-list__layout .block-cta__inner {
+  .home & {
+    @include inner;
+  }
+}
 
 .block-cta__body,
 .editor-block-list__layout .block-cta__body {
