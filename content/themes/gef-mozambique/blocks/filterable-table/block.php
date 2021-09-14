@@ -14,7 +14,7 @@
   $widths = block_field( 'widths', false );
   $lazy_load = block_field( 'lazy-load', false );
 
-  $table_shortcode = '[posts_table ';
+  $table_shortcode = '[posts_table post_type="' . $post_type . '" ';
 
   $table_shortcode .= 'columns="' . $columns . '"';
 
