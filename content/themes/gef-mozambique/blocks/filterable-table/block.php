@@ -13,6 +13,8 @@
   $filters = block_field( 'filters', false );
   $widths = block_field( 'widths', false );
   $lazy_load = block_field( 'lazy-load', false );
+  $hide_search = block_field( 'hide-search', false );
+  $hide_reset = block_field( 'hide-reset', false );
 
   $table_shortcode = '[posts_table post_type="' . $post_type . '" ';
 
@@ -28,6 +30,14 @@
 
   if ($lazy_load) {
     $table_shortcode .= ' lazy_load';
+  }
+
+  if ($hide_search) {
+    $table_shortcode .= ' search_box="false"';
+  }
+
+  if ($hide_reset) {
+    $table_shortcode .= ' reset_button="false"';
   }
 
   $table_shortcode .= ']';
