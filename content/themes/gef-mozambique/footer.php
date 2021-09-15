@@ -14,6 +14,8 @@
 					<?php }?>
 				</main>
 
+				<?php get_template_part( 'template-parts/footer/logos' ); ?>
+
 				<!-- Footer  -->
 				<footer class="layout__footer">
 					<div class="footer">
