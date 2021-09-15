@@ -44,7 +44,7 @@
       return {
         activePost: {},
         config: {
-          eventsBaseUrl: '/wp-json/gef-mozambique/v1/events?_embed',
+          byStartDateBaseUrl: '/wp-json/gef-mozambique/v1/posts-by-start-date?_embed&post_type=',
           postsBaseUrl: '/wp-json/wp/v2/'
         },
         posts: []
@@ -63,10 +63,18 @@
       postsURL() {
         let requestURL = ''
 
-        if (this.postType === 'event'){
-          requestURL = this.config.eventsBaseUrl
-        } else {
-          requestURL = this.config.postsBaseUrl + this.postType + '?_embed'
+        switch (this.postType) {
+          case 'online_course':
+            requestURL = this.config.byStartDateBaseUrl + this.postType
+            break;
+          case 'event':
+            requestURL = this.config.byStartDateBaseUrl + this.postType
+            break;
+          case 'public_consultation':
+            requestURL = this.config.byStartDateBaseUrl + this.postType
+            break;
+          default:
+            requestURL = this.config.postsBaseUrl + this.postType + '?_embed'
         }
 
         return encodeURI(requestURL)

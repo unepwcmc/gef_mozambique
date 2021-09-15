@@ -137,7 +137,6 @@ export default {
       config: {
         byStartDateBaseUrl: '/wp-json/gef-mozambique/v1/posts-by-start-date?_embed&post_type=',
         filtersBaseURL: '/wp-json/gef-mozambique/v1/list-filters',
-        multimediaBaseUrl: '/wp-json/wp/v2/multimedia?_embed',
         postsBaseUrl: '/wp-json/wp/v2/'
       },
       filters: [],
@@ -282,17 +281,12 @@ export default {
         case 'event':
           requestURL = this.config.byStartDateBaseUrl + this.postType
           break;
-        case 'multimedia':
-          requestURL = this.config.multimediaBaseUrl
-          break;
         case 'public_consultation':
           requestURL = this.config.byStartDateBaseUrl + this.postType
           break;
         default:
           requestURL = this.config.postsBaseUrl + this.postType + '?_embed'
       }
-
-      console.log('requestURL: ', requestURL);
 
       return encodeURI(requestURL)
     },
