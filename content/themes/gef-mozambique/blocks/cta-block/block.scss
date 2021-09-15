@@ -8,7 +8,8 @@
 
 .block-cta__inner {
   // .editor-block-list__layout .block-cta__inner {
-  .home & {
+  .home &,
+  .widgets & {
     @include inner_padding;
   }
 }
