@@ -20,11 +20,11 @@
   justify-content: space-between;
 }
 
-.latest-posts__title {
+h3.latest-posts__title {
   @include section_title;
 }
 
-.latest-posts__link {
+a.latest-posts__link {
   @include button_text_with_arrow;
   color: $color-primary;
   position: relative;
