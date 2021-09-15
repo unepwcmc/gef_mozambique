@@ -6,7 +6,9 @@
 }
 
 .link-tiles__inner {
-  @include inner;
+  .home & {
+    @include inner_padding;
+  }
 }
 
 .link-tiles__header {
