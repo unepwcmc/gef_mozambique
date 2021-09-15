@@ -42,7 +42,7 @@
 
   @include break-min($xs) {
     padding: $spacer-large $grid-gap;
-    max-width: 900px;
+    max-width: 960px;
   }
 
   @include break-min($lg) {
