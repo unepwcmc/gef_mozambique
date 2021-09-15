@@ -23,22 +23,20 @@
 ?>
 
 <div class="listing-grid <?php echo $post_type_class; ?>">
-  <div class="listing-grid__inner">
-    <div class="listing-grid__header">
-      <h3 class="listing-grid__title"><?php echo $section_title; ?></h3>
-      <?php if ($link_url !== '') : ?>
-        <a href="<?php echo $link_args['url']; ?>" class="listing-grid__link">
-          <?php echo $link_args['text']; ?>
-          <?php get_template_part('template-parts/icons/icon', 'angle-right'); ?>
-        </a>
-      <?php endif; ?>
-    </div>
-    <div class="listing-grid__body">
+  <div class="listing-grid__header">
+    <h3 class="listing-grid__title"><?php echo $section_title; ?></h3>
+    <?php if ($link_url !== '') : ?>
+      <a href="<?php echo $link_args['url']; ?>" class="listing-grid__link">
+        <?php echo $link_args['text']; ?>
+        <?php get_template_part('template-parts/icons/icon', 'angle-right'); ?>
+      </a>
+    <?php endif; ?>
+  </div>
+  <div class="listing-grid__body">
 
-      <latest-posts
-        post-type="<?php echo $post_type; ?>"
-      />
+    <latest-posts
+      post-type="<?php echo $post_type; ?>"
+    />
 
-    </div>
   </div>
 </div>
