@@ -59,6 +59,12 @@
         if (this.postType === 'public_consultation') {
           return 'card-event'
         }
+        if (this.postType === 'report_publication') {
+          return 'card-report'
+        }
+        if (this.postType === 'online_course') {
+          return 'card-course'
+        }
         return 'card-' + this.postType
       }
     }

@@ -8,7 +8,14 @@
     }"
     @onCardClicked="updateActivePost"
   />
+  <div
+    v-if="isFetching"
+    class="listing-grid__loader"
+  >
+    <Loader />
+  </div>
   <listing-modal
+    v-if="posts.length"
     v-bind="{
       id: modalID,
       post: activePost
@@ -20,21 +27,19 @@
 <script>
   import ListingCards from '../listing/ListingCards.vue'
   import ListingModal from '../listing/ListingModal.vue'
+  import Loader from '../../icons/IconLoader.vue'
 
   export default {
     name: 'LatestPosts',
 
     components: {
       ListingCards,
-      ListingModal
+      ListingModal,
+      Loader
     },
 
     props: {
       postType: {
-        type: String,
-        required: true
-      },
-      postSingular: {
         type: String,
         required: true
       }
@@ -47,6 +52,7 @@
           byStartDateBaseUrl: '/wp-json/gef-mozambique/v1/posts-by-start-date?_embed&post_type=',
           postsBaseUrl: '/wp-json/wp/v2/'
         },
+        isFetching: false,
         posts: []
       }
     },
@@ -87,17 +93,27 @@
         }
 
         return params
+      },
+
+      postSingular() {
+        return this.postType === 'posts' ? 'post' : this.postType
       }
     },
 
     methods: {
       getPosts() {
+        this.isFetching = true
+
         axios.get(this.postsURL, { params: this.postsParams })
         .then((response) => {
           this.posts.push(...response.data)
+
+          this.updateActivePost(0)
+          this.isFetching = false
         })
         .catch((error) => {
           console.error(error)
+          this.isFetching = false
         })
       },
 
