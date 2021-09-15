@@ -9,7 +9,7 @@
 .block-cta__inner {
   // .editor-block-list__layout .block-cta__inner {
   .home & {
-    @include inner;
+    @include inner_padding;
   }
 }
 

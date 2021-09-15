@@ -31,7 +31,7 @@
 	$intro_text = get_theme_mod( 'public_consultations_intro_text' );
 ?>
 
-<div class="layout-container">
+<div class="layout-container layout-container--full-width">
 	<div class="layout-container__inner">
 		<div class="layout-container__body">
 			<section class="layout-primary">

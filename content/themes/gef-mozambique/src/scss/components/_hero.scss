@@ -9,10 +9,6 @@
 .hero__inner {
   @include inner_padding;
   display: flex;
-
-  .hero--simple & {
-    @include inner;
-  }
 }
 
 .hero__background-image,

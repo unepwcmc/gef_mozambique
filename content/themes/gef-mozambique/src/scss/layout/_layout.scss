@@ -75,7 +75,11 @@
 }
 
 .layout-container__inner {
-  @include inner;
+  @include inner_padding;
+
+  .layout-container:not(.layout-container--full-width) & {
+    @include inner;
+  }
 }
 
 .layout-container__body {

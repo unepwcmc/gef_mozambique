@@ -10,7 +10,7 @@
 }
 
 .footer__inner {
-  @include inner;
+  @include inner_padding;
 }
 
 .footer__footer {

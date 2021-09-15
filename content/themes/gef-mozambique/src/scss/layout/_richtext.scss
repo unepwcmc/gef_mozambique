@@ -35,6 +35,7 @@
   }
 
   .page-template-page-fullwidth &,
+  .page-template-page-landing-page &,
   .page-template-page-table-page & {
     > p {
       @include restrain_width;

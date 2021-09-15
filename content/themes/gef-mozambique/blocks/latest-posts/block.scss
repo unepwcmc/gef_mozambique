@@ -1,0 +1,43 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+
+.latest-posts {
+  @include spacer;
+}
+
+.latest-posts__inner {
+  .home & {
+    @include inner_padding;
+  }
+}
+
+.latest-posts__header {
+  @include section_header;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.latest-posts__title {
+  @include section_title;
+}
+
+.latest-posts__link {
+  @include button_text_with_arrow;
+  color: $color-primary;
+  position: relative;
+
+  svg {
+    color: $color-black;
+
+    transition: transform .3s ease;
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(1px);
+    }
+  }
+}
