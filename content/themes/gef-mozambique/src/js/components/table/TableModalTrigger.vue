@@ -2,10 +2,7 @@
   <div
     v-if="postID"
   >
-    <button
-      class="table-modal__trigger"
-      @click="clickHandler"
-    >
+    <button class="table-modal__trigger">
       <IconAngleRightRing />
     </button>
   </div>

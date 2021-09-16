@@ -81,6 +81,11 @@
           body.classList.add(className);
           body.style.top = `-${this.scrollTop}px`;
           body.style.paddingRight = `${this.scrollbarWidth}px`;
+
+          console.log({
+            "scrollTop": this.scrollTop,
+            "scrollbarWidth": this.scrollbarWidth
+          })
         } else {
           // When the modal is hidden we want to go back to where we had scrolled
           body.classList.remove(className);
