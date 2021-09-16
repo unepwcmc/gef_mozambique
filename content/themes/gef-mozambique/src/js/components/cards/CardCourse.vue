@@ -1,22 +1,16 @@
 <template>
-  <div
-    class="listing-card listing-card--course"
-    @click="clickHandler()"
-  >
-    <div
-      v-if="!isResource"
-      class="listing-card__header"
-    >
+  <div class="listing-card listing-card--course">
+    <div class="listing-card__header">
       <div class="listing-card__image-wrap">
         <IconCertificate class="listing-card__icon" />
       </div>
     </div>
     <div class="listing-card__body">
       <p
-        v-if="date"
+        v-if="year"
         class="listing-card__date"
       >
-        {{ date }}
+        {{ year }}
       </p>
       <h3 class="listing-card__title">
         {{ title }}
@@ -28,6 +22,7 @@
         <IconExternal />
       </p>
       <a
+        v-if="link"
         :href="link"
         class="listing-card__fauxlink"
         :title="title"
@@ -73,56 +68,16 @@
     },
 
     computed: {
-      date() {
-        return this.config.acf && this.config.acf.date_start ? moment(this.config.acf.date_start).format('D MMMM YYYY') : ''
-      },
-
-      excerpt() {
-        return this.config.excerpt.rendered ? decodeString(this.config.excerpt.rendered).substring(0, 80) : ''
-      },
-
-      externalLinkURL() {
-        return this.config.acf && this.config.acf.external_link_url ? this.config.acf.external_link_url : ''
-      },
-
-      imageUrl() {
-        if (this.postType == 'casestudy') {
-          return this.config.imageUrl
-            ? this.config.imageUrl
-            : this.placeholderImageUrl
-        } else {
-          return (
-            this.config.hasOwnProperty('_embedded') &&
-            this.config._embedded.hasOwnProperty('wp:featuredmedia')
-          )
-            ? this.config._embedded['wp:featuredmedia'][0].source_url
-            : this.placeholderImageUrl
-        }
-      },
-
-      isResource() {
-        return this.postType === 'resource'
+      year() {
+        return this.config.acf && this.config.acf.year ? this.config.acf.year : ''
       },
 
       link() {
-        return this.externalLinkURL ? this.externalLinkURL : this.config.link
-      },
-
-      hrefTarget() {
-        return this.externalLinkURL ? '_blank' : '_self'
+        return this.config.acf && this.config.acf.external_link_url ? this.config.acf.external_link_url : ''
       },
 
       title() {
         return this.config.title ? decodeString(this.config.title.rendered) : ''
-      }
-    },
-
-    methods: {
-      clickHandler () {
-        if (this.modal & !this.externalLinkURL) {
-          this.$eventHub.$emit('modal-open')
-          this.$parent.$emit('onCardClicked', this.id)
-        }
       }
     }
   }

@@ -275,9 +275,6 @@ export default {
       let requestURL = ''
 
       switch (this.postType) {
-        case 'online_course':
-          requestURL = this.config.byStartDateBaseUrl + this.postType
-          break;
         case 'event':
           requestURL = this.config.byStartDateBaseUrl + this.postType
           break;
