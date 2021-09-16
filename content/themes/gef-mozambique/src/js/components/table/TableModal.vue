@@ -39,6 +39,10 @@
       postType: {
         type: String,
         default: 'post'
+      },
+      restrictedColumns: {
+        type: String,
+        default: undefined
       }
     },
 
@@ -60,6 +64,10 @@
         let requestURL = `/wp-json/gef-mozambique/v1/table-posts`
 
         requestURL += `?post_type=${this.postType}`
+
+        if (this.restrictedColumns) {
+          requestURL += `&restricted_columns=${this.restrictedColumns}`
+        }
 
         return encodeURI(requestURL)
       },

@@ -229,7 +229,8 @@ function get_table_post_data( WP_REST_Request $request ) {
 
 	$formatted_posts = array();
 	// Make in to parameter
-	$restricted_columns = ['Text', 'Compliance Percentage', 'Progress Ranking', 'Shortcode'];
+	// $restricted_columns = ['Text', 'Compliance Percentage', 'Progress Ranking', 'Shortcode'];
+	$restricted_columns = explode(",", $parameters['restricted_columns']);
 
 	foreach ($posts as $post) {
 		$post_id = $post['id'];
@@ -239,7 +240,7 @@ function get_table_post_data( WP_REST_Request $request ) {
 		$post_acf_data = get_field_objects( $post_id );
 		foreach ($post_acf_data as $item) {
 			// If value is already show on the table already
-			if ( !in_array( $item['label'], $restricted_columns )) {
+			if ( !in_array( $item['name'], $restricted_columns )) {
 				array_push($post_data, array(
 					'label' => $item['label'],
 					'value' => $item['value']

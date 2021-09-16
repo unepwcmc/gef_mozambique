@@ -10,6 +10,7 @@
 
   $post_type = block_field( 'post-type', false );
   $columns = block_field( 'columns', false );
+  $restricted_columns = block_field( 'restricted-columns', false );
   $filters = block_field( 'filters', false );
   $widths = block_field( 'widths', false );
   $lazy_load = block_field( 'lazy-load', false );
@@ -45,4 +46,7 @@
 
 <?php echo do_shortcode( $table_shortcode ); ?>
 
-<table-modal post-type="<?php echo $post_type; ?>"><table-modal />
+<table-modal
+  post-type="<?php echo $post_type; ?>"
+  restricted-columns="<?php echo strip_tags($restricted_columns); ?>"
+><table-modal />
