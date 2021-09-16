@@ -11,6 +11,7 @@
     <ul class="table-modal__list-items">
       <li
         v-for="item in activePost.data"
+        v-if="item.value"
         class="table-modal__list-item"
       >
         <h4 class="table-modal__heading"
