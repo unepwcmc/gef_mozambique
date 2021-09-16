@@ -40,10 +40,7 @@
     $table_shortcode .= ' reset_button="false"';
   }
 
-  $table_shortcode .= ']';
-
-
-  // [posts_table columns="cf:text,cf:compliance_percentage:% of fulfillment by evaluating the respective indicators,cf:progress_ranking,cf:shortcode:blank" filters="tax:nbsap_goals_compliance_percent,tax:nbsap_goals_progress_ranking,tax:nbsap_goals_date_evaluation" lazy_load]
+  $table_shortcode .= ' links="none"]';
 ?>
 
 <?php echo do_shortcode( $table_shortcode ); ?>
