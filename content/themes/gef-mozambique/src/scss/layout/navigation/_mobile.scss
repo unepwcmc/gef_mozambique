@@ -20,21 +20,28 @@
     > li.menu-item {
       > a {
         @include font_base_text;
-        padding-top: $item-padding-small;
-        padding-bottom: $item-padding-small;
+        padding: $item-padding-small $item-padding * 1.5;
       }
+      // 
+      // &.menu-item-has-children {
+      //   background-image: url('../../img/icon-angle-down-white.svg');
+      //   background-size: 12px 18px;
+      //   background-repeat: no-repeat;
+      //   background-position: 94% 12px;
+      // }
     }
 
     .sub-menu {
+      background-color: lighten($color-primary-light, 5%);
       margin: 0;
-      padding-left: $item-padding;
+      padding: $item-padding $item-padding * 1.5;
 
       li.menu-item {
-        padding-top: $item-padding;
-        padding-bottom: $item-padding;
+        padding: $item-padding-smaller $item-padding;
 
         a {
           font-size: 16px;
+          line-height: 24px;
           font-weight: 400;
         }
       }

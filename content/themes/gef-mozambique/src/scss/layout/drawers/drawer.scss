@@ -17,6 +17,11 @@
   transform: translateX(500px);
   transition: transform 0.3s ease;
 
+  &[data-drawer="menu"] {
+    background-color: $color-primary-light;
+    color: $color-white;
+  }
+
   &.drawer--left {
     right: auto;
     left: 0;
@@ -67,6 +72,10 @@
   position: absolute;
   top: 0;
   right: 0;
+
+  [data-drawer="menu"] & {
+    color: $color-white;
+  }
 }
 
 .drawer__header {
@@ -114,8 +123,14 @@ h3.drawer__title {
 
   [data-drawer="menu"] & {
     max-height: calc(100% - #{$menuDrawerHeaderHeight});
+    padding-right: 0;
 
     top: $menuDrawerHeaderHeight;
+    left: 0;
+
+    @include break-min($xs) {
+      left: 0;
+    }
   }
 
   [data-drawer="filter"] & {
