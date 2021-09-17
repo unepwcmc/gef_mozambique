@@ -1,10 +1,14 @@
 <template>
   <div>
     <button
-      class="listing-modal__trigger"
+      :class="buttonClassList"
       @click="openModal"
     >
-      {{ $t('common.related_documents') }}
+      {{ buttonText }}
+
+      <IconAngleRight
+        v-if="customButton"
+      />
     </button>
     <ListingModal
       :id="modalID"
@@ -14,29 +18,53 @@
 </template>
 
 <script>
+import IconAngleRight from '../../icons/IconAngleRight.vue'
 import ListingModal from '../listing/ListingModal.vue'
 
 export default {
   components: {
+    IconAngleRight,
     ListingModal
   },
 
   props: {
-    title: {
-      type: String,
+    customButton: {
+      type: Boolean,
+      default: false
+    },
+    downloads: {
+      type: Array,
       default: undefined
     },
     text: {
       type: String,
       default: undefined
     },
-    downloads: {
-      type: Array,
+    title: {
+      type: String,
+      default: undefined
+    },
+    triggerText: {
+      type: String,
       default: undefined
     }
   },
 
   computed: {
+    buttonClassList() {
+      let classList = 'listing-modal__trigger'
+
+      classList += this.customButton
+        ? ' listing-modal__trigger--arrow'
+        : ' listing-modal__trigger--secondary'
+
+      return classList
+    },
+
+    buttonText() {
+      return this.customButton ? this.triggerText : this.$t('common.related_documents')
+    },
+
     modalID() {
       return String(this._uid)
     },

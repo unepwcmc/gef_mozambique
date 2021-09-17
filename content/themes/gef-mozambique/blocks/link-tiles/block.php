@@ -1,16 +1,11 @@
 <?php
   /*
-    Latest Posts Block
+    Link Tiles Block
     Created by UNEP-WCMC
     With Block Lab for Gutenberg - https://getblocklab.com/
   */
   // Variables
   $section_title = block_value( 'section-title' );
-
-  $link_args = array(
-    'text' => block_field( 'link-text', false ),
-    'url' => block_field( 'link-url', false ),
-  );
 ?>
 
 <div class="link-tiles">
@@ -20,14 +15,9 @@
         <h3 class="link-tiles__title">
           <?php echo $section_title; ?>
         </h3>
-        <?php if ($link_url !== '') : ?>
-          <a href="<?php echo $link_args['url']; ?>" class="link-tiles__link">
-            <?php echo $link_args['text']; ?>
-            <?php get_template_part('template-parts/icons/icon', 'angle-right'); ?>
-          </a>
-        <?php endif; ?>
       </div>
     <?php endif; ?>
+
     <div class="link-tiles__body">
 
       <?php if ( block_rows( 'link-tiles' ) ) : ?>
@@ -41,6 +31,11 @@
                 $image = block_sub_value( 'image', false );
                 $image_url = wp_get_attachment_image_src( $image, 'full-size' )[0];
                 $image_alt = get_post_meta($image, '_wp_attachment_image_alt', true);
+
+                $title = block_sub_value( 'title', false );
+                $text = block_sub_value( 'text', false );
+                $link_text = block_sub_value( 'link-text', false );
+                $link_url = block_sub_value( 'link-url', false );
               ?>
 
               <li class="link-tiles__item">
@@ -56,29 +51,29 @@
                     </div>
                   </div>
                   <div class="link-tile__body">
-                    <?php if ( block_sub_value( 'title' ) ) : ?>
+                    <?php if ( $title ) : ?>
                       <h3 class="link-tile__title">
-                        <?php echo block_sub_value( 'title' ); ?>
+                        <?php echo $title; ?>
                       </h3>
                     <?php endif;?>
-                    <?php if ( block_sub_value( 'text' ) ) : ?>
+                    <?php if ( $text ) : ?>
                       <p class="link-tile__text">
-                        <?php echo block_sub_value( 'text' ); ?>
+                        <?php echo $text; ?>
                       </p>
                     <?php endif;?>
 
-                    <?php if ( block_sub_value( 'link-url' ) ) : ?>
+                    <?php if ( $link_url ) : ?>
                       <p class="link-tile__button link-tile__button--external">
-                        <?php echo block_sub_value( 'link-text' ); ?>
+                        <?php echo $link_text; ?>
                         <?php get_template_part( 'template-parts/icons/icon', 'external' ); ?>
                       </p>
                       <a
-                        href="<?php echo block_sub_value( 'link-url' ); ?>"
-                        title="<?php echo block_sub_value( 'title' ); ?>"
+                        href="<?php echo $link_url; ?>"
+                        title="<?php echo $title; ?>"
                         target="_blank"
                         class="link-tile__fauxlink"
                       >
-                        <?php echo block_sub_value( 'link-text' ); ?>
+                        <?php echo $link_text; ?>
                       </a>
                     <?php endif;?>
                   </div>

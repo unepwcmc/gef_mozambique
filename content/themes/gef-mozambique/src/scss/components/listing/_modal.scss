@@ -1,6 +1,14 @@
 button.listing-modal__trigger {
-  @include button_secondary;
   margin-top: $item-padding;
+
+  &.listing-modal__trigger--secondary {
+    @include button_secondary;
+  }
+
+  &.listing-modal__trigger--arrow {
+    @include button_text_with_arrow;
+    color: $color-primary;
+  }
 }
 
 h3.listing-modal__title {
