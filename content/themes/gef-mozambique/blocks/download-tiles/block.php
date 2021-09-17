@@ -34,7 +34,7 @@
 
                 $title = block_sub_value( 'title', false );
                 $text = block_sub_value( 'text', false );
-                $file_url = block_sub_value( 'download-url', false );
+                $file_url = block_sub_value( 'file-url', false );
               ?>
 
               <li class="link-tiles__item">
@@ -63,7 +63,7 @@
                       </p>
                     <?php endif;?>
 
-                    <?php if ( $file_url != '' ): ?>
+                    <?php if ( !empty($file_url) ): ?>
                       <a
                         href="<?php echo $file_url; ?>"
                         title="<?php echo $title; ?>"
