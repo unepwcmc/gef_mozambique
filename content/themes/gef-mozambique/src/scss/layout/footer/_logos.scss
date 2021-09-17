@@ -78,7 +78,11 @@
   }
 
   &:not(:last-child) {
-    margin-right: $grid-gap * 2;
+    margin-right: $grid-gap;
+
+    @include break-min($sm) {
+      margin-right: $grid-gap * 2;
+    }
   }
 }
 
