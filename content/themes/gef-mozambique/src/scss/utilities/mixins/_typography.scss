@@ -2,6 +2,16 @@
 // Typography
 //-------------------------------------------------
 
+@mixin font_base_text {
+  font-size: 18px;
+  line-height: 24px;
+
+  @include break-min($sm) {
+    font-size: $font-base-size;
+    line-height: $font-base-line-height;
+  }
+}
+
 @mixin heading {
   color: $color-headings;
   font-family: $font-heading;
@@ -50,18 +60,12 @@
 }
 
 @mixin font_heading-5 {
-  font-size: 20px;
-  line-height: 27px;
+  @include font_base_text;
 }
 
 @mixin font_heading-6 {
   font-size: 16px;
   line-height: 20px;
-}
-
-@mixin font_base_text {
-  font-size: $font-base-size;
-  line-height: $font-base-line-height;
 }
 
 @mixin font_small_text {

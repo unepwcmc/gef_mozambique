@@ -65,7 +65,7 @@
 
                     <?php if ( !empty($file_url) ): ?>
                       <a
-                        href="<?php echo $file_url; ?>"
+                        href="<?php echo urlencode($file_url); ?>"
                         title="<?php echo $title; ?>"
                         target="_blank"
                         class="link-tile__button link-tile__button--download"

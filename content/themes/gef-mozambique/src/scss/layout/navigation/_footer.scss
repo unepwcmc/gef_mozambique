@@ -46,12 +46,21 @@
     margin-bottom: $item-padding * 2;
     width: calc(((6 / 12) * 100%) - #{$grid-gap});
 
+    display: none;
     flex: 0 0 calc(((6 / 12) * 100%) - #{$grid-gap});
+
+    @include break-min($xs) {
+      display: block;
+    }
 
     @include break-min($md) {
       width: auto;
 
       flex: 0 0 220px;
+    }
+
+    &:first-child {
+      display: block;
     }
 
     &:nth-child(3n) {
