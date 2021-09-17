@@ -5,42 +5,27 @@
   @include spacer;
 }
 
-.block-introduction__inner {
-
-}
-
-.block-introduction__body {
-
-}
-
 .block-introduction__columns {
-  display: flex;
+  @include break-min($md) {
+    display: flex;
+  }
 }
 
 .block-introduction__column {
-  flex: 1;
-
-  &:first-child {
-    margin-right: $grid-gap;
-    flex: 2;
+  @include break-min($md) {
+    flex: 1;
   }
 
-}
+  &:first-child {
+    margin-bottom: $grid-gap * 2;
 
-.block-introduction__content {
+    @include break-min($md) {
+      margin-right: $grid-gap;
+      margin-bottom: 0;
 
-}
-
-.block-introduction__text {
-
-}
-
-.block-introduction__link {
-
-}
-
-.block-introduction__link {
-
+      flex: 2;
+    }
+  }
 }
 
 .block-introduction__featured-link {
