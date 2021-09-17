@@ -119,7 +119,6 @@ p.listing-modal__download-text {
 
 a.listing-modal__download-button {
   @include button_accent_tertiary;
-  color: $color-black;
 
   display: inline-flex;
   align-items: center;

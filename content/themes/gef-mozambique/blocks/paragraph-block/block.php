@@ -43,7 +43,6 @@
     <?php endif; ?>
 
     <?php if (!empty($modal_downloads['rows'])): ?>
-<?php var_dump(highlight_string("<?n". var_export($modal_downloads['rows'], true))); ?>
       <modal-downloads
         text='<?php echo htmlentities($modal_text); ?>'
         :downloads='<?php echo json_encode($modal_downloads['rows']); ?>'

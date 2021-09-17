@@ -19,7 +19,7 @@
   border: 1px solid transparent;
   border-radius: 5px;
   font-family: $font-body;
-  font-size: $font-base-size;
+  font-size: 16px;
   font-weight: $fw-medium;
   line-height: 1;
   padding: 8px 14px;
@@ -32,6 +32,7 @@
     border-color 0.35s ease;
 
   @include break-min($lg) {
+    font-size: $font-base-size;
     padding: 10px 24px;
   }
 }
@@ -66,7 +67,7 @@
 
 @mixin button_accent_tertiary {
   @include button;
-  color: #fff;
+  color: $color-black;
   background-color: $color-accent-tertiary;
   border-color: $color-accent-tertiary;
 
@@ -115,7 +116,6 @@
 
 @mixin button_accent {
   @include button;
-
   color: $color-black;
   border-color: $color-accent-primary;
   background-color: $color-accent-primary;
@@ -133,6 +133,34 @@
 
   display: inline-flex;
   align-items: center;
+}
+
+@mixin button_download {
+  @include button_with_icon;
+  @include button_accent_tertiary;
+  // padding-right: 50px;
+  padding-right: 32px;
+
+  @include break-min($lg) {
+    padding-right: 42px;
+  }
+
+  .icon__download {
+    width: 10px;
+    height: 15px;
+
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+
+    @include break-min($lg) {
+      width: 12px;
+      height: 18px;
+
+      right: 24px;
+    }
+  }
 }
 
 @mixin button_text {

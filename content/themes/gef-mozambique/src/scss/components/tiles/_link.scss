@@ -110,6 +110,11 @@ p.link-tile__button,
   color: $color-primary;
 }
 
+a.link-tile__button--download,
+.editor-styles-wrapper a.link-tile__button--download {
+  @include button_download;
+}
+
 a.link-tile__fauxlink,
 .editor-styles-wrapper a.link-tile__fauxlink {
   @include absolute_fill;
