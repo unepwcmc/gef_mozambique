@@ -19,30 +19,43 @@
   min-height: 450px;
   width: 100%;
 
-  display: flex;
 
   position: relative;
   z-index: 2;
 
   @include break-min($sm) {
+    display: flex;
+  }
+
+  @include break-min($md) {
     min-height: 500px;
   }
 }
 
 .block-cta__content,
 .editor-block-list__layout .block-cta__content {
-  padding: $item-padding * 2;
-  max-width: calc((9 / 12) * 100%);
+  padding: $item-padding;
   width: 100%;
 
   display: flex;
 
   position: relative;
   z-index: 2;
+
+  @include break-min($sm) {
+    max-width: calc((8 / 12) * 100%);
+  }
+
+  @include break-min($md) {
+    padding: $item-padding * 2;
+    max-width: calc((9 / 12) * 100%);
+  }
 }
 
 .block-cta__featured {
-  max-width: calc(((10 / 12) * 100%) + #{$grid-gap});
+  @include break-min($md) {
+    max-width: calc(((10 / 12) * 100%) + #{$grid-gap});
+  }
 }
 
 ul.block-cta__featured-items,
@@ -50,26 +63,38 @@ ul.block-cta__featured-items,
   @include structural_ul;
   height: 100%;
 
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: $item-padding;
-  grid-template-areas:
-    "One Two"
-    "One Three";
+  @include break-min($md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: $item-padding;
+    grid-template-areas:
+      "One Two"
+      "One Three";
+  }
 }
 
 li.block-cta__featured-item {
   display: flex;
 
-  &:first-child {
-    grid-area: One;
+  @include break-min($sm) {
+    &:first-child {
+      grid-area: One;
+    }
+    &:nth-child(2) {
+      grid-area: Two;
+    }
+    &:nth-child(3) {
+      grid-area: Three;
+    }
   }
-  &:nth-child(2) {
-    grid-area: Two;
-  }
-  &:nth-child(3) {
-    grid-area: Three;
+
+  &:not(:last-child) {
+    margin-bottom: $item-padding;
+
+    @include break-min($md) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -77,10 +102,14 @@ li.block-cta__featured-item {
   background-color: $color-cta;
   border-radius: 5px;
   color: $color-white;
-  padding: $item-padding * 2;
+  padding: $item-padding;
   width: 100%;
 
   position: relative;
+
+  @include break-min($md) {
+    padding: $item-padding * 2;
+  }
 }
 
 h3.block-cta__title,
@@ -129,14 +158,24 @@ a.block-cta__fauxlink {
 
 aside.block-cta__list {
   background-color: $color-white;
-  padding: $item-padding-small $item-padding $item-padding $grid-gap;
-  width: calc((3 / 12) * 100%);
+  padding: $item-padding;
 
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   z-index: 2;
+
+  @include break-min($sm) {
+    padding: $item-padding-small $item-padding $item-padding $grid-gap;
+    width: calc((4 / 12) * 100%);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  @include break-min($md) {
+    width: calc((3 / 12) * 100%);
+  }
 }
 
 h3.block-cta__list-title {
