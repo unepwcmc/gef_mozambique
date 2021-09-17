@@ -63,7 +63,7 @@
                       </p>
                     <?php endif;?>
 
-                    <?php if ( $file_url !== '' ): ?>
+                    <?php if ( $file_url != '' ): ?>
                       <a
                         href="<?php echo $file_url; ?>"
                         title="<?php echo $title; ?>"
