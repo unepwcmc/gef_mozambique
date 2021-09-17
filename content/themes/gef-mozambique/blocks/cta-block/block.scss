@@ -45,7 +45,8 @@
   max-width: calc(((10 / 12) * 100%) + #{$grid-gap});
 }
 
-ul.block-cta__featured-items {
+ul.block-cta__featured-items,
+.editor-styles-wrapper .genesis-custom-blocks-editor__ssr ul.block-cta__featured-items {
   @include structural_ul;
   height: 100%;
 
