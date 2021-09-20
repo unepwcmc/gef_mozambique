@@ -13,17 +13,25 @@
 
 .block-introduction__column {
   @include break-min($md) {
-    flex: 1;
+    flex: 0 0 calc(((5 / 12) * 100%) - #{$grid-gap});
+  }
+
+  @include break-min($lg) {
+    flex: 0 0 calc(((4 / 12) * 100%) - #{$grid-gap});
   }
 
   &:first-child {
     margin-bottom: $grid-gap * 2;
 
     @include break-min($md) {
-      margin-right: $grid-gap;
+      margin-right: $grid-gap * 2;
       margin-bottom: 0;
 
-      flex: 2;
+      flex: 0 0 calc(((7 / 12) * 100%) - #{$grid-gap});
+    }
+
+    @include break-min($lg) {
+      flex: 0 0 calc(((8 / 12) * 100%) - #{$grid-gap});
     }
   }
 }

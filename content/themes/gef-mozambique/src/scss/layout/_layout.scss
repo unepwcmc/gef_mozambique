@@ -29,10 +29,18 @@
 }
 
 .layout-main {
-  padding-top: 105px; // ToDo: make varible
+  padding-top: $headerMobileHeight;
 
   @include break-min($headerNavShow) {
-    padding-top: 156px; // ToDo: make varible
+    padding-top: $headerHeight;
+  }
+
+  .language-switcher & {
+    padding-top: $headerMobileHeight + $headerTopBarHeight;
+
+    @include break-min($headerNavShow) {
+      padding-top: $headerHeight;
+    }
   }
 
   .home &,
