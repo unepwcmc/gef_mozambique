@@ -9,12 +9,14 @@
 .hero__inner {
   @include inner_padding;
   display: flex;
+  position: relative;
 }
 
 .hero__background-image,
 .block-editor__container .hero__background-image {
   @include absolute_fill;
   @include object_fit_cover;
+
   z-index: 1;
 }
 
@@ -107,5 +109,57 @@ a.hero__link {
       margin-left: 10px;
       width: 14px;
     }
+  }
+}
+
+.hero__summary {
+  background-color: $color-primary-dark;
+  color: $color-white;
+  padding: $item-padding * 2;
+  z-index: 5;
+  position: relative;
+
+  @include break-min($md) {
+    background-color: rgba($color-black, 0.4);
+
+    position: absolute;
+    bottom: 0;
+    right: $grid-gap * 2;
+  }
+
+  @include break-min($lg) {
+    right: $gutter;
+  }
+}
+
+h4.hero__summary-heading {
+  @include font_base_text;
+  color: inherit;
+  margin-bottom: 0;
+}
+
+h5.hero__summary-date {
+  @include font_heading-2;
+  border-bottom: 1px solid $color-border-light;
+  color: inherit;
+  margin-bottom: $item-padding-small;
+  padding-bottom: $item-padding-small;
+}
+
+button.hero__summary-link {
+  @include button_with_icon;
+  @include font_base_text;
+  color: $color-accent-primary;
+  padding-right: 24px;
+
+  position: relative;
+
+  svg {
+    width: 16px;
+    height: 8px;
+
+    position: absolute;
+    right: 0;
+    top: 10px;
   }
 }

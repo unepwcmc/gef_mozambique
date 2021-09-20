@@ -44,7 +44,12 @@
   $table_shortcode .= ' links="none"]';
 ?>
 
-<?php echo do_shortcode( $table_shortcode ); ?>
+<div
+  id="filterableTable"
+  class="blk-Filterable-Table blk-Filterable-Table--<?php echo $post_type; ?>"
+>
+  <?php echo do_shortcode( $table_shortcode ); ?>
+</div>
 
 <table-modal
   post-type="<?php echo $post_type; ?>"

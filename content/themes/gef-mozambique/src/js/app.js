@@ -2,6 +2,21 @@ import Vue from 'vue'
 window.Vue = Vue
 import store from './store'
 
+import VueScrollTo from 'vue-scrollto'
+Vue.use(VueScrollTo, {
+     container: "body",
+     duration: 500,
+     easing: "ease",
+     offset: 0,
+     force: true,
+     cancelable: true,
+     onStart: false,
+     onDone: false,
+     onCancel: false,
+     x: false,
+     y: true
+ })
+
 import objectFitImages from 'object-fit-images'
 import VueProgressiveImage from 'vue-progressive-image'
 
@@ -19,6 +34,7 @@ import ListingList from './components/listing/ListingList.vue'
 import HeaderSearch from './components/header/HeaderSearch.vue'
 import MainHeader from './components/header/MainHeader.vue'
 import ModalDownloads from './components/modal/ModalDownloads.vue'
+import TableJumpLink from './components/table/TableJumpLink.vue'
 import TableModal from './components/table/TableModal.vue'
 import TableModalTrigger from './components/table/TableModalTrigger.vue'
 
@@ -60,6 +76,7 @@ window.addEventListener("DOMContentLoaded", () => {
         ListingList,
         MainHeader,
         ModalDownloads,
+        TableJumpLink,
         TableModal,
         TableModalTrigger
       },

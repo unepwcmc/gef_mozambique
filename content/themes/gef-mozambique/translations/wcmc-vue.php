@@ -46,6 +46,9 @@ return array(
   ),
   'social' => array(
     'twitter' => __( 'Twitter', 'wcmc-vue' )
+  ),
+  'table' => array(
+    'jump_to_database' => __( 'Jump To Database', 'wcmc-vue' )
   )
 );
 

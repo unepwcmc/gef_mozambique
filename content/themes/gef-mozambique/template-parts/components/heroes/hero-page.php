@@ -8,6 +8,9 @@
   $background_image_url = $background_image != '' ? wp_get_attachment_image_src( $background_image, 'full-size' )[0] : get_theme_mod( 'default_hero_image' );
 
   $overlay_opacity = (get_query_var( 'hero-opacity' ) * 0.1);
+
+  $table_page = get_query_var( 'table-page' );
+  $database_last_updated = get_query_var( 'database-last-updated' );
 ?>
 
 <div class="hero">
@@ -32,4 +35,19 @@
       </div>
     </div>
   </div>
+  <?php if ($table_page) : ?>
+    <div class="hero__summary">
+      <?php if ($database_last_updated) : ?>
+        <h4 class="hero__summary-heading">
+          <?php _e( 'Database Last Updated:', 'wcmc' ); ?>
+        </h4>
+        <h5 class="hero__summary-date">
+          <?php echo $database_last_updated; ?>
+        </h5>
+      <?php endif; ?>
+      <table-jump-link
+        id="filterableTable"
+      />
+    </div>
+  <?php endif; ?>
 </div>

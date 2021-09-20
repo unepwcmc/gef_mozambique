@@ -6,6 +6,8 @@
  *
  */
 
+$database_last_updated = get_field('database-last-updated', false);
+
 get_header(); ?>
 
 <?php
@@ -21,6 +23,9 @@ get_header(); ?>
 			set_query_var('hero-text', get_field( 'hero_text' ));
 			set_query_var('hero-background-image', get_post_thumbnail_id(get_the_id()));
 			set_query_var('hero-opacity', get_field( 'hero_opacity' ));
+
+			set_query_var('table-page', true);
+			set_query_var('database-last-updated', get_field( 'database_last_updated' ));
 
 			get_template_part( 'template-parts/components/heroes/hero', 'page' );
 
