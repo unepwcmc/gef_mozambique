@@ -44,13 +44,15 @@
   > li {
     margin-right: $grid-gap;
     margin-bottom: $item-padding * 2;
-    width: calc(((6 / 12) * 100%) - #{$grid-gap});
+    width: 100%;
 
     display: none;
-    flex: 0 0 calc(((6 / 12) * 100%) - #{$grid-gap});
 
     @include break-min($xs) {
+      width: calc(((6 / 12) * 100%) - #{$grid-gap});
+
       display: block;
+      flex: 0 0 calc(((6 / 12) * 100%) - #{$grid-gap});
     }
 
     @include break-min($md) {
