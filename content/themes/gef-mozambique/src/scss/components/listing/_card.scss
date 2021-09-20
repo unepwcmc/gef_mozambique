@@ -116,6 +116,11 @@ p.listing-card__text {
 
 p.listing-card__button {
   color: $color-primary;
+  transition: opacity .5s ease;
+
+  .listing-card:hover & {
+    opacity: 0.7;
+  }
 
   &.listing-card__button--arrow {
     @include button_text_with_arrow;

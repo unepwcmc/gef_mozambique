@@ -185,6 +185,7 @@ h3.block-cta__list-title {
 
 .block-cta__list-item {
   margin-bottom: 5px;
+  padding-right: $item-padding-small;
 }
 
 a.block-cta__list-link,
@@ -197,5 +198,9 @@ a.block-cta__list-link,
   &.block-cta__list-link--external {
     @include button_text_external;
     white-space: inherit;
+
+    svg {
+      display: inline;
+    }
   }
 }
