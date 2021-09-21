@@ -26,12 +26,22 @@
 	set_query_var( 'hero-opacity', get_theme_mod( 'conventions_hero_overlay_opacity' ) );
 
 	get_template_part( 'template-parts/components/heroes/hero', 'large' );
+
+	// Introduction for International Conventions - Editable from WordPress Customizer settings
+	$intro_text = get_theme_mod( 'international_conventions_intro_text' );
 ?>
 
 <div class="layout-container layout-container--full-width">
 	<div class="layout-container__inner">
 		<div class="layout-container__body">
 			<section class="layout-primary layout-primary--restrained">
+				<?php if ($intro_text) : ?>
+					<div class="layout-primary__header">
+						<div class="layout-primary__intro">
+							<?php echo $intro_text; ?>
+						</div>
+					</div>
+				<?php endif; ?>
 				<div class="layout-primary__body layout-primary__body--archive">
 
 					<listing-list

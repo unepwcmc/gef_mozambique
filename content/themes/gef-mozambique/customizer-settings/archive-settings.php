@@ -7,7 +7,7 @@ function archive_settings_customizer_settings($wp_customize) {
   'priority' => 100
   ) );
 
-    // Title
+    // Public Consultations Intro Text
     $wp_customize->add_setting('public_consultations_intro_text');
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'public_consultations_intro_text',
     array(
@@ -15,6 +15,16 @@ function archive_settings_customizer_settings($wp_customize) {
     'section' => 'archive_settings',
     'type' => 'textarea',
     'settings' => 'public_consultations_intro_text'
+    ) ) );
+
+    // International Conventions Intro Text
+    $wp_customize->add_setting('international_conventions_intro_text');
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'international_conventions_intro_text',
+    array(
+    'label' => 'International Conventions Intro Text',
+    'section' => 'archive_settings',
+    'type' => 'textarea',
+    'settings' => 'international_conventions_intro_text'
     ) ) );
 
 }
