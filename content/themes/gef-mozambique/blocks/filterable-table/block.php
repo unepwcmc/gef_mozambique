@@ -13,6 +13,8 @@
   $restricted_columns = block_field( 'restricted-columns', false );
   $filters = block_field( 'filters', false );
   $widths = block_field( 'widths', false );
+  $sort_by = block_field ( 'sort-by', false );
+  $reverse_order = block_field ( 'reverse-order', false );
   $lazy_load = block_field( 'lazy-load', false );
   $hide_search = block_field( 'hide-search', false );
   $hide_reset = block_field( 'hide-reset', false );
@@ -27,6 +29,14 @@
 
   if ($widths) {
     $table_shortcode .= ' widths="' . $widths . '"';
+  }
+
+  if ($sort_by) {
+    $table_shortcode .= ' sort_by="' . $sort_by . '"';
+  }
+
+  if ($reverse_order) {
+    $table_shortcode .= ' sort_order="asc"';
   }
 
   if ($lazy_load) {
