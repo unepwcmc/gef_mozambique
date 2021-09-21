@@ -71,6 +71,16 @@ a.listing-grid__link {
 
 .listing-grid__item {
   @include listing_item;
+
+  .latest-posts & {
+    &:nth-child(n+3) {
+      display: none;
+
+      @include break-min($md) {
+        display: block;
+      }
+    }
+  }
 }
 
 .listing-grid__loader {
