@@ -6,12 +6,6 @@
       </div>
     </div>
     <div class="listing-card__body">
-      <p
-        v-if="year"
-        class="listing-card__date"
-      >
-        {{ year }}
-      </p>
       <h3 class="listing-card__title">
         {{ title }}
       </h3>
@@ -36,7 +30,6 @@
 
 <script>
   import { decodeString } from '../../helpers/application-helpers.js'
-  import moment from 'moment'
   import IconCertificate from '../../icons/IconCertificate.vue'
   import IconExternal from '../../icons/IconExternal.vue'
 
@@ -68,10 +61,6 @@
     },
 
     computed: {
-      year() {
-        return this.config.acf && this.config.acf.year ? this.config.acf.year : ''
-      },
-
       link() {
         return this.config.acf && this.config.acf.external_link_url ? this.config.acf.external_link_url : ''
       },
