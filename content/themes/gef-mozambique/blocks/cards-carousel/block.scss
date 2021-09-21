@@ -23,12 +23,16 @@
 }
 
 .card-carousel__body {
-  min-height: 700px;
+  min-height: 400px;
 
   display: flex;
   align-items: flex-end;
 
   position: relative;
+
+  @include break-min($sm) {
+    min-height: 700px;
+  }
 }
 
 .card-carousel__content {
