@@ -12,12 +12,6 @@
       </div>
     </div>
     <div class="listing-card__body">
-      <p
-        v-if="date"
-        class="listing-card__date"
-      >
-        {{ date }}
-      </p>
       <h3 class="listing-card__title">
         {{ title }}
       </h3>
@@ -73,10 +67,6 @@
     },
 
     computed: {
-      date() {
-        return this.config.acf && this.config.acf.date_start ? moment(this.config.acf.date_start).format('D MMMM YYYY') : ''
-      },
-
       excerpt() {
         return this.config.excerpt.rendered ? decodeString(this.config.excerpt.rendered).substring(0, 80) : ''
       },
