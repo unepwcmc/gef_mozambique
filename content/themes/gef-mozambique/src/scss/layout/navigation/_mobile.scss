@@ -24,6 +24,7 @@
       }
 
       &.menu-item-has-children {
+        cursor: pointer;
         position: relative;
 
         &::after {
