@@ -28,18 +28,18 @@
 
         &::after {
           background-image: url('../../img/icon-angle-down-white.svg');
-          background-size: 12px 18px;
+          background-size: 14px 20px;
           background-repeat: no-repeat;
           content: '';
           pointer-events: none;
-          width: 12px;
-          height: 18px;
+          width: 14px;
+          height: 20px;
 
           display: block;
 
           position: absolute;
           right: $grid-gap;
-          top: 12px;
+          top: 10px;
 
           transform: translateX(-50%);
           transition: transform .3s ease;
