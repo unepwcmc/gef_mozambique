@@ -25,7 +25,11 @@
 
       &.menu-item-has-children {
         cursor: pointer;
+        background-color: $color-primary-light;
+
         position: relative;
+        transition: background-color .5s ease;
+        transition-delay: .2s;
 
         &::after {
           background-image: url('../../img/icon-angle-down-white.svg');
@@ -48,6 +52,10 @@
         }
 
         &.open {
+          background-color: lighten($color-primary-light, 5%);
+
+          transition: background-color .3s ease;
+
           &::after {
             transform: translateX(-50%) rotate(180deg);
           }
@@ -56,16 +64,24 @@
     }
 
     .sub-menu {
-      background-color: lighten($color-primary-light, 5%);
       margin: 0;
       overflow: hidden;
-      padding: 0 $item-padding * 1.5;
+      padding-right: $item-padding * 1.5;
+      padding-left: $item-padding * 1.5;
       max-height: 0;
 
       transition: max-height .5s ease, padding .5s ease;
 
       li.menu-item {
-        padding: $item-padding-smaller $item-padding;
+        padding: $item-padding-small $item-padding;
+
+        &:first-child {
+          padding-top: $item-padding-smaller;
+        }
+
+        &:last-child {
+          padding-bottom: $item-padding-smaller;
+        }
 
         a {
           font-size: 16px;
@@ -76,8 +92,8 @@
     }
 
     .open .sub-menu {
-      padding-top: $item-padding;
-      padding-bottom: $item-padding;
+      padding-top: $item-padding-small;
+      padding-bottom: $item-padding-small;
       max-height: 1000px;
     }
   }
