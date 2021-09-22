@@ -78,10 +78,10 @@
                     <?php endif;?>
                   </div>
                 </div>
+              </li>
 
-              <?php endwhile;?>
+            <?php endwhile;?>
 
-            </li>
           </ul>
         </div>
 
