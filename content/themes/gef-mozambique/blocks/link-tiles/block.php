@@ -81,6 +81,7 @@
               </li>
 
             <?php endwhile;?>
+            <?php reset_block_rows( 'link-tiles' );?>
 
           </ul>
         </div>
