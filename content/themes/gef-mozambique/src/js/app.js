@@ -40,6 +40,9 @@ import TableModalTrigger from './components/table/TableModalTrigger.vue'
 
 window.axios = require('axios')
 
+window.moment = require('moment')
+moment.locale('pt')
+
 import translate from './helpers/translation-helper.js'
 
 Vue.use(VueProgressiveImage)

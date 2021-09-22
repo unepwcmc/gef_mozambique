@@ -42,7 +42,6 @@
 
 <script>
   import { decodeString } from '../../helpers/application-helpers.js'
-  import moment from 'moment'
   import IconAngleRight from '../../icons/IconAngleRight.vue'
 
   export default {
