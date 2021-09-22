@@ -14,18 +14,12 @@
   $database_last_updated = get_query_var( 'database-last-updated' );
 ?>
 
-<div class="hero">
+<div
+  class="hero"
+  style="background-color: <?php echo $background_colour; ?>"
+>
   <div class="hero__inner">
-    <div
-      class="hero__body"
-      style="background-color: <?php echo $background_colour; ?>"
-    >
-      <img
-        src="<?php echo $background_image_url; ?>"
-        alt="<?php echo $title; ?>"
-        <?php if ($overlay_opacity != 1) echo 'style="opacity: ' . $overlay_opacity . ';"'; ?>
-        class="hero__background-image"
-      >
+    <div class="hero__body">
       <div class="hero__content">
         <?php if ($title != ''): ?>
           <h2 class="hero__title"><?php echo $title; ?></h2>
@@ -51,4 +45,10 @@
       />
     </div>
   <?php endif; ?>
+  <img
+    src="<?php echo $background_image_url; ?>"
+    alt="<?php echo $title; ?>"
+    <?php if ($overlay_opacity != 1) echo 'style="opacity: ' . $overlay_opacity . ';"'; ?>
+    class="hero__background-image"
+  >
 </div>
