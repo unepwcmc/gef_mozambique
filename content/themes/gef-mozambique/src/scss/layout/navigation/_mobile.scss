@@ -22,19 +22,46 @@
         @include font_base_text;
         padding: $item-padding-small $item-padding * 1.5;
       }
-      // 
-      // &.menu-item-has-children {
-      //   background-image: url('../../img/icon-angle-down-white.svg');
-      //   background-size: 12px 18px;
-      //   background-repeat: no-repeat;
-      //   background-position: 94% 12px;
-      // }
+
+      &.menu-item-has-children {
+        position: relative;
+
+        &::after {
+          background-image: url('../../img/icon-angle-down-white.svg');
+          background-size: 12px 18px;
+          background-repeat: no-repeat;
+          content: '';
+          pointer-events: none;
+          width: 12px;
+          height: 18px;
+
+          display: block;
+
+          position: absolute;
+          right: $grid-gap;
+          top: 12px;
+
+          transform: translateX(-50%);
+          transition: transform .3s ease;
+          will-change: transform;
+        }
+
+        &.open {
+          &::after {
+            transform: translateX(-50%) rotate(180deg);
+          }
+        }
+      }
     }
 
     .sub-menu {
       background-color: lighten($color-primary-light, 5%);
       margin: 0;
-      padding: $item-padding $item-padding * 1.5;
+      overflow: hidden;
+      padding: 0 $item-padding * 1.5;
+      max-height: 0;
+
+      transition: max-height .5s ease, padding .5s ease;
 
       li.menu-item {
         padding: $item-padding-smaller $item-padding;
@@ -45,6 +72,12 @@
           font-weight: 400;
         }
       }
+    }
+
+    .open .sub-menu {
+      padding-top: $item-padding;
+      padding-bottom: $item-padding;
+      max-height: 1000px;
     }
   }
 }

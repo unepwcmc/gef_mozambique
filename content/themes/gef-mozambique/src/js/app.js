@@ -32,6 +32,7 @@ import LatestPosts from './components/widgets/LatestPosts.vue'
 import ListingGrid from './components/listing/ListingGrid.vue'
 import ListingList from './components/listing/ListingList.vue'
 import HeaderSearch from './components/header/HeaderSearch.vue'
+import MenuMobile from './components/menu/MenuMobile.vue'
 import MainHeader from './components/header/MainHeader.vue'
 import ModalDownloads from './components/modal/ModalDownloads.vue'
 import TableJumpLink from './components/table/TableJumpLink.vue'
@@ -77,6 +78,7 @@ window.addEventListener("DOMContentLoaded", () => {
         LatestPosts,
         ListingGrid,
         ListingList,
+        MenuMobile,
         MainHeader,
         ModalDownloads,
         TableJumpLink,
