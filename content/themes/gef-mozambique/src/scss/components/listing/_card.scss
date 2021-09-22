@@ -116,6 +116,7 @@ p.listing-card__text {
 
 p.listing-card__button {
   color: $color-primary;
+
   transition: opacity .5s ease;
 
   .listing-card:hover & {
@@ -146,5 +147,6 @@ p.listing-card__button {
 a.listing-card__fauxlink {
   @include absolute_fill;
   font-size: 0;
+
   z-index: 2;
 }
