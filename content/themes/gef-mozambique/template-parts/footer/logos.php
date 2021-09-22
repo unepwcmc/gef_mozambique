@@ -8,7 +8,7 @@
   <div class="footer-logos__inner">
     <ul class="footer-logos__items">
       <li class="footer-logos__item">
-        <h6>Supported by:</h6>
+        <h6><?php _e( 'Apoiado por:' ); ?></h6>
         <img
           src="<?php echo get_stylesheet_directory_uri() . '/dist/img/GEF-logo.png'; ?>"
           alt="GEF logo"
@@ -16,7 +16,7 @@
         >
       </li>
       <li class="footer-logos__item">
-        <h6>Led by:</h6>
+        <h6><?php _e( 'Liderado por:' ); ?></h6>
         <img
           src="<?php echo get_stylesheet_directory_uri() . '/dist/img/UN-Environment-logo.png'; ?>"
           alt="UN Environment Program logo"
@@ -24,7 +24,7 @@
         >
       </li>
       <li class="footer-logos__item footer-logos__item--large">
-        <h6>In partnership with:</h6>
+        <h6><?php _e( 'Em parceria com:' ); ?></h6>
         <ul class="footer-logos__logo-items">
           <li class="footer-logos__logo-item">
             <img
