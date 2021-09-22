@@ -22,7 +22,7 @@
           class="cards-carousel__cells"
         >
 
-          <?php while ( block_rows( 'carousel-cells' ) ) : block_row( 'carousel-cells' );?>
+          <?php while ( block_rows( 'carousel-cells' ) ) : block_row( 'carousel-cells' ); ?>
 
             <?php
               $image = block_sub_value( 'image', false );
@@ -39,19 +39,19 @@
                       <h3 class="card-carousel__title">
                         <?php echo block_sub_value( 'title' ); ?>
                       </h3>
-                    <?php endif;?>
+                    <?php endif; ?>
                     <?php if ( block_sub_value( 'text' ) ) : ?>
                       <p class="card-carousel__text">
                         <?php echo block_sub_value( 'text' ); ?>
                       </p>
-                    <?php endif;?>
+                    <?php endif; ?>
 
                     <?php if ( block_sub_value( 'link-url' ) ) : ?>
                       <p class="card-carousel__button card-carousel__button--external">
                         <?php echo block_sub_value( 'link-text' ); ?>
                         <?php get_template_part( 'template-parts/icons/icon', 'angle-right' ); ?>
                       </p>
-                    <?php endif;?>
+                    <?php endif; ?>
                   </div>
                   <img
                     class="card-carousel__background-image"
@@ -68,16 +68,17 @@
                       >
                       <?php echo block_sub_value( 'link-text' ); ?>
                     </a>
-                  <?php endif;?>
+                  <?php endif; ?>
                 </div>
               </div>
             </div>
 
-          <?php endwhile;?>
+          <?php endwhile; ?>
+          <?php reset_block_rows( 'carousel-cells' ); ?>
 
         </flickity-carousel>
 
-      <?php endif;?>
+      <?php endif; ?>
 
     </div>
   </div>

@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="listing-card listing-card--post"
-    @click="clickHandler()"
-  >
+  <div class="listing-card listing-card--post">
     <div class="listing-card__header">
       <div class="listing-card__image-wrap">
         <img
@@ -32,11 +29,10 @@
         <IconAngleRight />
       </p>
       <a
-        v-if="!modal || (modal && externalLinkURL)"
-        :href="link"
+        :href="externalLinkURL"
         class="listing-card__fauxlink"
         :title="title"
-        :target="hrefTarget"
+        target="_blank"
       >
         {{ $t( 'common.more' ) }}
       </a>
@@ -64,10 +60,6 @@
       config: {
         type: Object,
         default: () => {}
-      },
-      modal: {
-        type: Boolean,
-        default: false
       },
       postType: {
         type: String,
@@ -105,25 +97,8 @@
           : this.placeholderImageUrl
       },
 
-      link() {
-        return this.externalLinkURL ? this.externalLinkURL : this.config.link
-      },
-
-      hrefTarget() {
-        return this.externalLinkURL ? '_blank' : '_self'
-      },
-
       title() {
         return this.config.title ? decodeString(this.config.title.rendered) : ''
-      }
-    },
-
-    methods: {
-      clickHandler () {
-        if (this.modal & !this.externalLinkURL) {
-          this.$eventHub.$emit('modal-open')
-          this.$parent.$emit('onCardClicked', this.id)
-        }
       }
     }
   }

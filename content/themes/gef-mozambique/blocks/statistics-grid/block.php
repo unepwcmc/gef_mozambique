@@ -38,6 +38,7 @@
             </div>
           </li>
         <?php endwhile; ?>
+        <?php reset_block_rows( 'statistic' );?>
       </ul>
     </div>
   </div>

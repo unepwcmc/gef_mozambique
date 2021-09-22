@@ -25,7 +25,7 @@
         <div class="link-tiles__content">
           <ul class="link-tiles__items">
 
-            <?php while ( block_rows( 'modal-tiles' ) ) : block_row( 'modal-tiles' );?>
+            <?php while ( block_rows( 'modal-tiles' ) ) : block_row( 'modal-tiles' ); ?>
 
               <?php
                 $image = block_sub_value( 'image', false );
@@ -65,13 +65,13 @@
                       <h3 class="link-tile__title">
                         <?php echo $title; ?>
                       </h3>
-                    <?php endif;?>
+                    <?php endif; ?>
 
                     <?php if ( $text ) : ?>
                       <p class="link-tile__text">
                         <?php echo $text; ?>
                       </p>
-                    <?php endif;?>
+                    <?php endif; ?>
 
                     <?php if (!empty($modal_downloads)): ?>
                       <modal-downloads
@@ -85,13 +85,14 @@
                   </div>
                 </div>
 
-              <?php endwhile;?>
+              <?php endwhile; ?>
+              <?php reset_block_rows( 'modal-tiles' ); ?>
 
             </li>
           </ul>
         </div>
 
-      <?php endif;?>
+      <?php endif; ?>
 
     </div>
   </div>

@@ -25,7 +25,7 @@
         <div class="link-tiles__content">
           <ul class="link-tiles__items">
 
-            <?php while ( block_rows( 'link-tiles' ) ) : block_row( 'link-tiles' );?>
+            <?php while ( block_rows( 'link-tiles' ) ) : block_row( 'link-tiles' ); ?>
 
               <?php
                 $image = block_sub_value( 'image', false );
@@ -55,12 +55,12 @@
                       <h3 class="link-tile__title">
                         <?php echo $title; ?>
                       </h3>
-                    <?php endif;?>
+                    <?php endif; ?>
                     <?php if ( $text ) : ?>
                       <p class="link-tile__text">
                         <?php echo $text; ?>
                       </p>
-                    <?php endif;?>
+                    <?php endif; ?>
 
                     <?php if ( $link_url ) : ?>
                       <p class="link-tile__button link-tile__button--external">
@@ -75,18 +75,18 @@
                       >
                         <?php echo $link_text; ?>
                       </a>
-                    <?php endif;?>
+                    <?php endif; ?>
                   </div>
                 </div>
               </li>
 
-            <?php endwhile;?>
-            <?php reset_block_rows( 'link-tiles' );?>
+            <?php endwhile; ?>
+            <?php reset_block_rows( 'link-tiles' ); ?>
 
           </ul>
         </div>
 
-      <?php endif;?>
+      <?php endif; ?>
 
     </div>
   </div>
