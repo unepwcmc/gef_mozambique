@@ -64,6 +64,74 @@ table.dataTable.dtr-column>tbody>tr>td.control {
   }
 }
 
+// Filters
+.posts-table-above.posts-table-controls {
+  margin-bottom: $spacer-small !important;
+  @include break-min($sm) {
+    margin-bottom: $spacer-medium !important;
+  }
+}
+
+// Filter label
+.posts-table-select-filters {
+  width: 100%;
+
+  .filter-label {
+    display: block;
+  }
+}
+
+// Max posts text
+.dataTables_length {
+  label {
+    width: 300px;
+  }
+}
+
+// Table Pagination
+.dataTables_wrapper .dataTables_paginate.paging_numbers {
+  .paginate_button {
+    display: inline-block;
+    background-image: none !important;
+    padding: 0 10px !important;
+    margin-right: 5px;
+    min-width: 33px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .paginate_button.current,
+  .paginate_button:hover {
+    background-color: $color-primary-dark !important;
+    color: $color-white !important;
+  }
+
+  .paginate_button:hover,
+  .paginate_button.current:hover {
+    background-color: $color-primary !important;
+    color: $color-white !important;
+  }
+}
+
+// Filter dropdowns
+.select2.select2-container.select2-container--default {
+  width: 24% !important;
+
+  @include break-max($lg) {
+    width: 32% !important;
+  }
+
+  @include break-max($md) {
+    width: 48% !important;
+  }
+
+  @include break-max($xs) {
+    width: 100% !important;
+  }
+}
+
 // PTP Modal
 
 div.dtr-modal div.dtr-modal-display {
