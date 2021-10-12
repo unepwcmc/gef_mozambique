@@ -567,17 +567,17 @@ DISABLE SORTING OF SHORTCODE COLUMN ON FILTERABLE TABLE
 
 add_filter( 'posts_table_column_sortable_shortcode', '__return_false' );
 
-add_filter( 'posts_table_search_filter_label', function( $label ) {
-    return 'Filter:';
-} );
-
-add_filter( 'posts_table_reset_label', function( $label ) {
-    return "Clear";
-} );
-
 add_filter( 'posts_table_language_defaults', function( $defaults ) {
+    $defaults['filterBy'] = 'Filtro:';
+    $defaults['infoFiltered'] = '(_MAX_ no total)';
+    $defaults['lengthMenu'] = 'Mostrar _MENU_ por página:';
+    $defaults['resetButton'] = 'Redefinir';
+    $defaults['search'] = 'Procurar:';
+    $defaults['emptyTable'] = 'Sem _POSTS_ correspondentes.';
+    $defaults['zeroRecords'] = 'Sem _POSTS_ correspondentes.';
     $defaults['totalsPlural'] = 'results';
     $defaults['totalsSingle'] = 'result';
+
     return $defaults;
 } );
 
