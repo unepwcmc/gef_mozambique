@@ -31,11 +31,13 @@
                 $image = block_sub_value( 'image', false );
                 $image_url = wp_get_attachment_image_src( $image, 'full-size' )[0];
                 $image_alt = get_post_meta($image, '_wp_attachment_image_alt', true);
+                $contain_image = block_sub_value( 'contain-image', false );
 
                 $title = block_sub_value( 'title', false );
                 $text = block_sub_value( 'text', false );
                 $link_text = block_sub_value( 'link-text', false );
                 $link_url = block_sub_value( 'link-url', false );
+                $external_link = block_sub_value( 'external-link', false );
               ?>
 
               <li class="link-tiles__item">
@@ -44,7 +46,7 @@
                   <div class="link-tile__header">
                     <div class="link-tile__image-wrap">
                       <img
-                        class="link-tile__image"
+                        class="link-tile__image<?php if ($contain_image) echo ' link-tile__image--contain'; ?>"
                         src="<?php echo $image_url; ?>"
                         alt="<?php echo $image_alt; ?>"
                       >
@@ -63,14 +65,14 @@
                     <?php endif; ?>
 
                     <?php if ( $link_url ) : ?>
-                      <p class="link-tile__button link-tile__button--external">
+                      <p class="link-tile__button<?php if ($external_link) echo ' link-tile__button--external'; ?>">
                         <?php echo $link_text; ?>
-                        <?php get_template_part( 'template-parts/icons/icon', 'external' ); ?>
+                        <?php if ($external_link) get_template_part( 'template-parts/icons/icon', 'external' ); ?>
                       </p>
                       <a
                         href="<?php echo $link_url; ?>"
                         title="<?php echo $title; ?>"
-                        target="_blank"
+                        <?php if ($external_link) echo 'target="_blank"'; ?>
                         class="link-tile__fauxlink"
                       >
                         <?php echo $link_text; ?>
