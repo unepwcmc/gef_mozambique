@@ -29,6 +29,9 @@
       <?php if ($background_colour) echo 'style="background-color: ' . $background_colour . ';"'; ?>
     >
       <div class="hero__content">
+        <div class="hero__logo">
+          <?php get_template_part( 'template-parts/global/logo', 'main' ); ?>
+        </div>
         <?php if ($title): ?>
           <h2 class="hero__title">
             <?php echo $title; ?>
