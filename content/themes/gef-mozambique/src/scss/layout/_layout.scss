@@ -51,14 +51,14 @@
   .post-type-archive-public_consultation &,
   .post-type-archive-report_publication &,
   .single & {
-    padding-top: 105px + $spacer-small; // ToDo: make varible
+    padding-top: $headerMobileHeight + $spacer-small;
 
     @include break-min($sm) {
-      padding-top: 105px + 50px; // ToDo: make varible
+      padding-top: $headerMobileHeight + 50px;
     }
 
     @include break-min($headerNavShow) {
-      padding-top: 160px + $spacer-large; // ToDo: make varible
+      padding-top: $headerHeight + $spacer-large;
     }
   }
 }
