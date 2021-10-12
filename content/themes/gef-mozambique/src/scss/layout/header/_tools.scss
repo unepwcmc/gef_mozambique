@@ -81,13 +81,23 @@ a.header-tools__button {
   border: 0;
   color: $color-tools-icons;
   cursor: pointer;
+  font-family: $font-body;
+  font-weight: $fw-bold;
+  font-size: 14px;
   margin: 0;
   outline: none;
   padding: 0;
-  width: 32px;
-  height: 32px;
 
-  display: block;
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    margin-left: $grid-gap / 2;
+
+    display: block;
+  }
 
   .no-hero &,
   .layout-header--scrolled & {
