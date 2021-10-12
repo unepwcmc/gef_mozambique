@@ -79,16 +79,20 @@ li.link-tiles__item {
   transition: transform .8s ease;
   will-change: transform;
 
+  .link-tile:hover & {
+    transform: scale(1.01);
+  }
+
   &.link-tile__image--contain {
     @include absolute_center;
     @include object_fit_contain;
 
     max-width: 70%;
     max-height: 70%;
-  }
 
-  .link-tile:hover & {
-    transform: scale(1.01) translate(-50%, -50%);
+    .link-tile:hover & {
+      transform: scale(1.01) translate(-50%, -50%);
+    }
   }
 }
 
