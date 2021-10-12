@@ -52,6 +52,70 @@
   }
 }
 
+table.dataTable.dtr-column>tbody>tr>td.control {
+  &::before {
+    width: 16px !important;
+    height: 16px !important;
+
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// PTP Modal
+
+div.dtr-modal div.dtr-modal-display {
+  width: 100% !important;
+  height: 100% !important;
+
+  @include break-min($sm) {
+    width: 60% !important;
+    height: 60% !important;
+  }
+}
+
+div.dtr-modal div.dtr-modal-content {
+  padding: 1em 1.5em !important;
+
+  tr td {
+    &:first-child {
+      font-weight: $fw-bold;
+      width: 40%;
+    }
+
+    a {
+      word-break: break-all;
+    }
+  }
+}
+
+div.dtr-modal div.dtr-modal-close {
+  background: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  cursor: pointer;
+  font-size: 0;
+  width: 20px !important;
+  height: 20px !important;
+
+  position: absolute;
+  top: $item-padding !important;
+  right: $item-padding !important;
+  z-index: 12;
+
+  &::after {
+    @include absolute_fill;
+    background-image: url('../../img/icon-close.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    content: '';
+
+    display: block;
+  }
+}
 
 // WordPress Admin Bar
 
