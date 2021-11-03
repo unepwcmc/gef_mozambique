@@ -2,6 +2,7 @@
 
 return array(
   'common' => array(
+    'clear' => __( 'Limpar', 'wcmc-vue' ),
     'download' => __( 'Download', 'wcmc-vue' ),
     'explore' => __( 'Explorar', 'wcmc-vue' ),
     'filter' => __( 'Filtro', 'wcmc-vue' ),
@@ -14,6 +15,7 @@ return array(
   ),
   'listing' => array(
     'count_text' => __( '<span>Mostrando </span>%{posts_length} de %{max_posts}<span> entradas</span>', 'wcmc-vue' ),
+    'ratification_year' => __( 'Ano de Ratificação: <strong>%{year}</strong>', 'wcmc-vue' ),
   ),
   'post_types' => array(
     'event' => __( 'evento', 'wcmc-vue' ),
@@ -26,7 +28,7 @@ return array(
     'posts' => __( 'posts', 'wcmc-vue' ),
   ),
   'table' => array(
-    'jump_to_database' => __( 'Jump To Database', 'wcmc-vue' )
+    'jump_to_database' => __( 'Saltar para o banco de dados', 'wcmc-vue' )
   )
 );
 

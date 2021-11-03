@@ -1,10 +1,12 @@
 <template>
   <li class="listing-filter__term">
     <input
-      :checked="checked"
       @change="onChange($event.target.checked)"
       type="checkbox"
-      :value="value"
+      v-bind="{
+        checked,
+        value
+      }"
       class="listing-filter__checkbox"
     />
     <label

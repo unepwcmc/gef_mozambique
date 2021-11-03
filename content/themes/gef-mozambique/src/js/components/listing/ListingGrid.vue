@@ -10,7 +10,7 @@
         class="listing_text-button"
         @click="clearActiveTerms"
         >
-          Clear
+          {{ $t( 'common.clear' )}}
         </button>
 
         <listing-drawer

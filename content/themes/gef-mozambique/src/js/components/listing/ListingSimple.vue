@@ -16,9 +16,8 @@
     <p
       v-if="year"
       class="listing-simple__date"
+      v-html="$t( 'listing.ratification_year', { year } )"
     >
-      Ratification Year: <strong>{{ year }}</strong>
-    </p>
     <p
       v-if="description"
       class="listing-simple__text"
@@ -37,7 +36,7 @@
           class="listing-simple__button"
           @click="clickHandler()"
         >
-          Related Documents
+          {{ $t( 'common.related_documents' )}}
         </button>
       </li>
       <li
@@ -46,11 +45,11 @@
       >
         <a
           :href="externalLinkURL"
-          title="Explore"
+          :title="$t( 'common.explore' )"
           target="_blank"
           class="listing-simple__link listing-simple__link--external"
         >
-          Explore
+          {{ $t( 'common.explore' )}}
           <IconExternal />
         </a>
       </li>

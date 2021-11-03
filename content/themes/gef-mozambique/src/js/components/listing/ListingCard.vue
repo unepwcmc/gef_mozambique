@@ -39,7 +39,8 @@
       :title="title"
       :target="hrefTarget"
       >
-        More <!-- To be translated -->
+        more
+        {{ $t( 'common.more' ) }}
       </a>
     </div>
   </div>
@@ -50,8 +51,6 @@
   import moment from 'moment'
 
   export default {
-    name: 'ListingCard',
-
     props: {
       id: {
         type: Number,

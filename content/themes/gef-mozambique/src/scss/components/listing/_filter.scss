@@ -65,7 +65,7 @@ li.listing-filter__term {
 .listing-filter__label {
   @include font_heading-4;
   cursor: pointer;
-  padding-left: $grid-gap * 1.5;
+  padding-left: $grid-gap * 1.25;
 
   display: block;
   position: relative;
@@ -79,7 +79,7 @@ li.listing-filter__term {
     display: block;
 
     position: absolute;
-    top: 12px;
+    top: 8px;
     left: 0;
   }
 
@@ -96,7 +96,7 @@ li.listing-filter__term {
     display: block;
 
     position: absolute;
-    top: 10px;
+    top: 6px;
     left: 2px;
 
     transition: opacity .3s ease, visibility .3s ease;

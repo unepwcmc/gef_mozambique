@@ -25,10 +25,15 @@
       >
       <div class="hero__content">
         <?php if ($title != ''): ?>
-          <h2 class="hero__title"><?php echo $title; ?></h2>
+          <h2 class="hero__title">
+            <?php echo $title; ?>
+          </h2>
         <?php endif; ?>
+        
         <?php if ($text != ''): ?>
-          <p class="hero__text"><?php echo $text; ?></p>
+          <p class="hero__text">
+            <?php echo $text; ?>
+          </p>
         <?php endif; ?>
       </div>
     </div>

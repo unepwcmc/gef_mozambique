@@ -45,8 +45,6 @@
   import IconAngleRight from '../../icons/IconAngleRight.vue'
 
   export default {
-    name: 'ListingCard',
-
     components: {
       IconAngleRight
     },

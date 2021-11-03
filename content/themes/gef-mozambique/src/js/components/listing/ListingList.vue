@@ -14,13 +14,14 @@
             v-for="(post, index) in posts"
             class="listing-list__item"
           >
-
             <listing-simple
-              :id="index"
               :key="post.id"
-              :config="post"
-              :modal="modal"
-              :post-type="postType"
+              v-bind="{
+                config: post,
+                id: index,
+                modal,
+                postType
+              }"
               @onListingClicked="updateActivePost"
             />
           </li>

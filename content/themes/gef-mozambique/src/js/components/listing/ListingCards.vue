@@ -6,12 +6,14 @@
     >
       <Component
         :is="CardName"
-        :id="index"
         :key="post.id"
-        :config="post"
-        :modal="modal"
-        :modalID="modalID"
-        :post-type="postType"
+        v-bind="{
+          config: post,
+          id: index,
+          modal,
+          modalID,
+          postType
+        }"
       />
     </li>
   </ul>

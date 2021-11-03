@@ -1,7 +1,7 @@
 <template>
   <ModalTable
-    id="modalID"
     v-if="activePost"
+    id="modalID"
   >
     <template #header>
       <h3 class="table-modal__title">
@@ -81,21 +81,6 @@
           console.log(response);
           this.posts = response.data
           this.activePost = this.posts[0]
-          // let postACFData = []
-          //
-          // for (const [key, value] of Object.entries(response.data.acf)) {
-          //   if (key !== 'button') {
-          //     postACFData.push({
-          //       'label': value.label,
-          //       'value': value.value
-          //     });
-          //   }
-          // }
-          //
-          // this.activePost = {
-          //   'title': response.data.title,
-          //   'data': postACFData
-          // }
         })
         .catch((error) => {
           console.error(error)
@@ -103,7 +88,6 @@
       },
 
       openModal (modalID, postID) {
-        console.log(modalID, postID)
         this.activePost = this.posts.find(post => post.id == postID)
       }
     }
