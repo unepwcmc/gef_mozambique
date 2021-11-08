@@ -1,0 +1,60 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.blk-Filterable-Table,
+.editor-styles-wrapper .blk-Filterable-Table {
+  color: $color-white;
+}
+
+.blk-Filterable-Table_Header {
+  background-color: $color-primary-light;
+  padding: $item-padding;
+}
+
+h2.blk-Filterable-Table_Title,
+.editor-styles-wrapper h2.blk-Filterable-Table_Title {
+  color: $color-secondary;
+  margin: 0;
+}
+
+h3.blk-Filterable-Table_Subtitle,
+.editor-styles-wrapper h3.blk-Filterable-Table_Subtitle {
+  margin: 0;
+}
+
+.blk-Filterable-Table_Body {
+  padding: $item-padding;
+  background-color: $color-primary;
+}
+
+h4.blk-Filterable-Table_Heading,
+.editor-styles-wrapper h4.blk-Filterable-Table_Heading {
+  color: $color-secondary;
+  margin: 0;
+}
+
+ul.blk-Filterable-Table_List-Items,
+.editor-styles-wrapper ul.blk-Filterable-Table_List-Items {
+  @include structural_ul;
+}
+
+li.blk-Filterable-Table_List-Item,
+.editor-styles-wrapper li.blk-Filterable-Table_List-Item {
+  border-bottom: 1px solid $color-border-light;
+  margin-bottom: $item-padding;
+  padding-bottom: $item-padding;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.blk-Filterable-Table_SubList-Items {
+  column-count: 2;
+}
+
+.blk-Filterable-Table_SubList-Item {
+
+}
