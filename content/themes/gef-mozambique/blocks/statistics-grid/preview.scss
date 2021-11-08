@@ -1,6 +1,10 @@
 @import "../../src/scss/utilities/variables";
 @import "../../src/scss/utilities/mixins";
 
+$icon-width: 20px;
+$icon-height: 20px;
+$icon-padding: 5px;
+
 .stats-grid {
   @include spacer;
 }
@@ -23,6 +27,18 @@ ul.stats-grid__items,
   color: $color-white;
   padding: $item-padding;
   width: 100%;
+
+  position: relative;
+}
+
+.stats-tile__tooltip-icon {
+  color: $color-secondary;
+  width: $icon-width;
+  height: $icon-height;
+
+  position: absolute;
+  top: $icon-padding;
+  right: $icon-padding;
 }
 
 h4.stats-tile__heading,
