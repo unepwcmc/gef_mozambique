@@ -1,6 +1,6 @@
 <?php
 /**
- * Customeriser Settings
+ * Customiser Settings
  *
  * @link https://developer.wordpress.org/themes/customize-api/
  *
@@ -15,7 +15,7 @@ function remove_customizer_settings() {
 
   $wp_customize->remove_panel( 'themes' ); // Theme change settings
   $wp_customize->get_panel( 'nav_menus' )->active_callback = '__return_false'; // Navigation Menus
-  $wp_customize->remove_section( 'widgets' ); // Widgets
+  $wp_customize->remove_panel( 'widgets' ); // Widgets
   $wp_customize->remove_section( 'static_front_page' ); // Homepage Settings
   $wp_customize->remove_section( 'custom_css' ); // Additional CSS
   $wp_customize->add_panel( 'hero_settings',
@@ -71,12 +71,6 @@ require_once( 'customizer-settings/table-settings.php' );
 -------------------------------------------------------------------------------*/
 
 require_once( 'customizer-settings/cta-block.php' );
-
-/*-------------------------------------------------------------------------------
-  Statistics Block Customiser Settings
--------------------------------------------------------------------------------*/
-
-require_once( 'customizer-settings/statistics-block.php' );
 
 /*-------------------------------------------------------------------------------
   Footer Customiser Settings
