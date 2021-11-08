@@ -44,7 +44,7 @@
   <?php if ( $modal_downloads ): ?>
     <div>
       <button class="block-paragraph__trigger">
-        <?php _e( 'Related Documents', 'wcmc' ); ?>
+        <?php _e( 'Documentos Relacionados', 'wcmc' ); ?>
       </button>
     </div>
   <?php endif; ?>
