@@ -14,6 +14,7 @@
   $sort_by = block_field ( 'sort-by', false );
   $reverse_order = block_field ( 'reverse-order', false );
   $lazy_load = block_field( 'lazy-load', false );
+  $wrap_content = block_field( 'wrap-content', false );
   $hide_search = block_field( 'hide-search', false );
   $hide_reset = block_field( 'hide-reset', false );
 
@@ -66,7 +67,9 @@
   $table_shortcode .= ' post_limit="-1"';
 
   // Do not wrap text on columns
-  $table_shortcode .= ' wrap="false"';
+  if (!$wrap_content) {
+    $table_shortcode .= ' wrap="false"';
+  }
 
   // Open extra columns in modal
   $table_shortcode .= ' responsive_display="modal"';
