@@ -7,7 +7,6 @@
 }
 
 .block-cta__inner {
-  // .editor-block-list__layout .block-cta__inner {
   .home &,
   .widgets & {
     @include inner_padding;
@@ -113,21 +112,22 @@ li.block-cta__featured-item {
 }
 
 h3.block-cta__title,
-.editor-block-list__layout h3.block-cta__title {
+.editor-styles-wrapper h3.block-cta__title {
   @include font_heading-2;
   color: currentColor;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 p.block-cta__text,
-.editor-block-list__layout p.block-cta__text {
+.editor-styles-wrapper p.block-cta__text {
   @include font_base_text;
   color: currentColor;
+  margin-top: 0;
   margin-bottom: $item-padding-small;
 }
 
 p.block-cta__link,
-.editor-block-list__layout p.block-cta__link {
+.editor-styles-wrapper p.block-cta__link {
   @include button_text;
   color: $color-accent-primary;
   text-decoration: none;
@@ -149,7 +149,7 @@ a.block-cta__fauxlink {
 }
 
 .block-cta__background-image,
-.editor-block-list__layout .block-cta__background-image {
+.block-editor__container img.block-cta__background-image {
   @include absolute_fill;
   @include object_fit_cover;
 
