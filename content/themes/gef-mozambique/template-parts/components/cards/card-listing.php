@@ -18,6 +18,10 @@
 		<div class="listing-card__content">
       <p class="listing-card__details"><?php the_time( 'd/m/y' ); ?></p>
       <h3 class="listing-card__title"><?php the_title(); ?></h3>
+      <p href="<?php echo the_permalink(); ?>" class="listing-card__button listing-card__button--arrow">
+        <?php _e( 'Mais', 'wcmc' ); ?>
+        <?php get_template_part('template-parts/icons/icon', 'angle-right'); ?>
+      </p>
 		</div>
 	</div>
   <a class="listing-card__fauxlink" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"></a>

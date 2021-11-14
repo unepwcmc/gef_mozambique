@@ -114,7 +114,8 @@ p.listing-card__text {
   @include font_small_text;
 }
 
-p.listing-card__button {
+p.listing-card__button,
+.editor-styles-wrapper .listing-card__card p.listing-card__button {
   color: $color-primary;
 
   transition: opacity .5s ease;

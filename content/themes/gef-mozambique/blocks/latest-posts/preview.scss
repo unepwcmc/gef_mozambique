@@ -4,7 +4,7 @@
 @import "../../src/scss/components/listing/card";
 
 .listing-card__body {
-  padding: $item-padding;
+  padding: $item-padding 0;
 }
 
 .editor-styles-wrapper .listing-card__card h3,
@@ -19,8 +19,4 @@
 
 .editor-styles-wrapper .listing-card__card h3 {
   font-size: 18px;
-}
-
-.editor-styles-wrapper .listing-card__card p {
-  font-size: 12px;
 }
