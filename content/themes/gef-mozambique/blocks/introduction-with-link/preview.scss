@@ -1,0 +1,51 @@
+@import "../../src/scss/utilities/variables";
+@import "../../src/scss/utilities/mixins";
+
+.block-introduction {
+  @include spacer;
+}
+
+.block-introduction__column {
+  &:first-child {
+    margin-bottom: $grid-gap * 2;
+  }
+}
+
+.block-introduction__featured-link {
+  box-shadow: 0px 3px 6px #00000029;
+  padding: $spacer-small $spacer-medium;
+}
+
+.block-introduction__logo {
+  width: 100px;
+}
+
+h4.block-introduction__heading {
+  @include font_heading-3;
+}
+
+p.block-introduction__description {
+  @include font_heading-6;
+}
+
+a.block-introduction__link {
+  @include button_with_icon;
+  color: $color-primary;
+  font-weight: $fw-medium;
+
+  &.block-introduction__link--external {
+    display: inline-flex;
+    justify-content: center;
+
+    svg {
+      color: $color-dark-grey;
+      margin-left: 10px;
+      width: 14px;
+    }
+  }
+}
+
+button.block-introduction__trigger {
+  @include button_secondary;
+  margin-top: $item-padding;
+}
