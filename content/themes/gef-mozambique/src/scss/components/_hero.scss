@@ -75,6 +75,18 @@
   }
 }
 
+.hero__logo {
+  margin-bottom: $item-padding;
+
+  display: flex;
+  justify-content: center;
+
+  svg {
+    width: 250px;
+    height: 95px;
+  }
+}
+
 h2.hero__title,
 .editor-styles-wrapper h2.hero__title {
   color: currentColor;
