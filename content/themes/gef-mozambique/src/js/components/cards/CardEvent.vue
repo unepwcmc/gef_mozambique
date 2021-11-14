@@ -3,15 +3,18 @@
     class="listing-card listing-card--event"
     @click="clickHandler()"
   >
-    <div
-      v-if="!isResource"
-      class="listing-card__header"
-    >
+    <div class="listing-card__header">
       <div class="listing-card__image-wrap">
         <IconCalendar class="listing-card__icon" />
       </div>
     </div>
     <div class="listing-card__body">
+      <p
+        v-if="date"
+        class="listing-card__date"
+      >
+        {{ date }}
+      </p>
       <h3 class="listing-card__title">
         {{ title }}
       </h3>
@@ -67,43 +70,18 @@
     },
 
     computed: {
-      excerpt() {
-        return this.config.excerpt.rendered ? decodeString(this.config.excerpt.rendered).substring(0, 80) : ''
+      date() {
+        return this.config.acf && this.config.acf.date_start
+          ? this.config.acf.date_start
+          : ''
       },
 
       externalLinkURL() {
         return this.config.acf && this.config.acf.external_link_url ? this.config.acf.external_link_url : ''
       },
 
-      imageUrl() {
-        if (this.postType == 'casestudy') {
-          return this.config.imageUrl
-            ? this.config.imageUrl
-            : this.placeholderImageUrl
-        } else {
-          return (
-            this.config.hasOwnProperty('_embedded') &&
-            this.config._embedded.hasOwnProperty('wp:featuredmedia')
-          )
-            ? this.config._embedded['wp:featuredmedia'][0].source_url
-            : this.placeholderImageUrl
-        }
-      },
-
-      isResource() {
-        return this.postType === 'resource'
-      },
-
       link() {
         return this.externalLinkURL ? this.externalLinkURL : this.config.link
-      },
-
-      hasDate() {
-        return this.postType == 'post' || this.postType == 'event'
-      },
-
-      hrefTarget() {
-        return this.externalLinkURL ? '_blank' : '_self'
       },
 
       title() {
