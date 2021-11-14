@@ -13,6 +13,12 @@
         {{ title }}
       </h3>
       <p
+        v-if="excerpt"
+        class="listing-card__text"
+      >
+        {{ excerpt }}
+      </p>
+      <p
         class="listing-card__button listing-card__button--arrow"
       >
         {{ $t( 'common.more' ) }}
