@@ -12,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
 
-  @include break-min($lg) {
+  @include break-min($xlg) {
     flex-wrap: nowrap;
     justify-content: center;
   }
@@ -36,7 +36,7 @@
     padding-left: 0;
     margin-left: 0;
 
-    @include break-min($lg) {
+    @include break-min($xlg) {
       border-left: 2px dashed $color-border;
       padding-left: $grid-gap * 2;
       margin-left: $grid-gap * 2;
@@ -49,7 +49,7 @@
 
     flex: 0 0 100%;
 
-    @include break-min($lg) {
+    @include break-min($xlg) {
       margin-top: 0;
       width: auto;
 
@@ -63,6 +63,7 @@
   margin-bottom: -#{$grid-gap * 2};
 
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
 
   @include break-min($md) {
@@ -105,17 +106,22 @@
   }
 
   &.footer-logos__logo--wcs {
-    width: 79px;
-    height: 77px;
-  }
-
-  &.footer-logos__logo--unep-wcmc {
-    width: 167px;
-    height: 49px;
+    width: 138px;
+    height: 39px;
   }
 
   &.footer-logos__logo--combo {
-    width: 94px;
-    height: 57px;
+    width: 88px;
+    height: 54px;
+  }
+
+  &.footer-logos__logo--usaid {
+    width: 150px;
+    height: 45px;
+  }
+
+  &.footer-logos__logo--unep-wcmc {
+    width: 136px;
+    height: 40px;
   }
 }

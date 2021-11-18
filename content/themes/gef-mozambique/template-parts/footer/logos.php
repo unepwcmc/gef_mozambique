@@ -42,16 +42,23 @@
           </li>
           <li class="footer-logos__logo-item">
             <img
-              src="<?php echo get_stylesheet_directory_uri() . '/dist/img/UNEP-WCMC-logo.png'; ?>"
-              alt="UNEP-WCMC logo"
-              class="footer-logos__logo footer-logos__logo--unep-wcmc"
+              src="<?php echo get_stylesheet_directory_uri() . '/dist/img/COMBO-logo.png'; ?>"
+              alt="COMBO logo"
+              class="footer-logos__logo footer-logos__logo--combo"
             >
           </li>
           <li class="footer-logos__logo-item">
             <img
-              src="<?php echo get_stylesheet_directory_uri() . '/dist/img/COMBO-logo.png'; ?>"
-              alt="COMBO logo"
-              class="footer-logos__logo footer-logos__logo--combo"
+              src="<?php echo get_stylesheet_directory_uri() . '/dist/img/USAid-logo.png'; ?>"
+              alt="USAid logo"
+              class="footer-logos__logo footer-logos__logo--usaid"
+            >
+          </li>
+          <li class="footer-logos__logo-item">
+            <img
+              src="<?php echo get_stylesheet_directory_uri() . '/dist/img/UNEP-WCMC-logo.png'; ?>"
+              alt="UNEP-WCMC logo"
+              class="footer-logos__logo footer-logos__logo--unep-wcmc"
             >
           </li>
         </ul>
