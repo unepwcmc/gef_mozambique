@@ -82,8 +82,13 @@
   justify-content: center;
 
   svg {
-    width: 250px;
-    height: 95px;
+    width: 350px;
+    height: 133px;
+
+    @include break-min($sm) {
+      width: 500px;
+      height: 190px;
+    }
   }
 }
 
