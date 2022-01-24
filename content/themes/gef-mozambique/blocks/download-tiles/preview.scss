@@ -1,3 +1,7 @@
 @import "../../src/scss/utilities/variables";
 @import "../../src/scss/utilities/mixins";
 @import "../../src/scss/components/tiles/link";
+
+.editor-styles-wrapper a.link-tile__button {
+  position: relative;
+}

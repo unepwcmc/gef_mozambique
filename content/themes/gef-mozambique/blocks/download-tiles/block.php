@@ -35,6 +35,7 @@
                 $title = block_sub_value( 'title', false );
                 $text = block_sub_value( 'text', false );
                 $file_url = block_sub_value( 'file-url', false );
+                $external_url = block_sub_value( 'external-url', false );
               ?>
 
               <li class="link-tiles__item">
@@ -63,13 +64,13 @@
                       </p>
                     <?php endif; ?>
 
-                    <?php if ( !empty($file_url) ): ?>
+                    <?php if ( !empty( $file_url ) ): ?>
                       <a
                         href="<?php echo $file_url; ?>"
                         title="<?php echo $title; ?>"
-                        target="_blank"
+                        <?php if( $external_link ) echo 'target="_blank"'; ?>
                         class="link-tile__button link-tile__button--download"
-                        download
+                        <?php if( !$external_link ) echo 'download'; ?>
                       >
                         <?php _e( 'Download', 'wcmc' ); ?>
                         <?php get_template_part( 'template-parts/icons/icon', 'download' ); ?>
