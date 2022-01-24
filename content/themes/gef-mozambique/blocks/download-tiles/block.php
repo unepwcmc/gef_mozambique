@@ -35,7 +35,7 @@
                 $title = block_sub_value( 'title', false );
                 $text = block_sub_value( 'text', false );
                 $file_url = block_sub_value( 'file-url', false );
-                $external_url = block_sub_value( 'external-url', false );
+                $external_link = block_sub_value( 'external-link', false );
               ?>
 
               <li class="link-tiles__item">
