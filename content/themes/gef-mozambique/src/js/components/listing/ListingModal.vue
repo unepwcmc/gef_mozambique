@@ -27,6 +27,7 @@
               {{ document.description }}
             </p>
             <a
+              v-if="document.file"
               :href="document.file"
               download
               class="listing-modal__download-button"
