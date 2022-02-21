@@ -27,7 +27,7 @@
               {{ document.description }}
             </p>
             <a
-              :href="document.Link"
+              :href="document.file"
               download
               class="listing-modal__download-button"
             >
