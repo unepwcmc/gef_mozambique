@@ -57,6 +57,7 @@ a.block-introduction__link {
   @include button_with_icon;
   color: $color-primary;
   font-weight: $fw-medium;
+  margin-bottom: $item-padding;
 
   &.block-introduction__link--external {
     display: inline-flex;
