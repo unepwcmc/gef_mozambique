@@ -10,7 +10,7 @@
       <li class="footer-logos__item">
         <h6><?php _e( 'Apoiado por:' ); ?></h6>
         <a
-          href="https://mozambique.wcs.org"
+          href="https://www.thegef.org"
           target="_blank"
           title="GEF"
           class="footer-logos__link"
@@ -56,7 +56,7 @@
           </li>
           <li class="footer-logos__logo-item">
             <a
-              href="https://www.wcs.org/"
+              href="https://mozambique.wcs.org"
               target="_blank"
               title="Wildlife Conservation Society"
               class="footer-logos__link"
@@ -84,7 +84,7 @@
           </li>
           <li class="footer-logos__logo-item">
             <a
-              href="https://www.usaid.gov/mozambique"
+              href="https://www.usaid.gov"
               target="_blank"
               title="USAID"
               class="footer-logos__link"
