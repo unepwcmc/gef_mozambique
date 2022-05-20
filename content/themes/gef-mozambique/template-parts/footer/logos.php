@@ -42,15 +42,15 @@
         <ul class="footer-logos__logo-items">
           <li class="footer-logos__logo-item">
             <a
-              href="https://www.mta.gov.mz"
+              href="https://www.unep-wcmc.org"
               target="_blank"
-              title="Ministério da Terra e Ambiente"
+              title="UN Environment Program - World Conservation Monitoring Centre"
               class="footer-logos__link"
             >
               <img
-                src="<?php echo get_stylesheet_directory_uri() . '/dist/img/Mozambique-logo.png'; ?>"
-                alt="Ministério da Terra e Ambiente logo"
-                class="footer-logos__logo footer-logos__logo--mozambique"
+                src="<?php echo get_stylesheet_directory_uri() . '/dist/img/UNEP-WCMC-logo.png'; ?>"
+                alt="UNEP-WCMC logo"
+                class="footer-logos__logo footer-logos__logo--unep-wcmc"
               >
             </a>
           </li>
@@ -98,15 +98,29 @@
           </li>
           <li class="footer-logos__logo-item">
             <a
-              href="https://www.unep-wcmc.org"
+              href="https://www.afd.fr"
               target="_blank"
-              title="UN Environment Program - World Conservation Monitoring Centre"
+              title="Agence Française de Développement"
               class="footer-logos__link"
             >
               <img
-                src="<?php echo get_stylesheet_directory_uri() . '/dist/img/UNEP-WCMC-logo.png'; ?>"
-                alt="UNEP-WCMC logo"
-                class="footer-logos__logo footer-logos__logo--unep-wcmc"
+                src="<?php echo get_stylesheet_directory_uri() . '/dist/img/AFD-logo.png'; ?>"
+                alt="Agence Française de Développement logo"
+                class="footer-logos__logo footer-logos__logo--afd"
+              >
+            </a>
+          </li>
+          <li class="footer-logos__logo-item">
+            <a
+              href="https://www.ffem.fr"
+              target="_blank"
+              title="Fonds Français pour l'Environnement Mondial"
+              class="footer-logos__link"
+            >
+              <img
+                src="<?php echo get_stylesheet_directory_uri() . '/dist/img/FFEM-logo.png'; ?>"
+                alt="Fonds Français pour l'Environnement Mondial logo"
+                class="footer-logos__logo footer-logos__logo--ffem"
               >
             </a>
           </li>
